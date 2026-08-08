@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>CMS Menu — Kurnia Seafood</title>
+<style>
+  :root {
+    --navy-deep:   #0A2A4A;
+    --navy-ink:    #0F2C4C;
+    --navy-abyss:  #06182B;
+    --navy-panel:  #123E63;
+    --navy-panel-2:#0E3357;
+    --gold:        #C9A227;
+    --gold-bright: #E2B74E;
+    --gold-soft:   #EDC66B;
+    --cream:       #F5EFE3;
+    --white:       #FFFFFF;
+    --red:         #D42A20;
+    --red-deep:    #90262A;
+    --green:       #2E7D4A;
+    --border:      rgba(255,255,255,0.12);
+    --border-gold: rgba(201,162,39,0.45);
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--navy-deep);
+    color: var(--cream);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 100vh;
+  }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; }
+  h1, h2, h3 { color: var(--white); margin: 0 0 4px; font-weight: 700; }
+  p { margin: 0; }
+  a { color: var(--gold-soft); }
+  .is-hidden { display: none !important; }
+
+  .shell { max-width: 640px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+
+  /* ---------- Login ---------- */
+  .login-wrap { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 32px 20px 40px; }
+  .login-logo { width: 72px; height: 72px; margin: 0 auto 14px; border-radius: 14px; overflow: hidden; background: var(--navy-panel); display: flex; align-items: center; justify-content: center; }
+  .login-logo img { width: 100%; height: 100%; object-fit: cover; }
+  .login-title { text-align: center; font-size: 22px; margin-bottom: 2px; }
+  .login-sub { text-align: center; color: var(--gold-soft); font-size: 13px; margin-bottom: 28px; }
+  .login-card { background: var(--navy-panel); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+  .login-divider { text-align: center; color: rgba(245,239,227,0.5); font-size: 12px; margin: 18px 0; position: relative; }
+  .login-divider::before, .login-divider::after { content: ""; position: absolute; top: 50%; width: 38%; height: 1px; background: var(--border); }
+  .login-divider::before { left: 0; }
+  .login-divider::after { right: 0; }
+  .login-help { text-align: center; margin-top: 18px; font-size: 13px; }
+  .login-error { background: rgba(212,42,32,0.16); border: 1px solid var(--red); color: #ffd7d2; border-radius: 10px; padding: 10px 12px; font-size: 13px; margin-top: 12px; }
+
+  /* ---------- Form fields ---------- */
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 13px; color: var(--gold-soft); margin-bottom: 6px; font-weight: 600; }
+  .field .hint { display: block; font-size: 12px; color: rgba(245,239,227,0.55); margin-top: 5px; }
+  .input, .select, .textarea {
+    width: 100%; background: var(--navy-ink); border: 1px solid var(--border); color: var(--cream);
+    border-radius: 10px; padding: 11px 12px; font-size: 15px; font-family: inherit;
+  }
+  .input:focus, .select:focus, .textarea:focus { outline: none; border-color: var(--gold); }
+  .textarea { resize: vertical; min-height: 64px; }
+  .input-pass-row { position: relative; }
+  .input-pass-row .input { padding-right: 64px; }
+  .input-pass-row button { position: absolute; right: 6px; top: 6px; bottom: 6px; }
+  .checkbox-row { display: flex; align-items: center; gap: 9px; font-size: 13.5px; margin-bottom: 14px; cursor: pointer; }
+  .checkbox-row input { width: 18px; height: 18px; accent-color: var(--gold); flex: none; }
+
+  /* ---------- Buttons ---------- */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: none; border-radius: 10px;
+    padding: 12px 16px; font-size: 14.5px; font-weight: 700; cursor: pointer; width: 100%; }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn-primary { background: linear-gradient(180deg, var(--gold-soft), var(--gold)); color: var(--navy-abyss); }
+  .btn-outline { background: transparent; border: 1px solid var(--border-gold); color: var(--gold-soft); }
+  .btn-ghost { background: transparent; color: var(--cream); border: 1px solid var(--border); }
+  .btn-danger { background: rgba(212,42,32,0.18); color: #ffb6ae; border: 1px solid var(--red); }
+  .btn-sm { width: auto; padding: 7px 11px; font-size: 13px; border-radius: 8px; }
+  .btn-icon { width: auto; padding: 7px 10px; min-width: 44px; min-height: 44px; }
+  .btn-row { display: flex; gap: 10px; }
+  .btn-row .btn { width: auto; flex: 1; }
+  .link-btn { background: none; border: none; color: var(--gold-soft); text-decoration: underline; cursor: pointer; font-size: 13px; padding: 4px; }
+
+  /* ---------- Top bar & tabs ---------- */
+  .topbar { position: sticky; top: 0; z-index: 20; background: var(--navy-ink); border-bottom: 1px solid var(--border);
+    padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
+  .topbar-title { flex: 1; min-width: 0; }
+  .topbar-title h1 { font-size: 15.5px; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .badge { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 999px; margin-top: 2px; }
+  .badge-demo { background: rgba(226,183,78,0.18); color: var(--gold-soft); border: 1px solid var(--border-gold); }
+  .badge-live { background: rgba(46,125,74,0.22); color: #8fe0ab; border: 1px solid var(--green); }
+
+  .tabs { display: flex; background: var(--navy-panel-2); border-bottom: 1px solid var(--border); position: sticky; top: 45px; z-index: 19; }
+  .tab-btn { flex: 1; background: none; border: none; color: rgba(245,239,227,0.6); padding: 11px 6px; font-size: 14px; font-weight: 700;
+    border-bottom: 3px solid transparent; cursor: pointer; }
+  .tab-btn.is-active { color: var(--white); border-bottom-color: var(--gold); }
+
+  main { flex: 1; padding: 14px 14px 100px; }
+
+  /* ---------- Info banner ---------- */
+  .banner { border-radius: 12px; padding: 12px 14px; font-size: 13px; margin-bottom: 14px; }
+  .banner-demo { background: rgba(226,183,78,0.14); border: 1px solid var(--border-gold); color: var(--gold-soft); }
+  .banner-warn { background: rgba(212,42,32,0.14); border: 1px solid var(--red); color: #ffd7d2; }
+
+  /* ---------- Panels / accordion ---------- */
+  .panel { background: var(--navy-panel); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+  .panel-head { display: flex; align-items: center; gap: 10px; padding: 14px; cursor: pointer; }
+  .panel-head-main { flex: 1; min-width: 0; }
+  .panel-head-main h3 { font-size: 15px; margin: 0; }
+  .panel-head-meta { font-size: 12px; color: rgba(245,239,227,0.55); margin-top: 2px; }
+  .chev { transition: transform .15s; color: var(--gold-soft); flex: none; }
+  .panel.is-open .chev { transform: rotate(180deg); }
+  .panel-body { border-top: 1px solid var(--border); padding: 12px 14px 14px; display: none; }
+  .panel.is-open .panel-body { display: block; }
+
+  .item-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .item-row:last-child { border-bottom: none; }
+  .item-row-main { flex: 1; min-width: 0; }
+  .item-row-name { font-size: 14.5px; font-weight: 600; }
+  .item-row-price { font-size: 13px; color: var(--gold-soft); }
+  .badge-new-mini { display: inline-block; background: var(--red); color: #fff; font-size: 9.5px; font-weight: 800; padding: 1px 5px; border-radius: 5px; margin-left: 6px; vertical-align: middle; }
+  .item-row-actions { display: flex; gap: 8px; flex: none; }
+
+  .segar-note { font-size: 13px; color: rgba(245,239,227,0.75); margin-bottom: 10px; }
+  .segar-block-title { font-size: 12.5px; color: var(--gold-soft); font-weight: 700; margin: 12px 0 6px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { background: var(--navy-ink); border: 1px solid var(--border); border-radius: 999px; padding: 5px 10px; font-size: 12.5px; }
+
+  /* ---------- List editor (inside sheet, uncontrolled DOM) ---------- */
+  .list-editor { display: flex; flex-direction: column; gap: 7px; margin-bottom: 8px; }
+  .list-row { display: flex; align-items: center; gap: 6px; }
+  .list-row input { flex: 1; }
+  .list-row-btns { display: flex; gap: 8px; flex: none; }
+
+  /* ---------- Foto grid ---------- */
+  .foto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .foto-card { background: var(--navy-panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .foto-thumb { position: relative; width: 100%; aspect-ratio: 4/3; background: var(--navy-ink); }
+  .foto-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .foto-thumb-tipe { position: absolute; top: 6px; left: 6px; background: rgba(6,24,43,0.75); color: var(--gold-soft); font-size: 10px;
+    font-weight: 700; padding: 2px 7px; border-radius: 999px; }
+  .foto-thumb-pending { position: absolute; bottom: 6px; right: 6px; background: var(--gold); color: var(--navy-abyss); font-size: 9.5px;
+    font-weight: 800; padding: 2px 6px; border-radius: 6px; }
+  .foto-meta { padding: 9px 10px; }
+  .foto-meta-name { font-size: 12.5px; font-weight: 600; line-height: 1.3; margin-bottom: 6px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .foto-meta-btns { display: flex; gap: 6px; }
+  .foto-meta-btns .btn { padding: 6px; font-size: 12px; }
+  .foto-add-card { display: flex; align-items: center; justify-content: center; min-height: 140px; border: 2px dashed var(--border-gold);
+    border-radius: 12px; color: var(--gold-soft); font-weight: 700; font-size: 13px; cursor: pointer; background: none; text-align: center; padding: 12px; }
+
+  /* ---------- Save bar ---------- */
+  .savebar { position: sticky; bottom: 0; z-index: 20; background: var(--navy-ink); border-top: 1px solid var(--border);
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); }
+  .savebar-inner { display: flex; align-items: center; gap: 10px; }
+  .savebar-status { flex: 1; font-size: 12px; color: rgba(245,239,227,0.6); }
+  .savebar .btn { width: auto; padding: 11px 18px; }
+
+  /* ---------- Sheet / bottom modal ---------- */
+  .sheet-overlay { position: fixed; inset: 0; background: rgba(6,24,43,0.7); z-index: 50; display: flex; align-items: flex-end; justify-content: center; }
+  .sheet { background: var(--navy-deep); width: 100%; max-width: 640px; max-height: 92vh; border-radius: 18px 18px 0 0;
+    display: flex; flex-direction: column; border: 1px solid var(--border); border-bottom: none; }
+  .sheet-header { padding: 16px 16px 10px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+  .sheet-header h2 { font-size: 16.5px; flex: 1; }
+  .sheet-close { background: none; border: none; color: var(--cream); font-size: 20px; cursor: pointer; padding: 4px 8px;
+    min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .sheet-body { padding: 14px 16px; overflow-y: auto; flex: 1; -webkit-overflow-scrolling: touch; }
+  .sheet-footer { padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); border-top: 1px solid var(--border); display: flex; gap: 10px; }
+  .sheet-footer .btn { width: auto; flex: 1; }
+  .sheet-error { background: rgba(212,42,32,0.16); border: 1px solid var(--red); color: #ffd7d2; border-radius: 10px; padding: 9px 11px; font-size: 13px; margin-bottom: 12px; }
+  .sheet-warn { background: rgba(226,183,78,0.14); border: 1px solid var(--border-gold); color: var(--gold-soft); border-radius: 10px; padding: 9px 11px; font-size: 12.5px; margin-top: 8px; }
+  .sheet-ok { background: rgba(46,125,74,0.16); border: 1px solid var(--green); color: #b6f0c6; border-radius: 10px; padding: 9px 11px; font-size: 12.5px; margin-top: 8px; }
+
+  .switch-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; }
+  .switch-row-label { font-size: 13.5px; font-weight: 600; }
+  .switch-row-desc { font-size: 11.5px; color: rgba(245,239,227,0.55); margin-top: 2px; }
+  .switch { position: relative; width: 44px; height: 25px; flex: none; }
+  .switch input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .switch-track { position: absolute; inset: 0; background: rgba(245,239,227,0.2); border-radius: 999px; transition: .15s; }
+  .switch-thumb { position: absolute; top: 3px; left: 3px; width: 19px; height: 19px; background: #fff; border-radius: 50%; transition: .15s; }
+  .switch input:checked + .switch-track { background: var(--gold); }
+  .switch input:checked + .switch-track .switch-thumb { transform: translateX(19px); }
+
+  .thumb-preview { width: 100%; max-width: 220px; aspect-ratio: 4/3; border-radius: 10px; overflow: hidden; background: var(--navy-ink);
+    margin-bottom: 10px; border: 1px solid var(--border); }
+  .thumb-preview img { width: 100%; height: 100%; object-fit: cover; }
+  .file-status { font-size: 12px; margin-top: 6px; }
+
+  .problem-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .problem-list li { background: rgba(212,42,32,0.14); border: 1px solid var(--red); border-radius: 10px; padding: 9px 11px; font-size: 13px; }
+
+  .progress-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .progress-item { display: flex; align-items: center; gap: 10px; font-size: 13.5px; padding: 7px 0; }
+  .progress-icon { width: 22px; height: 22px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; }
+  .progress-item--pending .progress-icon { background: rgba(245,239,227,0.15); color: var(--cream); }
+  .progress-item--ok .progress-icon { background: var(--green); color: #fff; }
+  .progress-item--fail .progress-icon { background: var(--red); color: #fff; }
+  .spinner { width: 14px; height: 14px; border: 2px solid rgba(245,239,227,0.3); border-top-color: var(--gold); border-radius: 50%; animation: spin .7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .toast { position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%); background: var(--navy-ink); border: 1px solid var(--border-gold);
+    color: var(--cream); padding: 11px 16px; border-radius: 12px; font-size: 13.5px; z-index: 80; max-width: 90vw; text-align: center; box-shadow: 0 6px 22px rgba(0,0,0,0.4); }
+
+  .center-loading { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 40px; text-align: center; }
+  .center-loading .spinner { width: 28px; height: 28px; border-width: 3px; }
+</style>
+</head>
+<body>
+<div class="shell" id="shell">
+  <div id="loadingScreen" class="center-loading">
+    <div class="spinner"></div>
+    <p>Memuat...</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* =========================================================
+     Konstanta
+     ========================================================= */
+  var REPO = "PatrickPLJ/menu-kurnia";
+  var API_BASE = "https://api.github.com";
+  var REPO_API = API_BASE + "/repos/" + REPO;
+  var PAGES_BASE = "https://patrickplj.github.io/menu-kurnia";
+  var LIVE_URL = PAGES_BASE + "/";
+  var PANDUAN_URL = "https://github.com/" + REPO + "/blob/main/PANDUAN-CMS.md";
+  var NEW_DESC = "Menu baru (NEW)";
+  var MAX_PHOTO_SIDE = 1000;
+  var TARGET_PHOTO_BYTES = 300 * 1024;
+  var MAX_PHOTO_BYTES = 600 * 1024;
+  var TOKEN_KEY = "kurniaCmsToken";
+  var NAME_KEY = "kurniaCmsUserName";
+  var DRAFT_KEY = "kurniaCmsDraft";
+  var SAFE_FILE_RE = /^[a-z0-9-]+\.(webp|jpg|jpeg|png)$/;
+  var SAFE_ID_RE = /^[a-z0-9-]+$/;
+
+  /* =========================================================
+     Util murni -- tidak menyentuh document/window, bisa dites
+     lewat Node (lihat guard module.exports di bawah).
+     ========================================================= */
+  function escapeHtml(str) {
+    return String(str == null ? "" : str).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  // Format angka rupiah untuk tampilan input, mis. 46000 -> "46.000"
+  function formatRibuan(n) {
+    if (n === null || n === undefined || n === "") return "";
+    var num = Number(n);
+    if (!isFinite(num)) return "";
+    return Math.round(num).toLocaleString("id-ID");
+  }
+
+  // Kebalikan formatRibuan: buang semua karakter selain digit, "" -> null
+  function parseRibuan(str) {
+    if (str == null) return null;
+    var digits = String(str).replace(/[^0-9]/g, "");
+    if (!digits) return null;
+    return parseInt(digits, 10);
+  }
+
+  // Aturan auto harga_label (didokumentasikan juga di PANDUAN-CMS.md):
+  // - harga null/undefined -> "Harga pasar"
+  // - selain itu: bagi 1000, kalau hasilnya bilangan bulat -> format id-ID
+  //   (titik ribuan), mis. 46 -> "46K", 1000 -> "1.000K"
+  // - kalau tidak bulat -> bulatkan 1 angka desimal, pakai TITIK sebagai
+  //   pemisah desimal (bukan koma id-ID), mis. 9.5 -> "9.5K", 12.5 -> "12.5K"
+  // - satuan/plus_plus TIDAK mempengaruhi label auto -- itu selalu berupa
+  //   override manual (mis. "12K/Pcs", "269K++").
+  function generateHargaLabel(harga) {
+    if (harga === null || harga === undefined || harga === "") return "Harga pasar";
+    var n = Number(harga);
+    if (!isFinite(n)) return "Harga pasar";
+    var k = n / 1000;
+    var rounded1 = Math.round(k * 10) / 10;
+    var isWhole = Math.abs(rounded1 - Math.round(rounded1)) < 1e-9;
+    var numStr;
+    if (isWhole) {
+      numStr = Math.round(rounded1).toLocaleString("id-ID");
+    } else {
+      numStr = String(rounded1);
+    }
+    return numStr + "K";
+  }
+
+  function isNewDesc(desc) {
+    return desc === NEW_DESC;
+  }
+
+  // Slug kebab-case untuk nama file foto -- menyamai konvensi file yang
+  // sudah ada (mis. "Alaska King Crab" -> "alaska-king-crab").
+  function kebabCase(str) {
+    var s = String(str || "");
+    if (typeof s.normalize === "function") {
+      s = s.normalize("NFKD").replace(/[̀-ͯ]/g, "");
+    }
+    return s.toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .replace(/-{2,}/g, "-");
+  }
+
+  // Pastikan nama file belum dipakai (existingList = array nama file lain).
+  function uniqueFilename(base, ext, existingList) {
+    var slug = kebabCase(base) || "foto";
+    var list = existingList || [];
+    var candidate = slug + "." + ext;
+    var n = 2;
+    while (list.indexOf(candidate) !== -1) {
+      candidate = slug + "-" + n + "." + ext;
+      n++;
+    }
+    return candidate;
+  }
+
+  // Hitung dimensi hasil resize (sisi terpanjang <= maxSide, rasio dipertahankan).
+  function computeResizeDims(w, h, maxSide) {
+    w = Math.max(1, Math.round(w));
+    h = Math.max(1, Math.round(h));
+    if (w <= maxSide && h <= maxSide) return { w: w, h: h };
+    if (w >= h) {
+      var scaleW = maxSide / w;
+      return { w: maxSide, h: Math.max(1, Math.round(h * scaleW)) };
+    }
+    var scaleH = maxSide / h;
+    return { w: Math.max(1, Math.round(w * scaleH)), h: maxSide };
+  }
+
+  function formatKB(bytes) {
+    return Math.round(bytes / 1024) + " KB";
+  }
+
+  // Base64 encode/decode string UTF-8 -- dipakai untuk isi data/menu.json &
+  // data/foto.json lewat GitHub Contents API. atob/btoa GitHub base64 berisi
+  // newline tiap ~60 char -> harus dibuang dulu sebelum decode.
+  function base64EncodeUtf8(str) {
+    var bytes = new TextEncoder().encode(String(str));
+    var binary = "";
+    for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+    return btoa(binary);
+  }
+
+  function base64DecodeUtf8(b64) {
+    var clean = String(b64 == null ? "" : b64).replace(/\s+/g, "");
+    if (!clean) return "";
+    var binary = atob(clean);
+    var bytes = new Uint8Array(binary.length);
+    for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    return new TextDecoder("utf-8").decode(bytes);
+  }
+
+  // Ringkasan pesan commit dari daftar perubahan (dipakai di "CMS: <ringkasan> — oleh <nama>")
+  function buildCommitSummary(changeLog, maxLen) {
+    maxLen = maxLen || 220;
+    if (!changeLog || !changeLog.length) return "perubahan menu";
+    var out = "";
+    var used = 0;
+    for (var i = 0; i < changeLog.length; i++) {
+      var piece = (i === 0 ? "" : "; ") + changeLog[i];
+      if ((out + piece).length > maxLen) {
+        var sisa = changeLog.length - i;
+        out += " (+" + sisa + " lainnya)";
+        return out;
+      }
+      out += piece;
+      used++;
+    }
+    return out;
+  }
+
+  // Validasi data menu sebelum kirim: nama item tidak kosong & unik dalam
+  // kategorinya, harga integer >= 0 atau null (null wajib harga_label).
+  function validateMenuData(menu) {
+    var problems = [];
+    if (!menu.restoran || !String(menu.restoran.alamat == null ? "" : menu.restoran.alamat).trim()) {
+      problems.push("Alamat restoran tidak boleh dikosongkan.");
+    }
+    (menu.kategori || []).forEach(function (cat) {
+      if (cat.tipe === "seafood-segar") {
+        if (!(cat.varian_ukuran || []).length) {
+          problems.push('Kategori "' + cat.nama + '": daftar Pilihan Ukuran kosong -- isi minimal 1.');
+        }
+        if (!(cat.pilihan_olahan || []).length) {
+          problems.push('Kategori "' + cat.nama + '": daftar Pilihan Olahan kosong -- isi minimal 1.');
+        }
+      }
+      var seen = {};
+      (cat.item || []).forEach(function (item) {
+        var nama = String(item.nama == null ? "" : item.nama).trim();
+        if (!nama) {
+          problems.push('Kategori "' + cat.nama + '": ada item tanpa nama.');
+          return;
+        }
+        var key = nama.toLowerCase();
+        if (seen[key]) {
+          problems.push('Kategori "' + cat.nama + '": nama item "' + nama + '" dobel, harus unik.');
+        }
+        seen[key] = true;
+
+        if (item.harga !== null && item.harga !== undefined) {
+          if (!Number.isInteger(item.harga) || item.harga < 0) {
+            problems.push('Item "' + nama + '" (' + cat.nama + '): harga harus angka bulat >= 0, atau dikosongkan untuk "harga pasar".');
+          }
+        } else if (!item.harga_label || !String(item.harga_label).trim()) {
+          problems.push('Item "' + nama + '" (' + cat.nama + '): harga dikosongkan (harga pasar) tapi label harga juga kosong.');
+        }
+      });
+    });
+    return problems;
+  }
+
+  // Validasi silang: setiap foto tipe "hidangan" harus merujuk item yang
+  // benar-benar ada di kategori yang sama.
+  function validatePhotoRefs(menu, fotoList) {
+    var problems = [];
+    var catById = {};
+    (menu.kategori || []).forEach(function (c) { catById[c.id] = c; });
+    (fotoList || []).forEach(function (f) {
+      if (f.tipe !== "hidangan") return;
+      var cat = catById[f.kategori_id];
+      if (!cat) {
+        problems.push('Foto "' + f.file + '": kategori "' + f.kategori_id + '" tidak ditemukan.');
+        return;
+      }
+      var found = (cat.item || []).some(function (it) { return it.nama === f.item; });
+      if (!found) {
+        problems.push('Foto "' + f.file + '": merujuk item "' + f.item + '" yang tidak ada (lagi) di kategori "' + cat.nama + '".');
+      }
+    });
+    return problems;
+  }
+
+  // Id kategori tidak boleh berubah (CMS ini tidak punya fitur ubah id, ini
+  // jaring pengaman kalau ada bug lain).
+  function validateCategoryIds(origIds, curIds) {
+    var problems = [];
+    if (!origIds || !curIds || origIds.length !== curIds.length) {
+      problems.push("Struktur kategori berubah (jumlah kategori tidak sama). Muat ulang halaman sebelum menyimpan.");
+      return problems;
+    }
+    for (var i = 0; i < origIds.length; i++) {
+      if (origIds[i] !== curIds[i]) {
+        problems.push("Id kategori berubah (\"" + origIds[i] + '" -> "' + curIds[i] + '"). Muat ulang halaman sebelum menyimpan.');
+        break;
+      }
+    }
+    return problems;
+  }
+
+  // Data dari repo (foto.json/menu.json) dipakai sebagai atribut HTML (src,
+  // data-*) -- selain escapeHtml di titik render, tolak muat data yang nama
+  // file/id kategorinya di luar pola aman a-z0-9- (whitelist, bukan blacklist).
+  function validateDataIntegrity(menu, fotoList) {
+    var problems = [];
+    (menu.kategori || []).forEach(function (c) {
+      if (!SAFE_ID_RE.test(String(c.id))) problems.push('Id kategori tidak valid: "' + c.id + '".');
+    });
+    (fotoList || []).forEach(function (f) {
+      if (f.file && !SAFE_FILE_RE.test(String(f.file))) problems.push('Nama file foto tidak valid: "' + f.file + '".');
+    });
+    return problems;
+  }
+
+  // Item dengan flag plus_plus (harga belum termasuk pajak/service) tetap
+  // harus kelihatan "++" di label harga OTOMATIS, supaya mematikan toggle
+  // "Ubah label harga manual" tidak diam-diam menghilangkan tanda itu.
+  function applyPlusPlusSuffix(label, plusPlus) {
+    if (!plusPlus || !label || label === "Harga pasar") return label;
+    return /\+\+\s*$/.test(label) ? label : label + "++";
+  }
+
+  // Dipakai untuk menilai hasil GET .../collaborators/{login}/permission --
+  // "admin"/"maintain"/"write" dianggap boleh nulis (PUT/DELETE contents & git data api).
+  function isWritePermissionLevel(level) {
+    return level === "admin" || level === "maintain" || level === "write";
+  }
+
+  // Terjemahkan potongan error mentah (fetch/GitHub) yang paling sering
+  // muncul jadi kalimat Indonesia -- selebihnya ditampilkan apa adanya.
+  function friendlyErrorText(err) {
+    var raw = String((err && err.message) || "").trim();
+    if (/Failed to fetch|Load failed|NetworkError|network error/i.test(raw)) return "internet lagi bermasalah -- cek koneksi, lalu coba lagi";
+    if (/Bad credentials/i.test(raw)) return "token ditolak GitHub";
+    if (/Not Found/i.test(raw)) return "data tidak ditemukan di server";
+    if (/^HTTP 5\d\d/.test(raw)) return "server GitHub sedang bermasalah, coba lagi nanti";
+    return raw || "error tidak diketahui";
+  }
+
+  // Susun entries untuk 1 Git tree (dipakai untuk 1 commit atomik lewat Git
+  // Data API): file baru/ganti -> {path, sha: <blob sha>}, file yang dihapus
+  // -> {path, sha: null} (git tree API menghapus entry itu dari tree).
+  // Tidak butuh sha FILE LAMA sama sekali -- beda dari Contents API.
+  function buildAtomicTreeEntries(opts) {
+    opts = opts || {};
+    var blobShaByPath = opts.blobShaByPath || {};
+    var entries = [];
+    (opts.putPaths || []).forEach(function (p) {
+      entries.push({ path: p, mode: "100644", type: "blob", sha: blobShaByPath[p] || null });
+    });
+    (opts.deletePaths || []).forEach(function (p) {
+      entries.push({ path: p, mode: "100644", type: "blob", sha: null });
+    });
+    if (opts.fotoDirty) entries.push({ path: "data/foto.json", mode: "100644", type: "blob", sha: blobShaByPath["data/foto.json"] || null });
+    if (opts.menuDirty) entries.push({ path: "data/menu.json", mode: "100644", type: "blob", sha: blobShaByPath["data/menu.json"] || null });
+    return entries;
+  }
+
+  /* =========================================================
+     State aplikasi
+     ========================================================= */
+  var state = {
+    mode: null,            // 'token' | 'demo'
+    token: null,
+    menu: null,
+    foto: null,
+    menuSha: null,
+    fotoSha: null,
+    origMenuSnapshot: null,
+    origCategoryIds: null,
+    changeLog: [],
+    menuDirty: false,
+    fotoDirty: false,
+    pendingImageOps: [],   // {type:'put'|'delete', path, base64, label}
+    localPreviewUrls: {},  // filename -> object URL (foto yang belum tayang di Pages)
+    recentlyUploaded: {},  // filename -> true (baru sukses disimpan, menunggu deploy Pages)
+    activeTab: "menu",
+    expandedCategoryId: null,
+    userName: null,
+    defaultBranch: "main",
+    tokenPermWarning: null
+  };
+
+  function isDirty() {
+    return state.changeLog.length > 0 || state.pendingImageOps.length > 0;
+  }
+
+  function recordChange(desc) {
+    state.changeLog.push(desc);
+    persistDraft();
+    updateSaveBar();
+  }
+
+  /* =========================================================
+     Storage helpers
+     ========================================================= */
+  function saveToken(token, remember) {
+    try {
+      if (remember) {
+        localStorage.setItem(TOKEN_KEY, token);
+        sessionStorage.removeItem(TOKEN_KEY);
+      } else {
+        sessionStorage.setItem(TOKEN_KEY, token);
+        localStorage.removeItem(TOKEN_KEY);
+      }
+    } catch (e) { /* storage tidak tersedia -- token tetap dipakai di memori */ }
+  }
+
+  function loadStoredToken() {
+    try {
+      return localStorage.getItem(TOKEN_KEY) || sessionStorage.getItem(TOKEN_KEY) || null;
+    } catch (e) { return null; }
+  }
+
+  function clearStoredToken() {
+    try {
+      localStorage.removeItem(TOKEN_KEY);
+      sessionStorage.removeItem(TOKEN_KEY);
+    } catch (e) { /* ignore */ }
+  }
+
+  function loadUserName() {
+    try { return localStorage.getItem(NAME_KEY) || null; } catch (e) { return null; }
+  }
+
+  function saveUserName(name) {
+    try { localStorage.setItem(NAME_KEY, name); } catch (e) { /* ignore */ }
+  }
+
+  // Draft ke sessionStorage -- jaring pengaman kalau tab di-kill (pindah app,
+  // ambil foto, memori HP penuh) sebelum sempat tekan "Simpan Perubahan".
+  // Jalan di mode token MAUPUN demo (draft ditag per-mode di bawah supaya
+  // draft demo tidak pernah ketawarin masuk ke sesi token sungguhan, atau
+  // sebaliknya).
+  function persistDraft() {
+    if (!state.mode) return;
+    try {
+      sessionStorage.setItem(DRAFT_KEY, JSON.stringify({
+        mode: state.mode,
+        menu: state.menu,
+        foto: state.foto,
+        changeLog: state.changeLog,
+        pendingImageOps: state.pendingImageOps,
+        menuDirty: state.menuDirty,
+        fotoDirty: state.fotoDirty,
+        savedAt: Date.now()
+      }));
+    } catch (e) { /* storage penuh/tidak tersedia -- draft tetap ada di memori tab ini */ }
+  }
+
+  function loadDraftFromSession() {
+    try {
+      var raw = sessionStorage.getItem(DRAFT_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+
+  function clearDraftFromSession() {
+    try { sessionStorage.removeItem(DRAFT_KEY); } catch (e) { /* ignore */ }
+  }
+
+  /* =========================================================
+     GitHub API
+     ========================================================= */
+  function encodePath(path) {
+    return String(path).split("/").map(function (seg) {
+      if (seg === "" || seg === "." || seg === "..") throw new Error("Path tidak valid: " + path);
+      return encodeURIComponent(seg);
+    }).join("/");
+  }
+
+  // opts.absolute:true -> path sudah URL lengkap (dipakai untuk endpoint di
+  // luar /repos/{repo}, mis. /user). Selain itu path ditempel ke REPO_API.
+  function githubRequest(path, opts) {
+    opts = opts || {};
+    var url = opts.absolute ? path : REPO_API + path;
+    var headers = { "Authorization": "Bearer " + state.token, "Accept": "application/vnd.github+json" };
+    if (opts.headers) { for (var k in opts.headers) headers[k] = opts.headers[k]; }
+    return fetch(url, { method: opts.method || "GET", headers: headers, body: opts.body }).then(function (res) {
+      return res.json().catch(function () { return null; }).then(function (body) {
+        if (res.ok) return body;
+        var e = new Error((body && body.message) || ("HTTP " + res.status));
+        e.status = res.status;
+        e.body = body;
+        e.headers = res.headers;
+        throw e;
+      });
+    });
+  }
+
+  function githubGetContents(path) {
+    return githubRequest("/contents/" + encodePath(path));
+  }
+
+  function githubUserInfo() {
+    return githubRequest(API_BASE + "/user", { absolute: true });
+  }
+
+  function githubCollaboratorPermission(login) {
+    return githubRequest("/collaborators/" + encodeURIComponent(login) + "/permission");
+  }
+
+  // Verifikasi token yang BERMAKNA: repo publik jadi GET /repos/... selalu
+  // 200 apa pun scope token-nya -- itu tidak cukup. Cek juga izin tulis
+  // beneran lewat GET .../collaborators/{login}/permission (login dari
+  // GET /user). Kalau endpoint itu gagal ditentukan (mis. fine-grained
+  // token tanpa akses ke situ), token TETAP diterima tapi dikasih peringatan
+  // -- bukan diblokir, karena repo publik + Contents:write tetap valid tanpa
+  // butuh endpoint ini.
+  function githubVerifyToken() {
+    return githubRequest("").then(function (repoInfo) {
+      var result = { repoInfo: repoInfo, defaultBranch: repoInfo.default_branch || "main", permWarning: null };
+      return githubUserInfo().then(function (user) {
+        return githubCollaboratorPermission(user.login).then(function (perm) {
+          var level = perm && perm.permission;
+          if (!isWritePermissionLevel(level)) {
+            result.permWarning = 'Token ini kelihatannya cuma punya izin "' + (level || "tidak diketahui") +
+              '" -- Simpan Perubahan bisa gagal nanti. Cek lagi izin token: Contents harus "Read and write".';
+          }
+          return result;
+        }).catch(function () {
+          result.permWarning = "Tidak bisa memastikan izin tulis token ini lebih dulu. Kalau nanti Simpan Perubahan gagal, cek ulang izin token (Contents: Read and write).";
+          return result;
+        });
+      }).catch(function () {
+        return result; // GET /user gagal (jarang) -- tetap terima token, tanpa peringatan tambahan
+      });
+    });
+  }
+
+  /* =========================================================
+     Git Data API -- 1 commit atomik per "Simpan Perubahan"
+     (blob -> ref+commit dasar -> tree -> commit -> update ref).
+     Menggantikan pendekatan lama (PUT/DELETE Contents API terpisah per
+     file, tiap panggilan = 1 commit sendiri) yang bisa meninggalkan
+     menu live dalam keadaan campuran kalau gagal di tengah jalan.
+     ========================================================= */
+  function githubCreateBlob(base64Content) {
+    return githubRequest("/git/blobs", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: base64Content, encoding: "base64" })
+    });
+  }
+
+  function githubGetRef(branch) {
+    return githubRequest("/git/ref/heads/" + branch);
+  }
+
+  function githubGetCommit(sha) {
+    return githubRequest("/git/commits/" + sha);
+  }
+
+  function githubCreateTree(baseTreeSha, entries) {
+    return githubRequest("/git/trees", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ base_tree: baseTreeSha, tree: entries })
+    });
+  }
+
+  function githubCreateCommit(message, treeSha, parentSha) {
+    return githubRequest("/git/commits", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: message, tree: treeSha, parents: [parentSha] })
+    });
+  }
+
+  // force:false -> GitHub cuma menerima update ini kalau fast-forward dari
+  // ref saat ini. Kalau ada orang lain sudah commit duluan, ref TIDAK lagi
+  // fast-forward dari base yang kita pakai -> 422 -- itu deteksi konflik
+  // yang atomik (tidak ada state campuran yang sempat ke-deploy).
+  function githubUpdateRef(branch, commitSha) {
+    return githubRequest("/git/refs/heads/" + branch, {
+      method: "PATCH", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sha: commitSha, force: false })
+    }).catch(function (err) {
+      if (err.status === 422) err.isSaveConflict = true;
+      throw err;
+    });
+  }
+
+  function commitAtomic(prep) {
+    var branch = state.defaultBranch || "main";
+    return githubGetRef(branch).then(function (refRes) {
+      var baseCommitSha = refRes.object.sha;
+      return githubGetCommit(baseCommitSha).then(function (commitRes) {
+        var baseTreeSha = commitRes.tree.sha;
+        var entries = buildAtomicTreeEntries({
+          putPaths: prep.putPaths,
+          deletePaths: prep.deletePaths,
+          blobShaByPath: prep.blobShaByPath,
+          fotoDirty: state.fotoDirty,
+          menuDirty: state.menuDirty
+        });
+        return githubCreateTree(baseTreeSha, entries).then(function (treeRes) {
+          return githubCreateCommit(commitMessage(), treeRes.sha, baseCommitSha).then(function (commitObjRes) {
+            return githubUpdateRef(branch, commitObjRes.sha).then(function () {
+              state.pendingImageOps = [];
+              state.menuDirty = false;
+              state.fotoDirty = false;
+            });
+          });
+        });
+      });
+    });
+  }
+
+  /* =========================================================
+     Load data (token / demo)
+     ========================================================= */
+  function fetchLocalJson(url) {
+    return fetch(url).then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status + " untuk " + url);
+      return res.json();
+    });
+  }
+
+  function loadDataTokenMode() {
+    return Promise.all([githubGetContents("data/menu.json"), githubGetContents("data/foto.json")]).then(function (results) {
+      var menu = JSON.parse(base64DecodeUtf8(results[0].content));
+      var foto = JSON.parse(base64DecodeUtf8(results[1].content));
+      var problems = validateDataIntegrity(menu, foto);
+      if (problems.length) throw new Error("Data di repo tidak lolos validasi keamanan: " + problems.join(" "));
+      state.menu = menu;
+      state.foto = foto;
+      afterDataLoaded();
+    });
+  }
+
+  function loadDataDemoMode() {
+    return Promise.all([fetchLocalJson("./data/menu.json"), fetchLocalJson("./data/foto.json")]).then(function (results) {
+      var problems = validateDataIntegrity(results[0], results[1]);
+      if (problems.length) throw new Error("Data contoh tidak lolos validasi keamanan: " + problems.join(" "));
+      state.menu = results[0];
+      state.foto = results[1];
+      afterDataLoaded();
+    });
+  }
+
+  function afterDataLoaded() {
+    state.origMenuSnapshot = JSON.parse(JSON.stringify(state.menu));
+    state.origCategoryIds = state.menu.kategori.map(function (c) { return c.id; });
+    state.changeLog = [];
+    state.menuDirty = false;
+    state.fotoDirty = false;
+    state.pendingImageOps = [];
+    state.userName = loadUserName();
+    clearLocalPreviews();
+  }
+
+  // Revoke semua object URL preview lokal sebelum dibuang (cegah kebocoran
+  // memori) -- dipanggil tiap kali data server yang FRESH selesai dimuat.
+  function clearLocalPreviews() {
+    Object.keys(state.localPreviewUrls).forEach(function (fn) {
+      try { URL.revokeObjectURL(state.localPreviewUrls[fn]); } catch (e) { /* ignore */ }
+    });
+    state.localPreviewUrls = {};
+    state.recentlyUploaded = {};
+  }
+
+  function photoSrc(file) {
+    if (state.localPreviewUrls[file]) return state.localPreviewUrls[file];
+    if (state.mode === "demo") return "./assets/foto/" + file;
+    return PAGES_BASE + "/assets/foto/" + file;
+  }
+
+  // Tawarkan pulihkan draft (sessionStorage) begitu app selesai render --
+  // dipanggil tiap kali data FRESH sukses dimuat (login pertama, reload
+  // biasa, atau reload setelah konflik simpan). Draft TIDAK dihapus di sini
+  // -- baru dihapus saat user pilih "Buang", atau simpan sukses, atau logout.
+  function maybeOfferDraftRestore() {
+    if (!state.mode) return;
+    var draft = loadDraftFromSession();
+    if (!draft || draft.mode !== state.mode || !draft.changeLog || !draft.changeLog.length) return;
+    var body = '<p>Ditemukan <strong>' + draft.changeLog.length + '</strong> perubahan dari sesi sebelumnya yang belum sempat disimpan ke server (tab sempat tertutup/pindah aplikasi, atau simpan gagal karena bentrok).</p>' +
+      '<ul class="progress-list" style="margin-top:10px;">' + draft.changeLog.map(function (c) { return '<li class="progress-item"><span>' + escapeHtml(c) + '</span></li>'; }).join("") + '</ul>' +
+      '<p style="margin-top:10px;color:rgba(245,239,227,0.6);font-size:12.5px;">Data menu di atas ini sudah yang terbaru dari server -- kalau dipulihkan, perubahanmu akan ditumpuk di atasnya.</p>';
+    var footer = '<button type="button" class="btn btn-ghost" id="draftDiscardBtn">Buang</button>' +
+      '<button type="button" class="btn btn-primary" id="draftRestoreBtn">Pulihkan</button>';
+    openSheet("Lanjutkan Perubahan?", body, footer);
+    document.getElementById("draftDiscardBtn").addEventListener("click", function () { clearDraftFromSession(); closeSheet(); });
+    document.getElementById("draftRestoreBtn").addEventListener("click", function () { applyDraft(draft); closeSheet(); });
+  }
+
+  function applyDraft(draft) {
+    state.menu = draft.menu;
+    state.foto = draft.foto;
+    state.changeLog = draft.changeLog || [];
+    state.pendingImageOps = draft.pendingImageOps || [];
+    state.menuDirty = !!draft.menuDirty;
+    state.fotoDirty = !!draft.fotoDirty;
+    // Bangun ulang preview lokal dari base64 yang tersimpan supaya foto yang
+    // belum ke-upload tetap kelihatan (bukan blank/rusak) setelah dipulihkan.
+    state.pendingImageOps.forEach(function (op) {
+      if (op.type !== "put" || !op.base64) return;
+      try {
+        var byteChars = atob(op.base64);
+        var bytes = new Uint8Array(byteChars.length);
+        for (var i = 0; i < byteChars.length; i++) bytes[i] = byteChars.charCodeAt(i);
+        var fn = op.path.split("/").pop();
+        state.localPreviewUrls[fn] = URL.createObjectURL(new Blob([bytes]));
+      } catch (e) { /* abaikan -- thumbnail fallback ke URL server */ }
+    });
+    persistDraft();
+    renderApp();
+  }
+
+  /* =========================================================
+     Render: shell / routing
+     ========================================================= */
+  function renderShell(html) {
+    document.getElementById("shell").innerHTML = html;
+  }
+
+  function goLogin(errorMsg) {
+    state.mode = null;
+    var demoParam = false;
+    try { demoParam = new URLSearchParams(location.search).get("demo") === "1"; } catch (e) { demoParam = false; }
+    renderShell(
+      '<div class="login-wrap">' +
+        '<div class="login-logo"><img src="assets/logo-kurnia.webp" alt="" onerror="this.parentNode.textContent=\'KS\'"></div>' +
+        '<h1 class="login-title">CMS Menu Kurnia Seafood</h1>' +
+        '<p class="login-sub">Kelola menu online lewat HP -- tanpa perlu buka kode</p>' +
+        '<div class="login-card">' +
+          (errorMsg ? '<div class="login-error">' + escapeHtml(errorMsg) + '</div>' : "") +
+          '<div class="field">' +
+            '<label for="tokenInput">Token GitHub</label>' +
+            '<div class="input-pass-row">' +
+              '<input class="input" type="password" id="tokenInput" placeholder="github_pat_xxx..." autocomplete="off" autocapitalize="off" spellcheck="false">' +
+              '<button type="button" class="btn btn-ghost btn-sm" id="toggleTokenVisBtn">Lihat</button>' +
+            '</div>' +
+            '<span class="hint">Token = kunci akses. Jangan share ke siapa pun selain lewat cara aman.</span>' +
+          '</div>' +
+          '<label class="checkbox-row" for="rememberChk"><input type="checkbox" id="rememberChk"> Ingat di perangkat ini</label>' +
+          '<button type="button" class="btn btn-primary" id="loginBtn">Masuk</button>' +
+          '<div id="loginBusy" class="is-hidden" style="text-align:center;margin-top:12px;"><div class="spinner" style="display:inline-block;"></div></div>' +
+          '<div class="login-divider">atau</div>' +
+          '<button type="button" class="btn btn-outline" id="demoBtn">Coba tanpa token (mode demo)</button>' +
+        '</div>' +
+        '<p class="login-help"><a href="' + PANDUAN_URL + '" target="_blank" rel="noopener">Cara dapat token &rarr;</a></p>' +
+      '</div>'
+    );
+    document.getElementById("loginBtn").addEventListener("click", handleLoginSubmit);
+    document.getElementById("tokenInput").addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter") { ev.preventDefault(); handleLoginSubmit(); }
+    });
+    document.getElementById("demoBtn").addEventListener("click", function () { enterDemoMode(); });
+    document.getElementById("toggleTokenVisBtn").addEventListener("click", function () {
+      var inp = document.getElementById("tokenInput");
+      var btn = document.getElementById("toggleTokenVisBtn");
+      if (inp.type === "password") { inp.type = "text"; btn.textContent = "Sembunyikan"; }
+      else { inp.type = "password"; btn.textContent = "Lihat"; }
+    });
+    if (demoParam) enterDemoMode();
+  }
+
+  function handleLoginSubmit() {
+    var tokenInput = document.getElementById("tokenInput");
+    var token = tokenInput.value.trim();
+    if (!token) { goLogin("Isi token dulu, ya. Atau pakai mode demo kalau cuma mau coba-coba."); return; }
+    var remember = document.getElementById("rememberChk").checked;
+    document.getElementById("loginBtn").disabled = true;
+    document.getElementById("loginBusy").classList.remove("is-hidden");
+    state.token = token;
+    githubVerifyToken().then(function (result) {
+      saveToken(token, remember);
+      state.mode = "token";
+      state.defaultBranch = result.defaultBranch;
+      state.tokenPermWarning = result.permWarning;
+      goLoadingThenApp();
+    }).catch(function (err) {
+      state.token = null;
+      goLogin(loginErrorMessage(err));
+    });
+  }
+
+  function loginErrorMessage(err) {
+    if (err.status === 401) return "Token salah atau sudah kedaluwarsa. Cek lagi token-nya, atau buat token baru (lihat panduan).";
+    if (err.status === 404) return "Token tidak punya akses ke repo menu ini. Pastikan token dibuat khusus untuk repo PatrickPLJ/menu-kurnia.";
+    if (err.status === 403) return "GitHub menolak permintaan (kemungkinan terlalu banyak percobaan). Tunggu sebentar lalu coba lagi.";
+    return "Gagal menghubungi GitHub. Cek koneksi internet, lalu coba lagi. (" + friendlyErrorText(err) + ")";
+  }
+
+  function enterDemoMode() {
+    state.mode = "demo";
+    state.token = null;
+    goLoadingThenApp();
+  }
+
+  function goLoadingThenApp() {
+    renderShell('<div class="center-loading"><div class="spinner"></div><p>Memuat data menu...</p></div>');
+    var loader = state.mode === "demo" ? loadDataDemoMode() : loadDataTokenMode();
+    loader.then(function () {
+      state.activeTab = "menu";
+      state.expandedCategoryId = null;
+      renderApp();
+      maybeOfferDraftRestore();
+    }).catch(function (err) {
+      renderShell(
+        '<div class="center-loading">' +
+          '<p style="color:#ffb6ae;">Gagal memuat data menu.<br>' + escapeHtml(friendlyErrorText(err)) + '</p>' +
+          '<button type="button" class="btn btn-outline" id="retryLoadBtn" style="width:auto;">Coba lagi</button>' +
+          '<button type="button" class="btn btn-ghost" id="backLoginBtn" style="width:auto;">Kembali ke login</button>' +
+        '</div>'
+      );
+      document.getElementById("retryLoadBtn").addEventListener("click", goLoadingThenApp);
+      document.getElementById("backLoginBtn").addEventListener("click", function () { goLogin(); });
+    });
+  }
+
+  function doLogout() {
+    if (isDirty() && !window.confirm("Ada perubahan yang belum disimpan. Yakin mau keluar? Perubahan akan hilang.")) return;
+    clearStoredToken();
+    clearDraftFromSession();
+    state = {
+      mode: null, token: null, menu: null, foto: null, menuSha: null, fotoSha: null,
+      origMenuSnapshot: null, origCategoryIds: null, changeLog: [], menuDirty: false, fotoDirty: false,
+      pendingImageOps: [], localPreviewUrls: {}, recentlyUploaded: {}, activeTab: "menu",
+      expandedCategoryId: null, userName: null, defaultBranch: "main", tokenPermWarning: null
+    };
+    goLogin();
+  }
+
+  /* =========================================================
+     Render: app shell (topbar + tabs + savebar)
+     ========================================================= */
+  function renderApp() {
+    var modeBadge = state.mode === "demo"
+      ? '<span class="badge badge-demo">Mode Demo</span>'
+      : '<span class="badge badge-live">Terhubung</span>';
+    renderShell(
+      '<header class="topbar">' +
+        '<div class="topbar-title"><h1>CMS Menu Kurnia</h1>' + modeBadge + '</div>' +
+        '<button type="button" class="btn btn-ghost btn-sm" id="logoutBtn">Keluar</button>' +
+      '</header>' +
+      '<nav class="tabs">' +
+        '<button type="button" class="tab-btn' + (state.activeTab === "menu" ? " is-active" : "") + '" data-tab="menu">Menu</button>' +
+        '<button type="button" class="tab-btn' + (state.activeTab === "foto" ? " is-active" : "") + '" data-tab="foto">Foto</button>' +
+      '</nav>' +
+      (state.tokenPermWarning ? '<div class="banner banner-warn" style="margin:12px 14px 0;">' + escapeHtml(state.tokenPermWarning) + '</div>' : "") +
+      '<main id="mainArea"></main>' +
+      '<footer class="savebar"><div class="savebar-inner">' +
+        '<div class="savebar-status" id="saveStatus"></div>' +
+        '<button type="button" class="btn btn-primary" id="saveBtn" style="width:auto;">Simpan Perubahan</button>' +
+      '</div></footer>'
+    );
+    document.getElementById("logoutBtn").addEventListener("click", doLogout);
+    document.getElementById("saveBtn").addEventListener("click", startSaveFlow);
+    Array.prototype.forEach.call(document.querySelectorAll(".tab-btn"), function (btn) {
+      btn.addEventListener("click", function () { state.activeTab = btn.getAttribute("data-tab"); renderApp(); });
+    });
+    renderMainArea();
+    updateSaveBar();
+  }
+
+  function updateSaveBar() {
+    var statusEl = document.getElementById("saveStatus");
+    var btn = document.getElementById("saveBtn");
+    if (!statusEl || !btn) return;
+    var n = state.changeLog.length;
+    if (state.mode === "demo") {
+      statusEl.textContent = n === 0
+        ? "Mode demo -- coba ubah sesuatu untuk lihat alurnya (tidak tersimpan ke server)."
+        : n + " perubahan -- bisa ditinjau, tapi TIDAK terkirim ke server (mode demo).";
+      btn.disabled = n === 0;
+      btn.textContent = n === 0 ? "Simpan Perubahan" : "Tinjau Perubahan (" + n + ")";
+    } else if (n === 0) {
+      statusEl.textContent = "Belum ada perubahan.";
+      btn.disabled = true;
+      btn.textContent = "Simpan Perubahan";
+    } else {
+      statusEl.textContent = n + " perubahan menunggu disimpan.";
+      btn.disabled = false;
+      btn.textContent = "Simpan Perubahan (" + n + ")";
+    }
+  }
+
+  function renderMainArea() {
+    var el = document.getElementById("mainArea");
+    if (!el) return;
+    el.innerHTML = state.activeTab === "menu" ? renderMenuTabHtml() : renderFotoTabHtml();
+    bindMenuTabEvents();
+    bindFotoTabEvents();
+  }
+
+  /* =========================================================
+     TAB MENU
+     ========================================================= */
+  function renderMenuTabHtml() {
+    var demoNote = state.mode === "demo" ? '<div class="banner banner-demo">Mode demo: semua fitur bisa dicoba, tapi tombol Simpan nonaktif.</div>' : "";
+    var infoPanel =
+      '<div class="panel" id="infoPanel">' +
+        '<div class="panel-head" data-toggle="__info">' +
+          '<div class="panel-head-main"><h3>Info Restoran &amp; Catatan Umum</h3>' +
+            '<div class="panel-head-meta">Alamat &amp; catatan yang tampil di semua halaman menu</div></div>' +
+          '<span class="chev">&#9660;</span>' +
+        '</div>' +
+        '<div class="panel-body">' +
+          '<p style="font-size:13px;color:rgba(245,239,227,0.7);margin-bottom:10px;">' + escapeHtml(state.menu.restoran.alamat) + '</p>' +
+          '<button type="button" class="btn btn-outline btn-sm" data-action="edit-global-info">Edit alamat &amp; catatan</button>' +
+        '</div>' +
+      '</div>';
+
+    var catsHtml = state.menu.kategori.map(function (cat) { return renderCategoryPanel(cat); }).join("");
+    var infoOpen = state.expandedCategoryId === "__info";
+    return demoNote + toggleClass(infoPanel, infoOpen) + catsHtml;
+  }
+
+  function toggleClass(panelHtml, isOpen) {
+    if (!isOpen) return panelHtml;
+    return panelHtml.replace('class="panel"', 'class="panel is-open"');
+  }
+
+  function renderCategoryPanel(cat) {
+    var isSegar = cat.tipe === "seafood-segar";
+    var count = (cat.item || []).length;
+    var meta = isSegar ? "Seafood segar -- harga pasar" : (count + " menu");
+    var isOpen = state.expandedCategoryId === cat.id;
+
+    var bodyHtml;
+    if (isSegar) {
+      bodyHtml = renderSegarBody(cat);
+    } else {
+      bodyHtml = renderRegularCategoryBody(cat);
+    }
+
+    var html =
+      '<div class="panel">' +
+        '<div class="panel-head" data-toggle="' + escapeHtml(cat.id) + '">' +
+          '<div class="panel-head-main"><h3>' + escapeHtml(cat.nama) + '</h3><div class="panel-head-meta">' + meta + '</div></div>' +
+          '<span class="chev">&#9660;</span>' +
+        '</div>' +
+        '<div class="panel-body">' + bodyHtml + '</div>' +
+      '</div>';
+    return toggleClass(html, isOpen);
+  }
+
+  function renderRegularCategoryBody(cat) {
+    var noteHtml = cat.catatan
+      ? '<p class="segar-note">' + escapeHtml(cat.catatan) + '</p>'
+      : '<p class="segar-note" style="opacity:.5;">(tidak ada catatan kategori)</p>';
+    var rows = (cat.item || []).map(function (item, idx) {
+      var isNew = isNewDesc(item.deskripsi);
+      return (
+        '<div class="item-row">' +
+          '<div class="item-row-main">' +
+            '<div class="item-row-name">' + escapeHtml(item.nama) + (isNew ? '<span class="badge-new-mini">NEW</span>' : "") + '</div>' +
+            '<div class="item-row-price">' + escapeHtml(item.harga_label || generateHargaLabel(item.harga)) + (item.satuan ? " &middot; " + escapeHtml(item.satuan) : "") + '</div>' +
+          '</div>' +
+          '<div class="item-row-actions">' +
+            (idx > 0 ? '<button type="button" class="btn btn-ghost btn-icon" data-action="move-item" data-cat="' + escapeHtml(cat.id) + '" data-idx="' + idx + '" data-dir="-1" title="Naik">&#8593;</button>' : "") +
+            (idx < cat.item.length - 1 ? '<button type="button" class="btn btn-ghost btn-icon" data-action="move-item" data-cat="' + escapeHtml(cat.id) + '" data-idx="' + idx + '" data-dir="1" title="Turun">&#8595;</button>' : "") +
+            '<button type="button" class="btn btn-outline btn-icon" data-action="edit-item" data-cat="' + escapeHtml(cat.id) + '" data-idx="' + idx + '">Edit</button>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join("");
+    return noteHtml + rows + '<div style="margin-top:10px;"><button type="button" class="btn btn-outline btn-sm" data-action="add-item" data-cat="' + escapeHtml(cat.id) + '">+ Tambah item</button>' +
+      ' <button type="button" class="btn btn-ghost btn-sm" data-action="edit-cat-note" data-cat="' + escapeHtml(cat.id) + '">Edit catatan kategori</button></div>';
+  }
+
+  function renderSegarBody(cat) {
+    var noteHtml = cat.catatan ? '<p class="segar-note">' + escapeHtml(cat.catatan) + '</p>' : "";
+    var varian = cat.varian_ukuran || [];
+    var olahan = cat.pilihan_olahan || [];
+    return (
+      noteHtml +
+      '<div class="segar-block-title">Pilihan Ukuran (' + varian.length + ')</div>' +
+      '<div class="tag-row">' + varian.map(function (v) { return '<span class="tag">' + escapeHtml(v) + '</span>'; }).join("") + '</div>' +
+      '<div class="segar-block-title">Pilihan Olahan (' + olahan.length + ')</div>' +
+      '<div class="tag-row">' + olahan.map(function (v) { return '<span class="tag">' + escapeHtml(v) + '</span>'; }).join("") + '</div>' +
+      '<div style="margin-top:12px;"><button type="button" class="btn btn-outline btn-sm" data-action="edit-segar" data-cat="' + escapeHtml(cat.id) + '">Edit catatan, ukuran &amp; olahan</button></div>'
+    );
+  }
+
+  function bindMenuTabEvents() {
+    var el = document.getElementById("mainArea");
+    if (!el) return;
+    Array.prototype.forEach.call(el.querySelectorAll("[data-toggle]"), function (headEl) {
+      headEl.addEventListener("click", function () {
+        var id = headEl.getAttribute("data-toggle");
+        state.expandedCategoryId = state.expandedCategoryId === id ? null : id;
+        renderMainArea();
+      });
+    });
+    Array.prototype.forEach.call(el.querySelectorAll("[data-action]"), function (btn) {
+      btn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var action = btn.getAttribute("data-action");
+        var catId = btn.getAttribute("data-cat");
+        if (action === "edit-global-info") openGlobalInfoSheet();
+        else if (action === "edit-item") openItemSheet(catId, parseInt(btn.getAttribute("data-idx"), 10));
+        else if (action === "add-item") openItemSheet(catId, -1);
+        else if (action === "move-item") moveItem(catId, parseInt(btn.getAttribute("data-idx"), 10), parseInt(btn.getAttribute("data-dir"), 10));
+        else if (action === "edit-cat-note") openCategoryNoteSheet(catId);
+        else if (action === "edit-segar") openSegarSheet(catId);
+      });
+    });
+  }
+
+  function findCategory(catId) {
+    return state.menu.kategori.filter(function (c) { return c.id === catId; })[0];
+  }
+
+  function moveItem(catId, idx, dir) {
+    var cat = findCategory(catId);
+    var newIdx = idx + dir;
+    if (!cat || newIdx < 0 || newIdx >= cat.item.length) return;
+    var tmp = cat.item[idx];
+    cat.item[idx] = cat.item[newIdx];
+    cat.item[newIdx] = tmp;
+    state.menuDirty = true;
+    recordChange('Ubah urutan item di kategori "' + cat.nama + '"');
+    renderMainArea();
+  }
+
+  /* =========================================================
+     Sheet system (bottom modal generik)
+     ========================================================= */
+  // Kalau non-null, dipanggil sebelum overlay/X/Batal menutup sheet -- kalau
+  // return true (form berubah dari nilai awal), minta konfirmasi dulu supaya
+  // ketikan tidak hilang gara-gara jempol nyenggol area gelap di luar sheet.
+  var sheetDirtyCheck = null;
+
+  function setSheetDirtyCheck(fn) { sheetDirtyCheck = fn; }
+
+  function requestCloseSheet() {
+    if (sheetDirtyCheck && sheetDirtyCheck() && !window.confirm("Ada isian yang belum disimpan di form ini. Tutup dan buang isiannya?")) return;
+    sheetDirtyCheck = null;
+    closeSheet();
+  }
+
+  function showToast(msg) {
+    var existing = document.getElementById("cmsToast");
+    if (existing) existing.parentNode.removeChild(existing);
+    var div = document.createElement("div");
+    div.className = "toast";
+    div.id = "cmsToast";
+    div.textContent = msg;
+    document.body.appendChild(div);
+    setTimeout(function () {
+      if (div.parentNode) div.parentNode.removeChild(div);
+    }, 3200);
+  }
+
+  var APPLIED_TOAST_MSG = "Perubahan ditampung -- jangan lupa tekan \"Simpan Perubahan\" di bawah supaya naik ke website.";
+
+  function openSheet(title, bodyHtml, footerHtml) {
+    closeSheet();
+    sheetDirtyCheck = null;
+    var overlay = document.createElement("div");
+    overlay.className = "sheet-overlay";
+    overlay.id = "sheetOverlay";
+    overlay.innerHTML =
+      '<div class="sheet">' +
+        '<div class="sheet-header"><h2>' + escapeHtml(title) + '</h2><button type="button" class="sheet-close" id="sheetCloseBtn">&times;</button></div>' +
+        '<div class="sheet-body" id="sheetBody">' + bodyHtml + '</div>' +
+        (footerHtml ? '<div class="sheet-footer">' + footerHtml + '</div>' : "") +
+      '</div>';
+    document.body.appendChild(overlay);
+    document.getElementById("sheetCloseBtn").addEventListener("click", requestCloseSheet);
+    overlay.addEventListener("click", function (ev) { if (ev.target === overlay) requestCloseSheet(); });
+    return overlay;
+  }
+
+  function closeSheet() {
+    var existing = document.getElementById("sheetOverlay");
+    if (existing) existing.parentNode.removeChild(existing);
+  }
+
+  function sheetSetError(msg) {
+    var body = document.getElementById("sheetBody");
+    if (!body) return;
+    var existing = body.querySelector(".sheet-error");
+    if (existing) existing.parentNode.removeChild(existing);
+    if (!msg) return;
+    var div = document.createElement("div");
+    div.className = "sheet-error";
+    div.textContent = msg;
+    body.insertBefore(div, body.firstChild);
+  }
+
+  // Sheet konfirmasi generik.
+  function openConfirmSheet(title, bodyHtml, confirmLabel, danger, onConfirm) {
+    var footer =
+      '<button type="button" class="btn btn-ghost" id="confirmCancelBtn">Batal</button>' +
+      '<button type="button" class="btn ' + (danger ? "btn-danger" : "btn-primary") + '" id="confirmOkBtn">' + escapeHtml(confirmLabel) + '</button>';
+    openSheet(title, bodyHtml, footer);
+    document.getElementById("confirmCancelBtn").addEventListener("click", closeSheet);
+    document.getElementById("confirmOkBtn").addEventListener("click", function () { onConfirm(); });
+  }
+
+  /* =========================================================
+     Sheet: Edit / Tambah Item
+     ========================================================= */
+  function openItemSheet(catId, idx) {
+    var cat = findCategory(catId);
+    var isNewItem = idx < 0;
+    var item = isNewItem ? { nama: "", harga: null, harga_label: null, satuan: null, deskripsi: null } : cat.item[idx];
+    var hasPlusPlusField = !isNewItem && Object.prototype.hasOwnProperty.call(item, "plus_plus");
+    var isMarketPrice = item.harga === null || item.harga === undefined;
+    var isOverride = !!item.harga_label && item.harga_label !== generateHargaLabel(item.harga);
+    var isNew = isNewDesc(item.deskripsi);
+
+    var body =
+      '<div class="field"><label for="fNama">Nama menu</label><input class="input" id="fNama" value="' + escapeHtml(item.nama) + '" placeholder="mis. Gohyong"></div>' +
+      '<label class="checkbox-row" for="fHargaPasar"><input type="checkbox" id="fHargaPasar"' + (isMarketPrice ? " checked" : "") + '> Harga pasar (tidak punya harga tetap)</label>' +
+      '<div class="field" id="fHargaWrap"><label for="fHarga">Harga (Rp)</label><input class="input" id="fHarga" inputmode="numeric" value="' + escapeHtml(formatRibuan(item.harga)) + '" placeholder="mis. 46.000"></div>' +
+      '<label class="checkbox-row" for="fLabelOverride"><input type="checkbox" id="fLabelOverride"' + (isOverride ? " checked" : "") + '> Ubah label harga secara manual</label>' +
+      '<div class="field" id="fLabelAutoWrap"><label>Label harga (otomatis)</label><input class="input" id="fHargaLabelAuto" value="' + escapeHtml(generateHargaLabel(item.harga)) + '" readonly></div>' +
+      '<div class="field is-hidden" id="fLabelManualWrap"><label for="fHargaLabelManual">Label harga (manual)</label><input class="input" id="fHargaLabelManual" value="' + escapeHtml(item.harga_label || "") + '" placeholder="mis. 12K/Pcs, 269K++"></div>' +
+      '<div class="field"><label for="fSatuan">Satuan (opsional)</label><input class="input" id="fSatuan" value="' + escapeHtml(item.satuan || "") + '" placeholder="mis. per pcs, 2 porsi, ± 1,2 kg"></div>' +
+      '<div class="switch-row"><div><div class="switch-row-label">Tandai "Menu Baru (NEW)"</div><div class="switch-row-desc">Badge NEW akan tampil di menu online</div></div>' +
+        '<label class="switch"><input type="checkbox" id="fNewBadge"' + (isNew ? " checked" : "") + '><span class="switch-track"><span class="switch-thumb"></span></span></label></div>' +
+      (hasPlusPlusField ?
+        '<div class="switch-row"><div><div class="switch-row-label">Harga ++ (belum termasuk pajak/service)</div></div>' +
+        '<label class="switch"><input type="checkbox" id="fPlusPlus"' + (item.plus_plus ? " checked" : "") + '><span class="switch-track"><span class="switch-thumb"></span></span></label></div>' : "") +
+      '<div class="field"><label for="fDeskripsi">Deskripsi (opsional)</label><textarea class="textarea" id="fDeskripsi"' + (isNew ? " disabled" : "") + '>' + escapeHtml(isNew ? NEW_DESC : (item.deskripsi || "")) + '</textarea>' +
+        '<span class="hint" id="fDeskripsiHint">' + (isNew ? 'Terkunci ke teks konvensi selama badge NEW aktif.' : '') + '</span></div>';
+
+    var footer =
+      (isNewItem ? "" : '<button type="button" class="btn btn-danger" id="deleteItemBtn" style="flex:0 0 auto;width:auto;padding:12px 14px;">Hapus</button>') +
+      '<button type="button" class="btn btn-ghost" id="itemCancelBtn">Batal</button>' +
+      '<button type="button" class="btn btn-primary" id="itemSaveBtn">Terapkan</button>';
+
+    openSheet(isNewItem ? "Tambah Item" : "Edit Item", body, footer);
+
+    var fHargaPasar = document.getElementById("fHargaPasar");
+    var fHarga = document.getElementById("fHarga");
+    var fHargaWrap = document.getElementById("fHargaWrap");
+    var fLabelOverride = document.getElementById("fLabelOverride");
+    var fLabelAutoWrap = document.getElementById("fLabelAutoWrap");
+    var fLabelManualWrap = document.getElementById("fLabelManualWrap");
+    var fHargaLabelAuto = document.getElementById("fHargaLabelAuto");
+    var fNewBadge = document.getElementById("fNewBadge");
+    var fDeskripsi = document.getElementById("fDeskripsi");
+    var fDeskripsiHint = document.getElementById("fDeskripsiHint");
+    var fPlusPlus = hasPlusPlusField ? document.getElementById("fPlusPlus") : null;
+
+    function syncHargaVisibility() {
+      fHargaWrap.classList.toggle("is-hidden", fHargaPasar.checked);
+      refreshAutoLabel();
+    }
+    function refreshAutoLabel() {
+      var harga = fHargaPasar.checked ? null : parseRibuan(fHarga.value);
+      fHargaLabelAuto.value = applyPlusPlusSuffix(generateHargaLabel(harga), fPlusPlus ? fPlusPlus.checked : false);
+    }
+    function syncLabelMode() {
+      fLabelAutoWrap.classList.toggle("is-hidden", fLabelOverride.checked);
+      fLabelManualWrap.classList.toggle("is-hidden", !fLabelOverride.checked);
+    }
+    function syncNewBadge() {
+      if (fNewBadge.checked) {
+        fDeskripsi.value = NEW_DESC;
+        fDeskripsi.disabled = true;
+        fDeskripsiHint.textContent = "Terkunci ke teks konvensi selama badge NEW aktif.";
+      } else {
+        fDeskripsi.disabled = false;
+        if (fDeskripsi.value === NEW_DESC) fDeskripsi.value = "";
+        fDeskripsiHint.textContent = "";
+      }
+    }
+
+    fHargaPasar.addEventListener("change", syncHargaVisibility);
+    fHarga.addEventListener("input", function () {
+      var digits = parseRibuan(fHarga.value);
+      fHarga.value = formatRibuan(digits);
+      refreshAutoLabel();
+    });
+    fLabelOverride.addEventListener("change", syncLabelMode);
+    fNewBadge.addEventListener("change", syncNewBadge);
+    if (fPlusPlus) fPlusPlus.addEventListener("change", refreshAutoLabel);
+    syncHargaVisibility();
+    syncLabelMode();
+
+    var itemFieldIds = ["fNama", "fHargaPasar", "fHarga", "fLabelOverride", "fHargaLabelManual", "fSatuan", "fNewBadge", "fDeskripsi"];
+    if (fPlusPlus) itemFieldIds.push("fPlusPlus");
+    var itemInitialSnapshot = snapshotFormFields(itemFieldIds);
+    setSheetDirtyCheck(function () { return snapshotFormFields(itemFieldIds) !== itemInitialSnapshot; });
+
+    document.getElementById("itemCancelBtn").addEventListener("click", requestCloseSheet);
+    if (!isNewItem) {
+      document.getElementById("deleteItemBtn").addEventListener("click", function () { confirmDeleteItem(catId, idx); });
+    }
+    document.getElementById("itemSaveBtn").addEventListener("click", function () {
+      submitItemSheet(catId, idx, isNewItem, hasPlusPlusField);
+    });
+  }
+
+  function snapshotFormFields(ids) {
+    return ids.map(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return "";
+      if (el.type === "checkbox") return el.checked ? "1" : "0";
+      return el.value;
+    }).join("|");
+  }
+
+  function submitItemSheet(catId, idx, isNewItem, hasPlusPlusField) {
+    var cat = findCategory(catId);
+    var nama = document.getElementById("fNama").value.trim();
+    if (!nama) { sheetSetError("Nama menu tidak boleh kosong."); return; }
+    var dup = cat.item.some(function (it, i) { return i !== idx && it.nama.trim().toLowerCase() === nama.toLowerCase(); });
+    if (dup) { sheetSetError('Sudah ada item bernama "' + nama + '" di kategori ini. Nama harus unik.'); return; }
+
+    var hargaPasar = document.getElementById("fHargaPasar").checked;
+    var harga = hargaPasar ? null : parseRibuan(document.getElementById("fHarga").value);
+    if (!hargaPasar && (harga === null || harga < 0)) { sheetSetError("Isi harga dengan angka, atau centang \"Harga pasar\"."); return; }
+    var override = document.getElementById("fLabelOverride").checked;
+    var plusPlusOn = hasPlusPlusField && document.getElementById("fPlusPlus").checked;
+    var label = override ? document.getElementById("fHargaLabelManual").value.trim() : applyPlusPlusSuffix(generateHargaLabel(harga), plusPlusOn);
+    if (!label) { sheetSetError("Label harga tidak boleh kosong."); return; }
+    var satuan = document.getElementById("fSatuan").value.trim() || null;
+    var isNew = document.getElementById("fNewBadge").checked;
+    var deskripsi = isNew ? NEW_DESC : (document.getElementById("fDeskripsi").value.trim() || null);
+
+    var newItem = { nama: nama, harga: harga, harga_label: label, satuan: satuan, deskripsi: deskripsi };
+    if (hasPlusPlusField) newItem.plus_plus = plusPlusOn;
+
+    if (isNewItem) {
+      cat.item.push(newItem);
+      state.menuDirty = true;
+      recordChange('Tambah item "' + nama + '" di kategori "' + cat.nama + '"');
+      closeSheet();
+      showToast(APPLIED_TOAST_MSG);
+      renderMainArea();
+      return;
+    }
+
+    var oldNama = cat.item[idx].nama;
+    cat.item[idx] = newItem;
+    state.menuDirty = true;
+    recordChange('Edit item "' + nama + '" di kategori "' + cat.nama + '"');
+    showToast(APPLIED_TOAST_MSG);
+
+    if (oldNama !== nama) {
+      var refs = findPhotoRefsForItem(catId, oldNama);
+      if (refs.length) {
+        closeSheet();
+        offerUpdatePhotoRefsOnRename(catId, oldNama, nama, refs);
+        return;
+      }
+    }
+    closeSheet();
+    renderMainArea();
+  }
+
+  function findPhotoRefsForItem(catId, itemNama) {
+    return state.foto.filter(function (f) { return f.tipe === "hidangan" && f.kategori_id === catId && f.item === itemNama; });
+  }
+
+  function offerUpdatePhotoRefsOnRename(catId, oldNama, newNama, refs) {
+    var fileList = refs.map(function (f) { return f.file; }).join(", ");
+    var body = '<p>Nama item diganti dari "<strong>' + escapeHtml(oldNama) + '</strong>" ke "<strong>' + escapeHtml(newNama) +
+      '</strong>". Foto berikut masih merujuk nama lama: <strong>' + escapeHtml(fileList) + '</strong>.</p>' +
+      '<p style="margin-top:10px;">Update rujukan foto sekalian supaya tidak rusak?</p>';
+    openConfirmSheet("Update Rujukan Foto?", body, "Ya, update foto", false, function () {
+      refs.forEach(function (f) { f.item = newNama; });
+      state.fotoDirty = true;
+      recordChange('Update rujukan foto ke nama baru "' + newNama + '"');
+      closeSheet();
+      renderMainArea();
+    });
+    // Tombol "Batal" pada sheet konfirmasi = lewati (biarkan rujukan lama;
+    // akan tertangkap validasi sebelum simpan kalau memang jadi tidak valid).
+  }
+
+  function confirmDeleteItem(catId, idx) {
+    var cat = findCategory(catId);
+    var item = cat.item[idx];
+    var refs = findPhotoRefsForItem(catId, item.nama);
+    var isLastItem = cat.tipe !== "seafood-segar" && cat.item.length === 1;
+    var body = '<p>Hapus item "<strong>' + escapeHtml(item.nama) + '</strong>" dari kategori "' + escapeHtml(cat.nama) + '"?</p>' +
+      (refs.length ? '<p style="margin-top:10px;">Foto <strong>' + refs.map(function (f) { return escapeHtml(f.file); }).join(", ") +
+        '</strong> yang merujuk item ini akan ikut dihapus.</p>' : "") +
+      (isLastItem ? '<p style="margin-top:10px;color:#ffb6ae;">Ini item terakhir di kategori ini -- setelah dihapus, kategori "' + escapeHtml(cat.nama) + '" akan tampil kosong di menu online.</p>' : "") +
+      '<p style="margin-top:10px;color:rgba(245,239,227,0.6);font-size:12.5px;">Tindakan ini baru benar-benar terjadi setelah kamu tekan "Simpan Perubahan".</p>';
+    openConfirmSheet("Hapus Item?", body, "Ya, hapus", true, function () {
+      refs.forEach(function (f) { schedulePhotoEntryDeletion(f); });
+      cat.item.splice(idx, 1);
+      state.menuDirty = true;
+      recordChange('Hapus item "' + item.nama + '" dari kategori "' + cat.nama + '"');
+      closeSheet();
+      renderMainArea();
+    });
+  }
+
+  /* =========================================================
+     Sheet: Catatan kategori (biasa)
+     ========================================================= */
+  function openCategoryNoteSheet(catId) {
+    var cat = findCategory(catId);
+    var body = '<div class="field"><label for="fCatNote">Catatan kategori (opsional)</label><textarea class="textarea" id="fCatNote">' + escapeHtml(cat.catatan || "") + '</textarea></div>';
+    var footer = '<button type="button" class="btn btn-ghost" id="catNoteCancelBtn">Batal</button><button type="button" class="btn btn-primary" id="catNoteSaveBtn">Terapkan</button>';
+    openSheet('Catatan Kategori: ' + cat.nama, body, footer);
+    var catNoteInitial = cat.catatan || "";
+    setSheetDirtyCheck(function () { return (document.getElementById("fCatNote").value.trim() || "") !== catNoteInitial; });
+    document.getElementById("catNoteCancelBtn").addEventListener("click", requestCloseSheet);
+    document.getElementById("catNoteSaveBtn").addEventListener("click", function () {
+      var val = document.getElementById("fCatNote").value.trim() || null;
+      if (val !== cat.catatan) {
+        cat.catatan = val;
+        state.menuDirty = true;
+        recordChange('Edit catatan kategori "' + cat.nama + '"');
+        showToast(APPLIED_TOAST_MSG);
+      }
+      closeSheet();
+      renderMainArea();
+    });
+  }
+
+  /* =========================================================
+     List editor (dipakai di sheet Seafood Segar & Info Global) --
+     manipulasi DOM langsung (bukan re-render dari state) supaya fokus
+     input tidak hilang saat mengetik.
+     ========================================================= */
+  function listRowHtml(value, placeholder) {
+    return '<div class="list-row">' +
+      '<input class="input" value="' + escapeHtml(value || "") + '" placeholder="' + escapeHtml(placeholder || "") + '">' +
+      '<div class="list-row-btns">' +
+        '<button type="button" class="btn btn-ghost btn-icon" data-list-act="up">&#8593;</button>' +
+        '<button type="button" class="btn btn-ghost btn-icon" data-list-act="down">&#8595;</button>' +
+        '<button type="button" class="btn btn-ghost btn-icon" data-list-act="del">&times;</button>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function bindListEditor(containerId, addBtnId, placeholder) {
+    var container = document.getElementById(containerId);
+    var addBtn = document.getElementById(addBtnId);
+    container.addEventListener("click", function (ev) {
+      var btn = ev.target.closest ? ev.target.closest("[data-list-act]") : null;
+      if (!btn) return;
+      var row = btn.closest(".list-row");
+      var act = btn.getAttribute("data-list-act");
+      if (act === "del") {
+        var inp = row.querySelector("input");
+        var val = inp ? inp.value.trim() : "";
+        if (val && !window.confirm('Hapus "' + val + '" dari daftar ini?')) return;
+        row.parentNode.removeChild(row);
+        return;
+      }
+      if (act === "up" && row.previousElementSibling) row.parentNode.insertBefore(row, row.previousElementSibling);
+      if (act === "down" && row.nextElementSibling) row.parentNode.insertBefore(row.nextElementSibling, row);
+    });
+    addBtn.addEventListener("click", function () {
+      var div = document.createElement("div");
+      div.innerHTML = listRowHtml("", placeholder);
+      var rowEl = div.firstChild;
+      container.appendChild(rowEl);
+      rowEl.querySelector("input").focus();
+    });
+  }
+
+  function readListEditor(containerId) {
+    var container = document.getElementById(containerId);
+    var inputs = container.querySelectorAll(".list-row input");
+    var out = [];
+    Array.prototype.forEach.call(inputs, function (inp) {
+      var v = inp.value.trim();
+      if (v) out.push(v);
+    });
+    return out;
+  }
+
+  /* =========================================================
+     Sheet: Seafood Segar (catatan + varian_ukuran + pilihan_olahan)
+     ========================================================= */
+  function openSegarSheet(catId) {
+    var cat = findCategory(catId);
+    var body =
+      '<div class="field"><label for="fSegarNote">Catatan kategori</label><textarea class="textarea" id="fSegarNote">' + escapeHtml(cat.catatan || "") + '</textarea></div>' +
+      '<div class="segar-block-title">Pilihan Ukuran</div>' +
+      buildListEditorHtmlWrapped("varianEditor", "varianAddBtn", cat.varian_ukuran, "mis. Kepiting (500 gr up)") +
+      '<div class="segar-block-title" style="margin-top:18px;">Pilihan Olahan</div>' +
+      buildListEditorHtmlWrapped("olahanEditor", "olahanAddBtn", cat.pilihan_olahan, "mis. Saus Padang (Khas Kurnia)");
+    var footer = '<button type="button" class="btn btn-ghost" id="segarCancelBtn">Batal</button><button type="button" class="btn btn-primary" id="segarSaveBtn">Terapkan</button>';
+    openSheet("Seafood Segar: " + cat.nama, body, footer);
+
+    bindListEditor("varianEditor", "varianAddBtn", "mis. Kepiting (500 gr up)");
+    bindListEditor("olahanEditor", "olahanAddBtn", "mis. Saus Padang (Khas Kurnia)");
+
+    var segarInitialNote = cat.catatan || "";
+    var segarInitialVarian = JSON.stringify(cat.varian_ukuran || []);
+    var segarInitialOlahan = JSON.stringify(cat.pilihan_olahan || []);
+    setSheetDirtyCheck(function () {
+      var curNote = document.getElementById("fSegarNote").value.trim() || "";
+      return curNote !== segarInitialNote ||
+        JSON.stringify(readListEditor("varianEditor")) !== segarInitialVarian ||
+        JSON.stringify(readListEditor("olahanEditor")) !== segarInitialOlahan;
+    });
+
+    document.getElementById("segarCancelBtn").addEventListener("click", requestCloseSheet);
+    document.getElementById("segarSaveBtn").addEventListener("click", function () {
+      var newNote = document.getElementById("fSegarNote").value.trim() || null;
+      var newVarian = readListEditor("varianEditor");
+      var newOlahan = readListEditor("olahanEditor");
+      var changed = newNote !== cat.catatan ||
+        JSON.stringify(newVarian) !== JSON.stringify(cat.varian_ukuran || []) ||
+        JSON.stringify(newOlahan) !== JSON.stringify(cat.pilihan_olahan || []);
+      if (changed) {
+        cat.catatan = newNote;
+        cat.varian_ukuran = newVarian;
+        cat.pilihan_olahan = newOlahan;
+        state.menuDirty = true;
+        recordChange('Edit ukuran/olahan kategori "' + cat.nama + '"');
+        showToast(APPLIED_TOAST_MSG);
+      }
+      closeSheet();
+      renderMainArea();
+    });
+  }
+
+  function buildListEditorHtmlWrapped(containerId, addBtnId, items, placeholder) {
+    var rows = (items || []).map(function (v) { return listRowHtml(v, placeholder); }).join("");
+    return '<div class="list-editor" id="' + containerId + '">' + rows + '</div>' +
+      '<button type="button" class="btn btn-outline btn-sm" id="' + addBtnId + '">+ Tambah</button>';
+  }
+
+  /* =========================================================
+     Sheet: Info Restoran & Catatan Global
+     ========================================================= */
+  function openGlobalInfoSheet() {
+    var restoran = state.menu.restoran;
+    var body =
+      '<div class="field"><label for="fAlamat">Alamat</label><textarea class="textarea" id="fAlamat">' + escapeHtml(restoran.alamat || "") + '</textarea></div>' +
+      '<div class="segar-block-title">Catatan Umum (tampil di semua halaman)</div>' +
+      buildListEditorHtmlWrapped("catatanGlobalEditor", "catatanGlobalAddBtn", state.menu.catatan_global, "mis. Harga belum termasuk pajak");
+    var footer = '<button type="button" class="btn btn-ghost" id="giCancelBtn">Batal</button><button type="button" class="btn btn-primary" id="giSaveBtn">Terapkan</button>';
+    openSheet("Info Restoran & Catatan", body, footer);
+    bindListEditor("catatanGlobalEditor", "catatanGlobalAddBtn", "mis. Harga belum termasuk pajak");
+
+    var giInitialAlamat = restoran.alamat || "";
+    var giInitialCatatan = JSON.stringify(state.menu.catatan_global || []);
+    setSheetDirtyCheck(function () {
+      return document.getElementById("fAlamat").value.trim() !== giInitialAlamat ||
+        JSON.stringify(readListEditor("catatanGlobalEditor")) !== giInitialCatatan;
+    });
+
+    document.getElementById("giCancelBtn").addEventListener("click", requestCloseSheet);
+    document.getElementById("giSaveBtn").addEventListener("click", function () {
+      var newAlamat = document.getElementById("fAlamat").value.trim();
+      if (!newAlamat) { sheetSetError("Alamat tidak boleh dikosongkan."); return; }
+      var newCatatan = readListEditor("catatanGlobalEditor");
+      var changed = newAlamat !== restoran.alamat || JSON.stringify(newCatatan) !== JSON.stringify(state.menu.catatan_global || []);
+      if (changed) {
+        restoran.alamat = newAlamat;
+        state.menu.catatan_global = newCatatan;
+        state.menuDirty = true;
+        recordChange("Edit alamat/catatan umum");
+        showToast(APPLIED_TOAST_MSG);
+      }
+      closeSheet();
+      renderMainArea();
+    });
+  }
+
+  /* =========================================================
+     TAB FOTO
+     ========================================================= */
+  function renderFotoTabHtml() {
+    var demoNote = state.mode === "demo" ? '<div class="banner banner-demo">Mode demo: upload/hapus foto bisa dicoba di layar ini, tapi tidak benar-benar tersimpan.</div>' : "";
+    var cards = state.foto.map(function (f, idx) { return renderFotoCard(f, idx); }).join("");
+    return demoNote + '<div class="foto-grid">' + cards +
+      '<button type="button" class="foto-add-card" id="addFotoBtn">+ Tambah Foto</button></div>';
+  }
+
+  function fotoTipeLabel(tipe) {
+    if (tipe === "hidangan") return "Hidangan";
+    if (tipe === "komposisi") return "Komposisi";
+    if (tipe === "hero") return "Sampul";
+    return tipe;
+  }
+
+  function renderFotoCard(f, idx) {
+    var pendingBadge = "";
+    if (state.localPreviewUrls[f.file]) {
+      pendingBadge = state.recentlyUploaded[f.file]
+        ? '<span class="foto-thumb-pending">Menuju website (&plusmn;1 mnt)</span>'
+        : '<span class="foto-thumb-pending">Belum diunggah</span>';
+    }
+    return (
+      '<div class="foto-card">' +
+        '<div class="foto-thumb"><img src="' + escapeHtml(photoSrc(f.file)) + '" alt="" loading="lazy" onerror="this.style.opacity=0.25">' +
+          '<span class="foto-thumb-tipe">' + escapeHtml(fotoTipeLabel(f.tipe)) + '</span>' + pendingBadge +
+        '</div>' +
+        '<div class="foto-meta">' +
+          '<div class="foto-meta-name">' + escapeHtml(f.nama || f.file) + '</div>' +
+          '<div class="foto-meta-btns">' +
+            '<button type="button" class="btn btn-outline btn-sm" data-foto-action="edit" data-idx="' + idx + '" style="flex:1;">Edit</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function bindFotoTabEvents() {
+    var el = document.getElementById("mainArea");
+    if (!el) return;
+    var addBtn = document.getElementById("addFotoBtn");
+    if (addBtn) addBtn.addEventListener("click", function () { openFotoSheet(-1); });
+    Array.prototype.forEach.call(el.querySelectorAll("[data-foto-action]"), function (btn) {
+      btn.addEventListener("click", function () { openFotoSheet(parseInt(btn.getAttribute("data-idx"), 10)); });
+    });
+  }
+
+  /* =========================================================
+     Resize gambar (client-side, canvas)
+     ========================================================= */
+  function resizeImageFile(file) {
+    return new Promise(function (resolve, reject) {
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function () {
+        var dims = computeResizeDims(img.naturalWidth, img.naturalHeight, MAX_PHOTO_SIDE);
+        var canvas = document.createElement("canvas");
+        canvas.width = dims.w;
+        canvas.height = dims.h;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, dims.w, dims.h);
+        URL.revokeObjectURL(url);
+        canvas.toBlob(function (webpBlob) {
+          if (webpBlob && webpBlob.type === "image/webp") {
+            resolve({ blob: webpBlob, ext: "webp", width: dims.w, height: dims.h });
+            return;
+          }
+          canvas.toBlob(function (jpegBlob) {
+            if (!jpegBlob) { reject(new Error("Browser tidak bisa memproses gambar ini.")); return; }
+            resolve({ blob: jpegBlob, ext: "jpg", width: dims.w, height: dims.h });
+          }, "image/jpeg", 0.82);
+        }, "image/webp", 0.8);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); reject(new Error("File yang dipilih bukan gambar yang valid.")); };
+      img.src = url;
+    });
+  }
+
+  function blobToBase64(blob) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var result = reader.result;
+        var idx = result.indexOf(",");
+        resolve(result.slice(idx + 1));
+      };
+      reader.onerror = function () { reject(reader.error); };
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  /* =========================================================
+     Sheet: Tambah / Edit Foto
+     ========================================================= */
+  function allFilenames() {
+    return state.foto.map(function (f) { return f.file; });
+  }
+
+  // Kategori yang benar-benar merender thumbnail foto tipe "hidangan" di
+  // index.html (grid kartu + signature-dish). Kategori di luar daftar ini
+  // yang SUDAH punya foto komposisi tidak pernah menampilkan foto hidangan
+  // baru -- lihat renderCardListSection/renderSignatureSection/
+  // renderListSection di index.html.
+  var DISH_THUMBNAIL_CATEGORIES = { "special-menu": true, "nasi-liwet": true, "dessert": true, "signature-dish": true };
+
+  function categoryHasKomposisiPhoto(catId) {
+    return state.foto.some(function (x) { return x.tipe === "komposisi" && x.kategori_id === catId; });
+  }
+
+  function openFotoSheet(idx) {
+    var isNewEntry = idx < 0;
+    var f = isNewEntry ? { file: null, nama: "", tipe: "hidangan", kategori_id: null, item: null, alpha: false, yakin: true } : state.foto[idx];
+    var isHero = f.tipe === "hero";
+    var catOptions = state.menu.kategori.map(function (c) {
+      return '<option value="' + escapeHtml(c.id) + '"' + (c.id === f.kategori_id ? " selected" : "") + '>' + escapeHtml(c.nama) + '</option>';
+    }).join("");
+
+    var body =
+      '<div class="field"><label>Foto</label>' +
+        '<div class="thumb-preview" id="fotoPreviewWrap">' + (f.file ? '<img id="fotoPreviewImg" src="' + escapeHtml(photoSrc(f.file)) + '" alt="">' : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,239,227,.4);font-size:12px;">Belum ada foto</div>') + '</div>' +
+        '<input type="file" accept="image/*" id="fFile" class="input">' +
+        '<div class="file-status" id="fFileStatus"></div>' +
+      '</div>' +
+      '<div class="field"><label for="fFotoNama">Nama / caption</label><input class="input" id="fFotoNama" value="' + escapeHtml(f.nama || "") + '" placeholder="mis. Alaska King Crab"></div>' +
+      (isHero ?
+        '<p class="hint" style="margin-bottom:14px;">Foto ini bertipe "Sampul" (foto utama di halaman menu) -- tipe, kategori, dan item tidak berlaku untuk foto sampul.</p>' :
+        '<div class="field"><label for="fFotoTipe">Tipe</label><select class="select" id="fFotoTipe">' +
+          '<option value="hidangan"' + (f.tipe === "hidangan" ? " selected" : "") + '>Hidangan (foto 1 menu spesifik)</option>' +
+          '<option value="komposisi"' + (f.tipe === "komposisi" ? " selected" : "") + '>Komposisi (foto gabungan/showcase kategori)</option>' +
+        '</select></div>' +
+        '<div class="field"><label for="fFotoKategori">Kategori</label><select class="select" id="fFotoKategori"><option value="">-- pilih kategori --</option>' + catOptions + '</select></div>' +
+        '<div class="field" id="fFotoItemWrap"><label for="fFotoItem">Item</label><select class="select" id="fFotoItem"></select><span class="hint" id="fFotoItemHint"></span></div>'
+      );
+
+    var footer =
+      (isNewEntry ? "" : '<button type="button" class="btn btn-danger" id="deleteFotoBtn" style="flex:0 0 auto;width:auto;padding:12px 14px;">Hapus</button>') +
+      '<button type="button" class="btn btn-ghost" id="fotoCancelBtn">Batal</button>' +
+      '<button type="button" class="btn btn-primary" id="fotoSaveBtn">Terapkan</button>';
+
+    openSheet(isNewEntry ? "Tambah Foto" : "Edit Foto", body, footer);
+
+    var pendingResize = null; // {blob, ext, width, height} hasil resize terakhir
+    var fotoSaveBtn = document.getElementById("fotoSaveBtn");
+    function setFotoBusy(busy) {
+      fotoSaveBtn.disabled = busy;
+      fotoSaveBtn.textContent = busy ? "Memproses..." : "Terapkan";
+    }
+
+    if (!isHero) {
+      var fFotoTipe = document.getElementById("fFotoTipe");
+      var fFotoKategori = document.getElementById("fFotoKategori");
+      var fFotoItemWrap = document.getElementById("fFotoItemWrap");
+      var fFotoItem = document.getElementById("fFotoItem");
+      var fFotoItemHint = document.getElementById("fFotoItemHint");
+
+      function refreshItemOptions() {
+        var isHidangan = fFotoTipe.value === "hidangan";
+        fFotoItemWrap.classList.toggle("is-hidden", !isHidangan);
+        if (!isHidangan) return;
+        var cat = findCategory(fFotoKategori.value);
+        if (!cat || !cat.item.length) {
+          fFotoItem.innerHTML = "";
+          fFotoItemHint.textContent = cat ? 'Kategori ini tidak punya item satuan (seafood segar) -- pilih tipe "Komposisi".' : "Pilih kategori dulu.";
+          return;
+        }
+        if (!DISH_THUMBNAIL_CATEGORIES[cat.id] && categoryHasKomposisiPhoto(cat.id)) {
+          fFotoItemHint.textContent = 'Kategori ini pakai satu foto komposisi -- foto hidangan baru TIDAK akan tampil di menu online.';
+        } else {
+          fFotoItemHint.textContent = "";
+        }
+        fFotoItem.innerHTML = cat.item.map(function (it) {
+          return '<option value="' + escapeHtml(it.nama) + '"' + (it.nama === f.item ? " selected" : "") + '>' + escapeHtml(it.nama) + '</option>';
+        }).join("");
+      }
+      fFotoTipe.addEventListener("change", refreshItemOptions);
+      fFotoKategori.addEventListener("change", refreshItemOptions);
+      refreshItemOptions();
+    }
+
+    document.getElementById("fFile").addEventListener("change", function (ev) {
+      var file = ev.target.files && ev.target.files[0];
+      var statusEl = document.getElementById("fFileStatus");
+      if (!file) return;
+      setFotoBusy(true);
+      statusEl.innerHTML = '<span class="spinner" style="display:inline-block;vertical-align:middle;"></span> Memproses foto...';
+      resizeImageFile(file).then(function (result) {
+        if (result.blob.size > MAX_PHOTO_BYTES) {
+          statusEl.innerHTML = '<div class="sheet-warn" style="background:rgba(212,42,32,.16);border-color:#D42A20;color:#ffd7d2;">Ukuran foto masih ' + formatKB(result.blob.size) + ' setelah dikompres -- terlalu besar (maks 600 KB). Coba pilih foto lain.</div>';
+          pendingResize = null;
+          setFotoBusy(false);
+          return;
+        }
+        pendingResize = result;
+        var url = URL.createObjectURL(result.blob);
+        document.getElementById("fotoPreviewWrap").innerHTML = '<img src="' + url + '" alt="">';
+        if (result.blob.size > TARGET_PHOTO_BYTES) {
+          statusEl.innerHTML = '<div class="sheet-warn">Ukuran ' + formatKB(result.blob.size) + ' -- agak besar (idealnya di bawah 300 KB), tapi masih boleh dipakai.</div>';
+        } else {
+          statusEl.innerHTML = '<div class="sheet-ok">Siap -- ukuran ' + formatKB(result.blob.size) + ' (format .' + result.ext + ').</div>';
+        }
+        setFotoBusy(false);
+      }).catch(function (err) {
+        statusEl.innerHTML = '<div class="sheet-warn" style="background:rgba(212,42,32,.16);border-color:#D42A20;color:#ffd7d2;">' + escapeHtml(err.message || "Gagal memproses foto.") + '</div>';
+        pendingResize = null;
+        setFotoBusy(false);
+      });
+    });
+
+    var fotoInitialSnapshot = (isHero ? "" : snapshotFormFields(["fFotoTipe", "fFotoKategori", "fFotoItem"])) + "|" + (document.getElementById("fFotoNama") || {}).value;
+    setSheetDirtyCheck(function () {
+      if (pendingResize) return true;
+      var cur = (isHero ? "" : snapshotFormFields(["fFotoTipe", "fFotoKategori", "fFotoItem"])) + "|" + document.getElementById("fFotoNama").value;
+      return cur !== fotoInitialSnapshot;
+    });
+
+    document.getElementById("fotoCancelBtn").addEventListener("click", requestCloseSheet);
+    if (!isNewEntry) {
+      document.getElementById("deleteFotoBtn").addEventListener("click", function () { confirmDeleteFoto(idx); });
+    }
+    fotoSaveBtn.addEventListener("click", function () {
+      if (fotoSaveBtn.disabled) return;
+      setFotoBusy(true);
+      submitFotoSheet(idx, isNewEntry, isHero, f, pendingResize, function onFail() { setFotoBusy(false); });
+    });
+  }
+
+  function submitFotoSheet(idx, isNewEntry, isHero, original, pendingResize, onFail) {
+    var nama = document.getElementById("fFotoNama").value.trim();
+    if (!nama) { sheetSetError("Isi nama/caption foto dulu."); if (onFail) onFail(); return; }
+    if (isNewEntry && !pendingResize) { sheetSetError("Pilih file foto dulu."); if (onFail) onFail(); return; }
+
+    var tipe = isHero ? "hero" : document.getElementById("fFotoTipe").value;
+    var kategoriId = isHero ? null : document.getElementById("fFotoKategori").value;
+    if (!isHero && !kategoriId) { sheetSetError("Pilih kategori dulu."); if (onFail) onFail(); return; }
+    var itemNama = null;
+    if (tipe === "hidangan") {
+      var sel = document.getElementById("fFotoItem");
+      itemNama = sel && sel.value ? sel.value : null;
+      if (!itemNama) { sheetSetError("Pilih item untuk foto tipe Hidangan."); if (onFail) onFail(); return; }
+    }
+
+    var entry = isNewEntry ? { alpha: false, yakin: true } : original;
+    entry.nama = nama;
+    if (!isHero) {
+      entry.tipe = tipe;
+      entry.kategori_id = kategoriId;
+      if (tipe === "hidangan") entry.item = itemNama;
+      else delete entry.item;
+    }
+
+    var oldFile = original.file;
+    if (pendingResize) {
+      var existingOthers = allFilenames().filter(function (fn) { return fn !== oldFile; });
+      var newFilename = uniqueFilename(nama, pendingResize.ext, existingOthers);
+      entry.file = newFilename;
+      var localUrl = URL.createObjectURL(pendingResize.blob);
+      state.localPreviewUrls[newFilename] = localUrl;
+      blobToBase64(pendingResize.blob).then(function (base64) {
+        var newPath = "assets/foto/" + newFilename;
+        // De-dupe: kalau (mis. double-tap) sudah ada op put ke path yang
+        // sama, cabut yang lama dulu -- jangan sampai ada 2 PUT ke path sama.
+        state.pendingImageOps = state.pendingImageOps.filter(function (op) { return op.path !== newPath; });
+        state.pendingImageOps.push({ type: "put", path: newPath, base64: base64, label: "Unggah foto " + newFilename });
+        if (oldFile && oldFile !== newFilename && state.mode === "token") {
+          scheduleOldFileDeletion(oldFile);
+        }
+        finalizeFotoSubmit(idx, isNewEntry, entry);
+      });
+      return;
+    }
+    finalizeFotoSubmit(idx, isNewEntry, entry);
+  }
+
+  // Sinkron sepenuhnya -- Git Data API (tree entry sha:null) tidak butuh sha
+  // file lama, beda dari Contents API DELETE. Jadi tidak ada lagi jeda async
+  // "GET sha dulu" yang bisa ke-skip kalau user buru-buru tekan Simpan.
+  function scheduleOldFileDeletion(filename) {
+    var path = "assets/foto/" + filename;
+    var hadPendingPut = false;
+    state.pendingImageOps = state.pendingImageOps.filter(function (op) {
+      if (op.type === "put" && op.path === path) { hadPendingPut = true; return false; }
+      return true;
+    });
+    if (hadPendingPut) {
+      // File itu belum pernah ke-server (masih upload lokal yang dibatalkan
+      // sebelum sempat Simpan) -- cukup batalkan, jangan kirim DELETE.
+      if (state.localPreviewUrls[filename]) {
+        try { URL.revokeObjectURL(state.localPreviewUrls[filename]); } catch (e) { /* ignore */ }
+        delete state.localPreviewUrls[filename];
+      }
+      return;
+    }
+    state.pendingImageOps.push({ type: "delete", path: path, label: "Hapus foto lama " + filename });
+  }
+
+  function finalizeFotoSubmit(idx, isNewEntry, entry) {
+    if (isNewEntry) {
+      state.foto.push(entry);
+      recordChange('Tambah foto "' + entry.file + '"');
+    } else {
+      recordChange('Edit foto "' + entry.file + '"');
+    }
+    state.fotoDirty = true;
+    persistDraft();
+    closeSheet();
+    showToast(APPLIED_TOAST_MSG);
+    renderMainArea();
+  }
+
+  function schedulePhotoEntryDeletion(fotoEntry) {
+    var idx = state.foto.indexOf(fotoEntry);
+    if (idx === -1) return;
+    state.foto.splice(idx, 1);
+    state.fotoDirty = true;
+    if (fotoEntry.file && state.mode === "token") scheduleOldFileDeletion(fotoEntry.file);
+  }
+
+  function confirmDeleteFoto(idx) {
+    var f = state.foto[idx];
+    var body = '<p>Hapus foto "<strong>' + escapeHtml(f.nama || f.file) + '</strong>" (' + escapeHtml(f.file) + ')?</p>' +
+      '<p style="margin-top:10px;color:rgba(245,239,227,0.6);font-size:12.5px;">File foto & entrinya akan dihapus saat kamu tekan "Simpan Perubahan".</p>';
+    openConfirmSheet("Hapus Foto?", body, "Ya, hapus", true, function () {
+      schedulePhotoEntryDeletion(f);
+      recordChange('Hapus foto "' + f.file + '"');
+      closeSheet();
+      renderMainArea();
+    });
+  }
+
+  /* =========================================================
+     Validasi + alur Simpan
+     ========================================================= */
+  function runAllValidations() {
+    var problems = validateMenuData(state.menu);
+    problems = problems.concat(validatePhotoRefs(state.menu, state.foto));
+    var curIds = state.menu.kategori.map(function (c) { return c.id; });
+    problems = problems.concat(validateCategoryIds(state.origCategoryIds, curIds));
+    return problems;
+  }
+
+  function startSaveFlow() {
+    if (!state.mode) return;
+    var problems = runAllValidations();
+    if (problems.length) { showProblemsSheet(problems); return; }
+    // Mode demo boleh sampai ke ringkasan (buat lihat alurnya) tapi tidak
+    // pernah butuh nama pengirim -- itu cuma dipakai di pesan commit asli.
+    if (state.mode === "token" && !state.userName) {
+      openNameSheet(function (name) {
+        state.userName = name;
+        saveUserName(name);
+        showChangeSummarySheet();
+      });
+      return;
+    }
+    showChangeSummarySheet();
+  }
+
+  function showProblemsSheet(problems) {
+    var body = '<p style="margin-bottom:10px;">Ada yang perlu diperbaiki dulu sebelum bisa disimpan:</p>' +
+      '<ul class="problem-list">' + problems.map(function (p) { return "<li>" + escapeHtml(p) + "</li>"; }).join("") + '</ul>';
+    var footer = '<button type="button" class="btn btn-primary" id="problemsCloseBtn" style="width:100%;">Mengerti, saya perbaiki dulu</button>';
+    openSheet("Belum Bisa Disimpan", body, footer);
+    document.getElementById("problemsCloseBtn").addEventListener("click", closeSheet);
+  }
+
+  // Ringkasan changeLog sebelum benar-benar kirim ke server -- supaya salah
+  // hapus/salah edit kelihatan dulu sebelum ikut ke-commit (bukan cuma
+  // angka "N perubahan" di savebar).
+  function showChangeSummarySheet() {
+    var isDemo = state.mode === "demo";
+    var items = state.changeLog.map(function (c) {
+      var isHapus = /^Hapus /.test(c);
+      return '<li class="progress-item"' + (isHapus ? ' style="color:#ffb6ae;"' : "") + '><span>' + escapeHtml(c) + '</span></li>';
+    }).join("");
+    var body = '<p style="margin-bottom:10px;"><strong>' + state.changeLog.length + '</strong> perubahan berikut akan naik ke menu live:</p>' +
+      '<ul class="progress-list">' + items + '</ul>' +
+      (isDemo ? '<p class="hint" style="margin-top:10px;">Mode demo -- tombol kirim di bawah dinonaktifkan. Tidak ada yang benar-benar terkirim ke server.</p>' : "");
+    var footer = '<button type="button" class="btn btn-ghost" id="summaryBackBtn">Kembali</button>' +
+      '<button type="button" class="btn btn-primary" id="summaryConfirmBtn"' + (isDemo ? " disabled" : "") + '>' + (isDemo ? "Kirim (nonaktif)" : "Lanjut Simpan") + '</button>';
+    openSheet("Ringkasan Perubahan (" + state.changeLog.length + ")", body, footer);
+    document.getElementById("summaryBackBtn").addEventListener("click", closeSheet);
+    if (!isDemo) {
+      document.getElementById("summaryConfirmBtn").addEventListener("click", function () { executeSave(); });
+    }
+  }
+
+  function openNameSheet(onDone) {
+    var body = '<div class="field"><label for="fUserName">Nama kamu</label><input class="input" id="fUserName" placeholder="mis. Nia"></div>' +
+      '<p class="hint">Dipakai supaya kelihatan siapa yang mengubah menu (tersimpan di HP ini, cuma ditanya sekali).</p>';
+    var footer = '<button type="button" class="btn btn-ghost" id="nameCancelBtn">Batal Simpan</button><button type="button" class="btn btn-primary" id="nameOkBtn">Lanjut</button>';
+    openSheet("Nama Kamu", body, footer);
+    document.getElementById("nameCancelBtn").addEventListener("click", function () {
+      closeSheet();
+      showToast('Simpan dibatalkan -- perubahanmu masih menunggu, tekan "Simpan Perubahan" lagi kapan saja.');
+    });
+    document.getElementById("nameOkBtn").addEventListener("click", function () {
+      var name = document.getElementById("fUserName").value.trim();
+      if (!name) { sheetSetError("Isi nama dulu, ya."); return; }
+      closeSheet();
+      onDone(name);
+    });
+  }
+
+  function commitMessage() {
+    return "CMS: " + buildCommitSummary(state.changeLog, 220) + " — oleh " + state.userName;
+  }
+
+  // 1 "Simpan Perubahan" = 1 commit atomik lewat Git Data API. Blob dibuat
+  // dulu (aman -- tidak nempel ke branch mana pun, tidak memicu deploy Pages
+  // apa pun hasilnya), baru langkah terakhir (commitAtomic) yang benar-benar
+  // memindah ref cabang -- itu satu-satunya titik yang bisa "berhasil" atau
+  // "gagal total", tidak ada state campuran di antaranya.
+  function buildAtomicSteps() {
+    var steps = [];
+    var blobShaByPath = {};
+    var putOps = state.pendingImageOps.filter(function (op) { return op.type === "put"; });
+    var deletePaths = state.pendingImageOps.filter(function (op) { return op.type === "delete"; }).map(function (op) { return op.path; });
+    var putPaths = putOps.map(function (op) { return op.path; });
+
+    if (putOps.length) {
+      steps.push({
+        label: "Menyiapkan " + putOps.length + " foto baru",
+        run: function () {
+          return Promise.all(putOps.map(function (op) {
+            return githubCreateBlob(op.base64).then(function (res) { blobShaByPath[op.path] = res.sha; });
+          }));
+        }
+      });
+    }
+    if (state.fotoDirty) {
+      steps.push({
+        label: "Menyiapkan data/foto.json",
+        run: function () {
+          var content = base64EncodeUtf8(JSON.stringify(state.foto, null, 2) + "\n");
+          return githubCreateBlob(content).then(function (res) { blobShaByPath["data/foto.json"] = res.sha; });
+        }
+      });
+    }
+    if (state.menuDirty) {
+      steps.push({
+        label: "Menyiapkan data/menu.json",
+        run: function () {
+          var content = base64EncodeUtf8(JSON.stringify(state.menu, null, 2) + "\n");
+          return githubCreateBlob(content).then(function (res) { blobShaByPath["data/menu.json"] = res.sha; });
+        }
+      });
+    }
+    steps.push({
+      label: "Menyimpan 1 commit ke GitHub",
+      run: function () {
+        return commitAtomic({ putPaths: putPaths, deletePaths: deletePaths, blobShaByPath: blobShaByPath });
+      }
+    });
+    return steps;
+  }
+
+  function executeSave() {
+    var steps = buildAtomicSteps();
+    var body = '<ul class="progress-list" id="progressList">' + steps.map(function (s, i) {
+      return '<li class="progress-item progress-item--pending" id="progressStep' + i + '"><span class="progress-icon">' + (i + 1) + '</span><span>' + escapeHtml(s.label) + '</span></li>';
+    }).join("") + '</ul><div id="progressResult" style="margin-top:14px;"></div>';
+    openSheetNoClose("Menyimpan...", body);
+    runStepsSequentially(steps, 0);
+  }
+
+  function openSheetNoClose(title, bodyHtml) {
+    closeSheet();
+    var overlay = document.createElement("div");
+    overlay.className = "sheet-overlay";
+    overlay.id = "sheetOverlay";
+    overlay.innerHTML = '<div class="sheet"><div class="sheet-header"><h2>' + escapeHtml(title) + '</h2></div><div class="sheet-body" id="sheetBody">' + bodyHtml + '</div></div>';
+    document.body.appendChild(overlay);
+  }
+
+  function runStepsSequentially(steps, i) {
+    if (i >= steps.length) { onSaveAllSuccess(); return; }
+    var stepEl = document.getElementById("progressStep" + i);
+    stepEl.querySelector(".progress-icon").innerHTML = '<span class="spinner"></span>';
+    steps[i].run().then(function () {
+      stepEl.className = "progress-item progress-item--ok";
+      stepEl.querySelector(".progress-icon").textContent = "✓";
+      updateSaveBar();
+      runStepsSequentially(steps, i + 1);
+    }).catch(function (err) {
+      stepEl.className = "progress-item progress-item--fail";
+      stepEl.querySelector(".progress-icon").textContent = "!";
+      onSaveError(err);
+    });
+  }
+
+  function onSaveAllSuccess() {
+    state.changeLog = [];
+    clearDraftFromSession();
+    // localPreviewUrls SENGAJA tidak dibuang -- foto yang baru diunggah
+    // tetap dirender dari blob lokal (bukan URL Pages yang belum ter-deploy,
+    // ~1 menit) sampai reload berikutnya. Ditandai recentlyUploaded supaya
+    // badge kartu foto berubah dari "Belum diunggah" -> "Menuju website".
+    Object.keys(state.localPreviewUrls).forEach(function (fn) { state.recentlyUploaded[fn] = true; });
+    var result = document.getElementById("progressResult");
+    result.innerHTML = '<div class="sheet-ok">Tersimpan! Menu live akan terupdate &plusmn;1 menit.</div>' +
+      '<p style="margin-top:10px;"><a href="' + LIVE_URL + '" target="_blank" rel="noopener">' + LIVE_URL + '</a></p>' +
+      '<button type="button" class="btn btn-primary" id="afterSaveOkBtn" style="margin-top:14px;">Selesai</button>';
+    document.getElementById("afterSaveOkBtn").addEventListener("click", function () {
+      closeSheet();
+      renderApp();
+    });
+    updateSaveBar();
+  }
+
+  function onSaveError(err) {
+    var result = document.getElementById("progressResult");
+    if (err.isSaveConflict) {
+      result.innerHTML = '<div class="sheet-error">Ada perubahan lain yang masuk ke server duluan. Perubahanmu di sini <strong>tidak dibuang</strong> (sudah otomatis tersimpan di HP ini) -- muat data terbaru dulu, lalu coba terapkan ulang.</div>' +
+        '<button type="button" class="btn btn-primary" id="reloadAfterConflictBtn" style="margin-top:12px;">Muat Data Terbaru</button>';
+      document.getElementById("reloadAfterConflictBtn").addEventListener("click", function () { closeSheet(); goLoadingThenApp(); });
+    } else if (err.status === 401) {
+      result.innerHTML = '<div class="sheet-error">Token salah atau kedaluwarsa. Silakan keluar dan login ulang dengan token yang masih berlaku.</div>' +
+        '<button type="button" class="btn btn-primary" id="logoutAfterErrBtn" style="margin-top:12px;">Keluar</button>';
+      document.getElementById("logoutAfterErrBtn").addEventListener("click", function () { closeSheet(); doLogout(); });
+    } else if (err.status === 403) {
+      result.innerHTML = '<div class="sheet-error">GitHub membatasi terlalu banyak permintaan (rate limit) atau token tidak punya izin cukup. Tunggu beberapa menit lalu coba lagi, atau cek izin token (Contents: Read and write).</div>' +
+        '<button type="button" class="btn btn-ghost" id="closeErrBtn" style="margin-top:12px;">Tutup</button>';
+      document.getElementById("closeErrBtn").addEventListener("click", closeSheet);
+    } else {
+      result.innerHTML = '<div class="sheet-error">Gagal menyimpan: ' + escapeHtml(friendlyErrorText(err)) + '</div>' +
+        '<button type="button" class="btn btn-primary" id="retrySaveBtn" style="margin-top:12px;">Coba Lagi</button>';
+      document.getElementById("retrySaveBtn").addEventListener("click", function () { closeSheet(); executeSave(); });
+    }
+  }
+
+  /* =========================================================
+     beforeunload -- peringatan kalau ada perubahan belum tersimpan
+     ========================================================= */
+  if (typeof window !== "undefined") {
+    window.addEventListener("beforeunload", function (e) {
+      if (state.mode === "token" && isDirty()) {
+        e.preventDefault();
+        e.returnValue = "";
+      }
+    });
+  }
+
+  /* =========================================================
+     Init
+     ========================================================= */
+  function initApp() {
+    var demoParam = false;
+    try { demoParam = new URLSearchParams(location.search).get("demo") === "1"; } catch (e) { demoParam = false; }
+    if (demoParam) { enterDemoMode(); return; }
+    var stored = loadStoredToken();
+    if (stored) {
+      state.token = stored;
+      state.mode = "token";
+      renderShell('<div class="center-loading"><div class="spinner"></div><p>Menyambungkan...</p></div>');
+      githubVerifyToken().then(function (result) {
+        state.defaultBranch = result.defaultBranch;
+        state.tokenPermWarning = result.permWarning;
+        goLoadingThenApp();
+      }).catch(function (err) {
+        // Cuma hapus token yang tersimpan kalau GitHub BENERAN menolaknya
+        // (401) -- error jaringan/rate-limit/5xx bukan salah token, dan
+        // token cuma ditampilkan GitHub sekali (tidak ada salinan lain).
+        if (err && err.status === 401) {
+          clearStoredToken();
+          state.token = null;
+          state.mode = null;
+          goLogin("Sesi sebelumnya berakhir, silakan masuk lagi.");
+          return;
+        }
+        renderShell(
+          '<div class="center-loading">' +
+            '<p style="color:#ffb6ae;">Gagal menghubungi GitHub -- token tetap tersimpan.<br>' + escapeHtml(friendlyErrorText(err)) + '</p>' +
+            '<button type="button" class="btn btn-outline" id="retryVerifyBtn" style="width:auto;">Coba lagi</button>' +
+            '<button type="button" class="btn btn-ghost" id="goLoginInsteadBtn" style="width:auto;">Masuk dengan token lain</button>' +
+          '</div>'
+        );
+        document.getElementById("retryVerifyBtn").addEventListener("click", initApp);
+        document.getElementById("goLoginInsteadBtn").addEventListener("click", function () { goLogin(); });
+      });
+      return;
+    }
+    goLogin();
+  }
+
+  if (typeof document !== "undefined") {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initApp);
+    else initApp();
+  }
+
+  // Guard ekspor untuk verifikasi lewat Node (tidak berpengaruh di browser).
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = {
+      escapeHtml: escapeHtml,
+      formatRibuan: formatRibuan,
+      parseRibuan: parseRibuan,
+      generateHargaLabel: generateHargaLabel,
+      isNewDesc: isNewDesc,
+      kebabCase: kebabCase,
+      uniqueFilename: uniqueFilename,
+      computeResizeDims: computeResizeDims,
+      formatKB: formatKB,
+      base64EncodeUtf8: base64EncodeUtf8,
+      base64DecodeUtf8: base64DecodeUtf8,
+      buildCommitSummary: buildCommitSummary,
+      validateMenuData: validateMenuData,
+      validatePhotoRefs: validatePhotoRefs,
+      validateCategoryIds: validateCategoryIds,
+      validateDataIntegrity: validateDataIntegrity,
+      applyPlusPlusSuffix: applyPlusPlusSuffix,
+      isWritePermissionLevel: isWritePermissionLevel,
+      friendlyErrorText: friendlyErrorText,
+      buildAtomicTreeEntries: buildAtomicTreeEntries,
+      encodePath: encodePath,
+      NEW_DESC: NEW_DESC
+    };
+  }
+})();
+</script>
+</body>
+</html>
