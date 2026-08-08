@@ -1,0 +1,286 @@
+[
+  {
+    "file": "alaska-king-crab.webp",
+    "nama": "Alaska King Crab",
+    "kategori": "signature",
+    "halaman": 5,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "signature-dish",
+    "item": "Alaska King Crab"
+  },
+  {
+    "file": "appetizer-platter.webp",
+    "nama": "Appetizer Platter (Gohyong, Kangkung Krispi, Terong Raos, Mantau, Tahu Bawang Lombok, Lumpia Udang)",
+    "kategori": "appetizer",
+    "halaman": 4,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "appetizer"
+  },
+  {
+    "file": "rahang-tuna-bakar.webp",
+    "nama": "Rahang Tuna Bakar",
+    "kategori": "main",
+    "halaman": 7,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "signature-dish",
+    "item": "Rahang Tuna Bakar (L)"
+  },
+  {
+    "file": "pleasure-platter-premium.webp",
+    "nama": "Pleasure Platter Premium",
+    "kategori": "signature",
+    "halaman": 8,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "signature-dish",
+    "item": "Pleasure Platter Premium"
+  },
+  {
+    "file": "pleasure-platter-reguler.webp",
+    "nama": "Pleasure Platter Reguler",
+    "kategori": "signature",
+    "halaman": 8,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "signature-dish",
+    "item": "Pleasure Platter Reguler"
+  },
+  {
+    "file": "kepiting-garlic-caramel-saus-kurnia.webp",
+    "nama": "Kepiting Garlic Caramel & Kepiting Saus Kurnia",
+    "kategori": "kepiting",
+    "halaman": 9,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "seafood-kepiting"
+  },
+  {
+    "file": "udang-saus-kurnia-steam-bawang-putih.webp",
+    "nama": "Udang Saus Kurnia & Udang Steam Bawang Putih",
+    "kategori": "udang-lobster",
+    "halaman": 10,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "seafood-udang-lobster"
+  },
+  {
+    "file": "cumi-trio.webp",
+    "nama": "Cumi Bakar Bumbu Rujak, Cumi Saus Padang, Cumi Raja Bawang",
+    "kategori": "cumi",
+    "halaman": 11,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "seafood-cumi"
+  },
+  {
+    "file": "fresh-oyster.webp",
+    "nama": "Fresh Oyster",
+    "kategori": "kerang",
+    "halaman": 12,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "seafood-kerang"
+  },
+  {
+    "file": "ikan-trio.webp",
+    "nama": "Kakap Merah Steam Limau, Bawal Hitam Bakar Kurnia, Gurame Saus Thai",
+    "kategori": "ikan",
+    "halaman": 13,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "seafood-ikan"
+  },
+  {
+    "file": "sup-buntut-iga-bakar.webp",
+    "nama": "Sup Buntut, Sup Iga, Sup Buntut Goreng, Iga Bakar",
+    "kategori": "nusantara",
+    "halaman": 15,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "menu-nusantara"
+  },
+  {
+    "file": "nasi-liwet-ayam-bekakak.webp",
+    "nama": "Nasi Liwet Ayam Bekakak",
+    "kategori": "nasi-liwet",
+    "halaman": 16,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "nasi-liwet",
+    "item": "Nasi Liwet Ayam Bekakak"
+  },
+  {
+    "file": "nasi-liwet-gurami-terbang.webp",
+    "nama": "Nasi Liwet Gurami Terbang",
+    "kategori": "nasi-liwet",
+    "halaman": 16,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "nasi-liwet",
+    "item": "Nasi Liwet Gurami Terbang"
+  },
+  {
+    "file": "kepiting-soka.webp",
+    "nama": "Kepiting Soka 94 (Cabe Bawang/Telur Asin)",
+    "kategori": "special-menu",
+    "halaman": 17,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "special-menu",
+    "item": "Kepiting Soka (Cabe Bawang/Telur Asin)"
+  },
+  {
+    "file": "sayur-platter.webp",
+    "nama": "Sayur Platter (Tumis Brokoli Seafood, Tauge Tauco Seafood, Kangkung Terasi, Terong Balado, Genjer Tumis Teri, Kaylan Bawang Putih)",
+    "kategori": "sayur",
+    "halaman": 18,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "sayur"
+  },
+  {
+    "file": "rujak-ice-cream-pesona.webp",
+    "nama": "Rujak Ice Cream Pesona",
+    "kategori": "dessert",
+    "halaman": 19,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Rujak Ice Cream Pesona"
+  },
+  {
+    "file": "kurnia-signature-sorbet.webp",
+    "nama": "Kurnia Signature Sorbet",
+    "kategori": "dessert",
+    "halaman": 19,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Kurnia Signature Sorbet"
+  },
+  {
+    "file": "es-pisang-ijo.webp",
+    "nama": "Es Pisang Ijo",
+    "kategori": "dessert",
+    "halaman": 19,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Es Pisang Ijo"
+  },
+  {
+    "file": "es-serut-kurnia-spesial.webp",
+    "nama": "Es Serut Kurnia Spesial",
+    "kategori": "dessert",
+    "halaman": 19,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Es Serut Kurnia Spesial"
+  },
+  {
+    "file": "mango-sago-kelapa.webp",
+    "nama": "Mango Sago Kelapa",
+    "kategori": "dessert",
+    "halaman": 19,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Mango Sago Kelapa"
+  },
+  {
+    "file": "juice-series.webp",
+    "nama": "Juice Series (Jus Semangka, Jus Alpukat, Jus Mangga, Jus Buah Naga)",
+    "kategori": "minuman",
+    "halaman": 20,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "juice-series"
+  },
+  {
+    "file": "ice-cream-duo.webp",
+    "nama": "Signature Ice Cream & Margareta Ice Cream",
+    "kategori": "dessert",
+    "halaman": 21,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "dessert"
+  },
+  {
+    "file": "es-campur.webp",
+    "nama": "Es Campur",
+    "kategori": "dessert",
+    "halaman": 21,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Es Campur"
+  },
+  {
+    "file": "es-cao-kombinasi.webp",
+    "nama": "Es Cao Kombinasi",
+    "kategori": "dessert",
+    "halaman": 21,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Es Cao Kombinasi"
+  },
+  {
+    "file": "fresh-tape-blend.webp",
+    "nama": "Fresh Tape Blend",
+    "kategori": "minuman",
+    "halaman": 21,
+    "alpha": true,
+    "yakin": true,
+    "tipe": "hidangan",
+    "kategori_id": "others",
+    "item": "Fresh Tape Blend"
+  },
+  {
+    "file": "coffee-series.webp",
+    "nama": "Coffee Series (Batavia Coffee, Americano Ice, Es Kopi Susu Gula Aren, Cappucino, Cafe Latte)",
+    "kategori": "minuman",
+    "halaman": 22,
+    "alpha": false,
+    "yakin": true,
+    "tipe": "komposisi",
+    "kategori_id": "coffee-series"
+  },
+  {
+    "file": "seafood-segar.webp",
+    "nama": "Seafood Segar (foto hero generik, bukan hidangan spesifik)",
+    "kategori": "hero",
+    "halaman": 1,
+    "alpha": true,
+    "yakin": false,
+    "tipe": "hero"
+  }
+]
