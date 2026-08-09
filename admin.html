@@ -47,8 +47,8 @@
 
   /* ---------- Login ---------- */
   .login-wrap { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 32px 20px 40px; }
-  .login-logo { width: 72px; height: 72px; margin: 0 auto 14px; border-radius: 14px; overflow: hidden; background: var(--navy-panel); display: flex; align-items: center; justify-content: center; }
-  .login-logo img { width: 100%; height: 100%; object-fit: cover; }
+  .login-logo { width: 220px; height: 76px; margin: 0 auto 14px; padding: 10px 14px; border-radius: 14px; overflow: hidden; background: var(--navy-panel); display: flex; align-items: center; justify-content: center; }
+  .login-logo img { width: 100%; height: 100%; object-fit: contain; }
   .login-title { text-align: center; font-size: 22px; margin-bottom: 2px; }
   .login-sub { text-align: center; color: var(--gold-soft); font-size: 13px; margin-bottom: 28px; }
   .login-card { background: var(--navy-panel); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
@@ -1049,7 +1049,7 @@
     var demoNote = state.mode === "demo" ? '<div class="banner banner-demo">Mode demo: semua fitur bisa dicoba, tapi tombol Simpan nonaktif.</div>' : "";
     var infoPanel =
       '<div class="panel" id="infoPanel">' +
-        '<div class="panel-head" data-toggle="__info">' +
+        '<div class="panel-head" data-toggle="__info" role="button" tabindex="0">' +
           '<div class="panel-head-main"><h3>Info Restoran &amp; Catatan Umum</h3>' +
             '<div class="panel-head-meta">Alamat &amp; catatan yang tampil di semua halaman menu</div></div>' +
           '<span class="chev">&#9660;</span>' +
@@ -1070,6 +1070,13 @@
     return panelHtml.replace('class="panel"', 'class="panel is-open"');
   }
 
+  // Header accordion (panel-head) dibuat role="button" + tabindex="0" + keydown
+  // Enter/Space (bukan diganti jadi <button> asli) karena isinya berisi <h3>
+  // heading (h3 bukan phrasing content -- taruh di dalam <button> asli tidak
+  // valid & berisiko heading kehilangan semantik heading-nya di beberapa
+  // browser). Pola ini (custom widget + role + tabindex + keydown) adalah
+  // pola ARIA standar untuk elemen interaktif custom, tanpa risiko mengubah
+  // layout/CSS existing sama sekali.
   function renderCategoryPanel(cat) {
     var isSegar = cat.tipe === "seafood-segar";
     var count = (cat.item || []).length;
@@ -1085,7 +1092,7 @@
 
     var html =
       '<div class="panel">' +
-        '<div class="panel-head" data-toggle="' + escapeHtml(cat.id) + '">' +
+        '<div class="panel-head" data-toggle="' + escapeHtml(cat.id) + '" role="button" tabindex="0">' +
           '<div class="panel-head-main"><h3>' + escapeHtml(cat.nama) + '</h3><div class="panel-head-meta">' + meta + '</div></div>' +
           '<span class="chev">&#9660;</span>' +
         '</div>' +
@@ -1136,10 +1143,19 @@
     var el = document.getElementById("mainArea");
     if (!el) return;
     Array.prototype.forEach.call(el.querySelectorAll("[data-toggle]"), function (headEl) {
-      headEl.addEventListener("click", function () {
+      var toggle = function () {
         var id = headEl.getAttribute("data-toggle");
         state.expandedCategoryId = state.expandedCategoryId === id ? null : id;
         renderMainArea();
+      };
+      headEl.addEventListener("click", toggle);
+      // role="button" custom (bukan <button> asli -- lihat komentar di renderCategoryPanel)
+      // butuh handler keyboard manual supaya Enter/Space juga membuka/tutup panel.
+      headEl.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter" || ev.key === " " || ev.key === "Spacebar") {
+          ev.preventDefault();
+          toggle();
+        }
       });
     });
     Array.prototype.forEach.call(el.querySelectorAll("[data-action]"), function (btn) {
