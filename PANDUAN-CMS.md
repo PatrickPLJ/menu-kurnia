@@ -2,8 +2,8 @@
 
 CMS ini dipakai untuk mengubah menu online Kurnia Seafood (harga, nama menu, foto, dll) langsung dari HP -- tanpa perlu buka kode atau minta bantuan teknis tiap kali ada perubahan.
 
-Link CMS: **https://patrickplj.github.io/menu-kurnia/admin.html**
-Menu yang tayang ke tamu (live): **https://patrickplj.github.io/menu-kurnia/**
+Link CMS: **https://menu.kurniaseafood.co.id/admin.html**
+Menu yang tayang ke tamu (live): **https://menu.kurniaseafood.co.id/**
 
 > Halaman `admin.html` boleh dibuka siapa saja yang tahu linknya -- tapi **tanpa token**, orang itu cuma bisa lihat-lihat / coba-coba di mode demo, **tidak bisa mengubah apa pun** di menu yang sungguhan. Jadi aman kalau link ini kebuka orang lain, asal token tidak ikut dishare.
 
@@ -95,7 +95,7 @@ Token biasanya berlaku 1 tahun. Kalau sudah lewat atau salah copy, buat token ba
 Ini muncul kalau ada 2 orang mengubah menu di waktu yang hampir sama. Perubahanmu **tidak hilang** -- CMS otomatis menyimpan draft di HP itu. Tekan **"Muat Data Terbaru"**, lalu begitu halaman selesai dimuat ulang akan muncul tawaran **"Lanjutkan Perubahan?"** -- tekan **Pulihkan**, cek lagi tidak ada yang bentrok dengan perubahan orang lain, lalu tekan Simpan Perubahan lagi. Untuk menghindari ini, sebaiknya cuma 1 orang yang pegang CMS dalam satu waktu.
 
 **Sudah tekan Simpan, tapi menu di website belum berubah**
-Wajar -- proses update ke website butuh waktu sekitar **1 menit** (kadang bisa sampai beberapa menit kalau sedang ramai). Tunggu sebentar, lalu refresh halaman menu (https://patrickplj.github.io/menu-kurnia/). Kalau lebih dari 10 menit belum berubah, hubungi Patrick.
+Wajar -- proses update ke website butuh waktu sekitar **1 menit** (kadang bisa sampai beberapa menit kalau sedang ramai). Tunggu sebentar, lalu refresh halaman menu (https://menu.kurniaseafood.co.id/). Kalau lebih dari 10 menit belum berubah, hubungi Patrick.
 
 **GitHub membatasi terlalu banyak permintaan**
 Ini jarang terjadi -- biasanya karena terlalu banyak percobaan simpan berturut-turut dalam waktu singkat. Tunggu beberapa menit lalu coba lagi.
