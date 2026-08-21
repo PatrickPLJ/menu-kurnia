@@ -84,7 +84,7 @@
   }
 
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: hidden; }
+  html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: clip; }
   html { -webkit-text-size-adjust: 100%; }
   @media (prefers-reduced-motion: no-preference) {
     html { scroll-behavior: smooth; }
@@ -106,6 +106,23 @@
   sup { font-size: 0.62em; letter-spacing: 0.02em; }
 
   .is-hidden { display: none !important; }
+
+  /* ---------- Skip link (a11y) ---------- */
+  .skip-link {
+    position: absolute;
+    top: -60px;
+    left: 12px;
+    z-index: 100;
+    background: var(--gold-grad);
+    color: #241A05;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus-visible { top: 12px; }
 
   /* ---------- Background layer (fixed, iOS-safe -- BUKAN background-attachment) ---------- */
   .bg-ocean {
@@ -263,6 +280,10 @@
     color: var(--cream);
     opacity: 0.8;
     padding: 4px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     list-style: none;
   }
@@ -271,7 +292,7 @@
   .global-details[open] summary::after { content: " ▴"; }
   .global-details ul { padding-top: 4px; }
   .global-details li {
-    font-size: 0.9375rem;
+    font-size: 1rem;
     color: var(--cream);
     opacity: 0.85;
     padding: 3px 0 3px 18px;
@@ -316,6 +337,24 @@
     position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
     width: 16px; height: 16px; color: rgba(245,239,227,0.55); pointer-events: none;
   }
+  .search-clear {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: rgba(245,239,227,0.7);
+    cursor: pointer;
+  }
+  .search-clear:hover, .search-clear:focus-visible { color: var(--gold-soft); }
+  .search-box.has-value .search-icon { display: none; }
+  .search-box.has-value .search-clear { display: flex; }
   .search-result { font-size: 0.9375rem; color: var(--gold-soft); min-height: 20px; padding-top: 4px; }
   .search-empty {
     max-width: 760px;
@@ -330,9 +369,11 @@
     display: flex;
     gap: 8px;
     overflow-x: auto;
-    padding: 8px 18px 12px;
+    padding: 8px 8px 12px 18px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent 100%);
   }
   .chip-row::-webkit-scrollbar { display: none; }
   .chip {
@@ -340,7 +381,7 @@
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    min-height: 40px;
+    min-height: 44px;
     padding: 8px 16px;
     border-radius: 999px;
     border: 1px solid rgba(240,222,121,0.30);
@@ -449,7 +490,7 @@
     margin-bottom: 5px;
   }
   .menu-price { flex-shrink: 0; color: var(--gold-bright); font-weight: 700; font-size: 1rem; white-space: nowrap; }
-  .menu-meta { font-size: 0.9375rem; color: var(--cream); opacity: 0.75; margin-top: 3px; }
+  .menu-meta { font-size: 1rem; color: var(--cream); opacity: 0.75; margin-top: 3px; }
 
   /* ---------- Showcase foto komposisi (satu foto besar di atas kategori) ---------- */
   .category-showcase { max-width: 760px; margin: 0 auto 16px; padding: 0 18px; }
@@ -470,12 +511,14 @@
      warna panel di kiri-kanan, tinggi tetap konsisten dgn showcase lain. */
   .category-showcase .showcase-frame--contain img { object-fit: contain; }
   .category-showcase .showcase-caption {
-    font-size: 0.9375rem;
+    font-size: 1rem;
     color: var(--cream);
     opacity: 0.75;
     font-style: italic;
     text-align: center;
     margin-top: 8px;
+    max-width: 60ch;
+    margin-inline: auto;
   }
 
   /* ---------- Dish card grid (Special Menu, Nasi Liwet, Dessert) ---------- */
@@ -501,7 +544,7 @@
   .dish-name-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
   .dish-name { font-weight: 500; color: var(--gold-name); font-size: 1rem; }
   .dish-price { color: var(--gold-bright); font-weight: 700; font-size: 1rem; white-space: nowrap; }
-  .dish-meta { font-size: 0.9375rem; color: var(--cream); opacity: 0.75; }
+  .dish-meta { font-size: 1rem; color: var(--cream); opacity: 0.75; }
   @media (hover: hover) and (pointer: fine) {
     .dish-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .dish-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,0.35); }
@@ -603,7 +646,7 @@
     margin-bottom: 6px;
   }
   .sig-body h3 { font-size: 1.375rem; font-weight: 700; color: var(--gold-bright); margin-bottom: 8px; }
-  .sig-desc { font-size: 0.9375rem; color: var(--cream); opacity: 0.85; line-height: 1.55; }
+  .sig-desc { font-size: 1rem; color: var(--cream); opacity: 0.85; line-height: 1.55; }
   .sig-price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
   .sig-price { color: var(--gold-bright); font-weight: 700; font-size: 1.25rem; }
   .sig-satuan { font-size: 0.9375rem; color: var(--cream); opacity: 0.75; }
@@ -622,6 +665,9 @@
   .category--segar {
     position: relative;
     isolation: isolate;
+    background: var(--navy-ink);
+  }
+  .category--segar.bg-loaded {
     background: url("assets/bg2/bg2-cover-deep.webp") center / cover no-repeat, var(--navy-ink);
   }
   .category--segar::before {
@@ -643,7 +689,7 @@
     color: var(--cream);
     border-radius: 999px;
     font-weight: 600;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     text-align: center;
   }
   .segar-block { margin-bottom: 18px; }
@@ -688,7 +734,7 @@
   .footer-inner { max-width: 760px; margin: 0 auto; }
   .footer-address h2 { font-size: 1.25rem; }
   .footer-address .gold-rule { margin-bottom: 14px; }
-  .footer-address p { font-size: 1rem; opacity: 0.9; margin-bottom: 14px; }
+  .footer-address p { font-size: 1rem; opacity: 0.9; margin-bottom: 14px; max-width: 60ch; margin-inline: auto; }
   .footer-links { display: flex; flex-wrap: wrap; gap: 14px; margin: 18px 0; }
   .footer-links a {
     display: inline-flex;
@@ -710,7 +756,7 @@
   }
   .footer-notes h3 { font-family: var(--font-sans); font-size: 1rem; color: var(--gold-soft); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.03em; }
   .footer-notes li {
-    font-size: 0.9375rem;
+    font-size: 1rem;
     color: var(--cream);
     opacity: 0.8;
     padding: 3px 0 3px 18px;
@@ -734,8 +780,8 @@
   /* ---------- Back to top ---------- */
   .back-to-top {
     position: fixed;
-    right: 16px;
-    bottom: 16px;
+    right: 12px;
+    bottom: 12px;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -748,12 +794,19 @@
     box-shadow: 0 6px 16px rgba(0,0,0,0.35);
     cursor: pointer;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
     transform: translateY(10px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0.2s;
     z-index: 50;
   }
-  .back-to-top.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0s;
+  }
 
   /* ---------- Toast ---------- */
   .toast {
@@ -821,6 +874,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#mainContent">Langsung ke daftar menu</a>
+
 <div class="bg-ocean" aria-hidden="true"></div>
 
 <div id="loadingState" class="state-panel">
@@ -856,7 +911,7 @@
      -> mencegah layout shift. Diukur langsung dari file webp.
      ========================================================= */
   var PHOTO_DIMS = {
-    "logo-kurnia.webp": [800, 287],
+    "logo-kurnia.webp": [440, 158],
     "alaska-king-crab.webp": [460, 1000],
     "appetizer-platter.webp": [667, 1000],
     "coffee-series.webp": [667, 1000],
@@ -1027,9 +1082,9 @@
     if (!showcase) return "";
     var dims = photoDims(showcase.file);
     var frameClass = showcase.alpha ? "showcase-frame showcase-frame--contain" : "showcase-frame";
-    return '<div class="category-showcase"><div class="' + frameClass + '"><img src="assets/foto/' + showcase.file +
-      '" alt="' + escapeHtml(showcase.caption) + '" width="' + dims[0] + '" height="' + dims[1] +
-      '" loading="lazy" decoding="async"></div><p class="showcase-caption">' + escapeHtml(showcase.caption) + '</p></div>';
+    return '<figure class="category-showcase"><div class="' + frameClass + '"><img src="assets/foto/' + showcase.file +
+      '" alt="" width="' + dims[0] + '" height="' + dims[1] +
+      '" loading="lazy" decoding="async"></div><figcaption class="showcase-caption">' + escapeHtml(showcase.caption) + '</figcaption></figure>';
   }
 
   /* =========================================================
@@ -1345,9 +1400,10 @@
       renderCatatanTop(menu.catatan_global) +
       '<div class="sticky-bar">' +
         '<div class="search-row">' +
-          '<div class="search-box">' +
+          '<div class="search-box" id="searchBox">' +
             '<input type="search" id="searchInput" placeholder="Cari menu, misalnya: kepiting" aria-label="Cari menu">' +
             '<svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
+            '<button type="button" class="search-clear" id="searchClear" aria-label="Hapus pencarian"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>' +
           '</div>' +
           '<div class="search-result" id="searchResult" aria-live="polite"></div>' +
         '</div>' +
@@ -1362,6 +1418,8 @@
   /* =========================================================
      Orkestrasi DOM (hanya dipanggil di browser)
      ========================================================= */
+  var prefersReducedMotion = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+
   function fetchJson(url) {
     return fetch(url).then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status + " untuk " + url);
@@ -1406,11 +1464,15 @@
     var chipRow = document.getElementById("chipRow");
 
     function setActive(id) {
-      chips.forEach(function (c) { c.classList.toggle("is-active", c.dataset.target === id); });
+      chips.forEach(function (c) {
+        var isActive = c.dataset.target === id;
+        c.classList.toggle("is-active", isActive);
+        if (isActive) { c.setAttribute("aria-current", "true"); } else { c.removeAttribute("aria-current"); }
+      });
       var active = chipByTarget[id];
       if (active && chipRow) {
         var target = active.offsetLeft - chipRow.clientWidth / 2 + active.clientWidth / 2;
-        chipRow.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
+        chipRow.scrollTo({ left: Math.max(0, target), behavior: (prefersReducedMotion && prefersReducedMotion.matches) ? "auto" : "smooth" });
       }
     }
 
@@ -1471,8 +1533,21 @@
 
   function setupSearch() {
     var input = document.getElementById("searchInput");
+    var box = document.getElementById("searchBox");
+    var clearBtn = document.getElementById("searchClear");
     if (!input) return;
-    input.addEventListener("input", function () { applySearch(input.value); });
+    input.addEventListener("input", function () {
+      applySearch(input.value);
+      if (box) box.classList.toggle("has-value", input.value.length > 0);
+    });
+    if (clearBtn) {
+      clearBtn.addEventListener("click", function () {
+        input.value = "";
+        applySearch("");
+        if (box) box.classList.remove("has-value");
+        input.focus();
+      });
+    }
   }
 
   function showToast(msg) {
@@ -1503,6 +1578,48 @@
     });
   }
 
+  function setupSegarBgLazyLoad() {
+    var els = document.querySelectorAll(".category--segar");
+    if (!els.length) return;
+    if (typeof IntersectionObserver === "undefined") {
+      els.forEach(function (el) { el.classList.add("bg-loaded"); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("bg-loaded");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "800px 0px", threshold: 0 });
+    els.forEach(function (el) { observer.observe(el); });
+  }
+
+  // Klik chip saat filter search aktif: section target bisa is-hidden
+  // (display:none) sehingga anchor-jump native browser tidak berpengaruh.
+  // Kosongkan search dulu, baru scroll manual ke section.
+  function setupChipRow() {
+    var chipRow = document.getElementById("chipRow");
+    if (!chipRow) return;
+    chipRow.addEventListener("click", function (e) {
+      var chip = e.target.closest ? e.target.closest(".chip") : null;
+      if (!chip) return;
+      var input = document.getElementById("searchInput");
+      if (input && input.value.trim()) {
+        e.preventDefault();
+        input.value = "";
+        applySearch("");
+        var box = document.getElementById("searchBox");
+        if (box) box.classList.remove("has-value");
+        var target = document.getElementById(chip.dataset.target);
+        if (target) {
+          target.scrollIntoView({ behavior: (prefersReducedMotion && prefersReducedMotion.matches) ? "auto" : "smooth", block: "start" });
+        }
+      }
+    });
+  }
+
   function setupBackToTop() {
     var btn = document.getElementById("backToTop");
     if (!btn) return;
@@ -1510,7 +1627,7 @@
       btn.classList.toggle("is-visible", window.scrollY > 500);
     });
     btn.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: (prefersReducedMotion && prefersReducedMotion.matches) ? "auto" : "smooth" });
     });
   }
 
@@ -1536,6 +1653,8 @@
         setupSearch();
         setupShare();
         setupBackToTop();
+        setupSegarBgLazyLoad();
+        setupChipRow();
       })
       .catch(function (err) {
         console.error(err);
