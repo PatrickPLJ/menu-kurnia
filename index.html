@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Menu Kurnia Seafood Surabaya | Fresh &amp; Live Seafood</title>
 <meta name="description" content="Menu online Kurnia Seafood Surabaya: appetizer, seafood segar (kepiting, udang, lobster, cumi, kerang, ikan), signature dish Alaska King Crab, nasi liwet, dessert & minuman. Halal Certified.">
-<meta name="theme-color" content="#0A2A4A">
+<meta name="theme-color" content="#0B192B">
 <link rel="icon" href="assets/logo-kurnia.webp" type="image/webp">
 <link rel="canonical" href="https://patrickplj.github.io/menu-kurnia/">
 
@@ -42,25 +42,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/bg/bg-waves-top.webp">
+<link rel="preload" as="image" href="assets/bg2/bg2-cover-top.webp">
 
 <style>
   :root {
-    /* — Biru: hasil sampling brand-colors.json (menang untuk warna biru) — */
-    --sea-sky:    #42a8eb;   /* biru_terang_atas */
-    --sea-bright: #2f91d2;   /* biru_tengah */
-    --sea-panel:  #094872;   /* navy_bawah -- panel harga ala appetizer/coffee */
-    --navy-deep:  #0A2A4A;   /* dipertahankan dari versi sekarang */
-    --navy-ink:   #0F2C4C;   /* spine hlm 7/9 -- border & footer */
-    --navy-abyss: #06182B;   /* ujung gradasi paling gelap, scrim */
+    /* — Navy: restyle v2 "Dark Blue Gold", sinkron assets/bg2/brand-colors-v2.json — */
+    --sea-sky:    #364580;   /* retired -- garis_tekstur json, aksen langka/fallback frame */
+    --sea-bright: #364580;   /* retired, sama seperti --sea-sky */
+    --sea-panel:  var(--panel); /* retired, alias --panel */
+    --navy-deep:  #0B192B;   /* navy_dasar (brand-colors-v2.json) */
+    --navy-ink:   #122A48;   /* turunan navy_dasar, sedikit lebih terang -- footer & fallback foto */
+    --navy-abyss: #060E19;   /* turunan navy_dasar, ujung gradasi/scrim paling gelap */
 
-    /* — Hitam-emas (dari hlm 5 & 19, ikut design-spec §1) — */
-    --black-lux:    #0D0D0F;
-    --black-lux-2:  #15151A;
-    --gold:         #C9A227;
-    --gold-bright:  #E2B74E;
+    /* — Hitam-emas (dari hlm 5 & 19, ikut design-spec v2 §2b/§8) — */
+    --black-lux:    #0C0B09;
+    --black-lux-2:  #161310;
+    --gold:         #DAB140;   /* emas_utama (brand-colors-v2.json) */
+    --gold-bright:  #F0DE79;   /* emas_terang (brand-colors-v2.json) */
     --gold-soft:    #EDC66B;
-    --gold-grad: linear-gradient(180deg, #F2D98B 0%, #E2B74E 45%, #A97E1F 100%);
+    --gold-grad: linear-gradient(180deg, #F2E186 0%, #F0DE79 45%, #B89124 100%);
+    --gold-name:       #E9C87E;   /* nama item -- champagne */
+    --gold-grad-panel: linear-gradient(160deg, #F1E080 0%, #F0DE79 55%, #D0A328 100%);
 
     /* — Merah & netral — */
     --red:        #D42A20;
@@ -70,13 +72,11 @@
     --white:      #FFFFFF;
 
     /* — Turunan fungsional — */
-    --panel:        #123E63;
-    --panel-border: rgba(255,255,255,0.08);
-    --gold-border:  rgba(201,162,39,0.4);
-    /* Scrim hero dinaikkan dari draf awal (min alpha 0 -> 0.45) supaya h1/tagline
-       tetap AA di atas bg-waves-top.webp yang ternyata cukup terang saat disampling. */
-    --scrim-hero: linear-gradient(180deg, rgba(6,24,43,0.45) 0%, rgba(6,24,43,0.6) 45%, rgba(10,42,74,0.94) 100%);
-    --scrim-card: linear-gradient(180deg, rgba(6,24,43,0) 45%, rgba(6,24,43,0.82) 100%);
+    --panel:        #1D3154;   /* navy_panel (brand-colors-v2.json) */
+    --panel-border: rgba(240,222,121,0.22);
+    --gold-border:  rgba(240,222,121,0.45);
+    --scrim-hero: linear-gradient(180deg, rgba(6,14,25,0.15) 0%, rgba(6,14,25,0.35) 55%, var(--navy-deep) 100%);
+    --scrim-card: linear-gradient(180deg, rgba(6,14,25,0) 45%, rgba(6,14,25,0.82) 100%);
 
     --sticky-h: 132px;
     --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -112,18 +112,19 @@
     position: fixed;
     inset: 0;
     z-index: -1;
-    /* background-size:100% auto + repeat-y -> tile SELALU pas lebar viewport,
-       jadi tidak pernah ada sambungan/seam vertikal di layar lebar (desktop). */
+    /* .bg-ocean fixed = selalu pas 1 viewport (bukan tinggi dokumen), jadi
+       bg2-tile cukup di-"cover" sekali (tanpa repeat) -> tidak pernah ada
+       sambungan/seam horizontal ATAU vertikal di ukuran layar mana pun.
+       (background-size:100% auto + repeat-y sempat dicoba tapi bg2-tile
+       570px lebih pendek dari viewport -> menimbulkan seam vertikal.) */
     background-image:
-      url("assets/bg/bg-waves-tile.webp"),
-      linear-gradient(180deg, var(--navy-deep) 0%, var(--navy-abyss) 100%);
-    background-repeat: repeat-y, no-repeat;
-    background-position: top left, top left;
-    background-size: 100% auto, cover;
-    /* Tile ternyata cukup terang/kontras saat disampling -> diredam dgn blend
-       soft-light + opacity, sesuai fallback yang diizinkan spec §3a. */
-    background-blend-mode: soft-light;
-    opacity: 0.6;
+      url("assets/bg2/bg2-tile.webp"),
+      linear-gradient(180deg, var(--navy-ink) 0%, var(--navy-abyss) 100%);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, top left;
+    background-size: cover, cover;
+    /* bg2-tile sudah gelap-jadi (garis diagonal tipis di atas navy) -> render
+       normal, tanpa blend-mode/opacity redam seperti tile lama. */
     pointer-events: none;
   }
 
@@ -174,8 +175,8 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: url("assets/bg/bg-waves-top.webp") center top / cover no-repeat,
-                linear-gradient(170deg, var(--sea-sky) 0%, var(--sea-bright) 55%, var(--navy-deep) 100%);
+    background: url("assets/bg2/bg2-cover-top.webp") center top / cover no-repeat,
+                linear-gradient(180deg, var(--navy-ink) 0%, var(--navy-deep) 70%);
   }
   .hero-scrim { position: absolute; inset: 0; background: var(--scrim-hero); }
   .hero-content {
@@ -191,7 +192,7 @@
   }
   .hero-logo {
     width: 148px; height: auto; margin: 0 auto 2px; align-self: center;
-    filter: drop-shadow(0 4px 14px rgba(6,24,43,0.45));
+    filter: drop-shadow(0 4px 14px rgba(6,14,25,0.45));
   }
   .hero h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); line-height: 1.15; overflow-wrap: break-word; }
   .hero-tagline {
@@ -200,7 +201,7 @@
     font-size: 0.8125rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--white);
+    color: var(--gold-soft);
     margin-top: 2px;
   }
   .hero-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 2px; max-width: 100%; }
@@ -210,8 +211,8 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 4px 8px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.28);
+    background: rgba(11,25,43,0.5);
+    border: 1px solid rgba(240,222,121,0.55);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border-radius: 999px;
@@ -238,8 +239,8 @@
     border: 1px solid transparent;
     cursor: pointer;
   }
-  .btn-gold { background: var(--gold-grad); color: #241A05; box-shadow: 0 4px 14px rgba(201,162,39,0.35); }
-  .btn-outline { background: transparent; color: var(--cream); border-color: rgba(255,255,255,0.55); }
+  .btn-gold { background: var(--gold-grad); color: #241A05; box-shadow: 0 4px 14px rgba(218,177,64,0.35); }
+  .btn-outline { background: transparent; color: var(--gold-soft); border-color: rgba(240,222,121,0.6); }
 
   /* ---------- Global notice (ringkas + details) ---------- */
   .global-notice {
@@ -288,10 +289,10 @@
     position: sticky;
     top: 0;
     z-index: 40;
-    background: rgba(6,24,43,0.88);
+    background: rgba(7,13,24,0.92);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(237,198,107,0.18);
+    border-bottom: 1px solid rgba(240,222,121,0.25);
   }
   .search-row { padding: 10px 18px 6px; }
   .search-box { position: relative; }
@@ -299,8 +300,8 @@
     width: 100%;
     min-height: 44px;
     border-radius: 999px;
-    border: 1px solid rgba(237,198,107,0.25);
-    background: rgba(6,24,43,0.6);
+    border: 1px solid rgba(240,222,121,0.30);
+    background: rgba(7,13,24,0.7);
     color: var(--cream);
     padding: 0 44px 0 16px;
     font-size: 1rem;
@@ -342,12 +343,12 @@
     min-height: 40px;
     padding: 8px 16px;
     border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.18);
-    color: rgba(245,239,227,0.85);
+    border: 1px solid rgba(240,222,121,0.30);
+    color: rgba(245,239,227,0.9);
     text-decoration: none;
     font-size: 0.9375rem;
     font-weight: 500;
-    background: transparent;
+    background: rgba(11,25,43,0.45);
     scroll-margin-left: 18px;
   }
   .chip.is-active {
@@ -355,7 +356,7 @@
     color: #241A05;
     border-color: transparent;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(201,162,39,0.4);
+    box-shadow: 0 2px 8px rgba(218,177,64,0.4);
   }
 
   /* ---------- Category sections (generic) ---------- */
@@ -372,7 +373,18 @@
     margin-bottom: 6px;
   }
   .cat-num { opacity: 0.7; }
-  .category-head h2 { font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 700; }
+  .category-head h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    background: var(--gold-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--gold-bright);
+    -webkit-text-fill-color: transparent;
+  }
+  @supports not (background-clip: text) {
+    .category-head h2 { color: var(--gold-bright); -webkit-text-fill-color: initial; }
+  }
   .gold-rule { display: flex; align-items: center; gap: 8px; margin-top: 10px; max-width: 220px; }
   .gold-rule::before, .gold-rule::after {
     content: "";
@@ -389,10 +401,19 @@
     margin-top: 4px;
   }
 
-  /* ---------- Divider gelombang antar-section ---------- */
-  .wave-divider { line-height: 0; margin-top: -1px; }
-  .wave-divider svg { width: 100%; height: 34px; display: block; }
-  .wave-divider--flip svg { transform: scaleY(-1); }
+  /* ---------- Divider rule+diamond emas antar-section (v2, ganti gelombang) ---------- */
+  .rule-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 26px 18px;
+  }
+  .rule-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(240,222,121,0.7)); }
+  .rule-line--flip { transform: scaleX(-1); }
+  .rule-diamond { width: 7px; height: 7px; background: var(--gold-bright); transform: rotate(45deg); flex: none; }
 
   /* ---------- Menu list (printed-menu style, tanpa thumbnail -> rata kiri konsisten) ---------- */
   .menu-list {
@@ -400,7 +421,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    background: rgba(10,42,74,0.55);
+    background: rgba(11,25,43,0.78);
     border: 1px solid var(--panel-border);
     border-radius: 16px;
     padding: 14px 16px;
@@ -408,7 +429,7 @@
   .menu-row { display: block; }
   .menu-info { min-width: 0; }
   .menu-name-row { display: flex; align-items: baseline; gap: 6px; }
-  .menu-name { font-size: 1rem; font-weight: 500; color: var(--white); }
+  .menu-name { font-size: 1rem; font-weight: 500; color: var(--gold-name); }
   .badge-new {
     display: inline-block;
     background: var(--red);
@@ -424,10 +445,10 @@
   .menu-dots {
     flex: 1 1 auto;
     min-width: 10px;
-    border-bottom: 1px dotted rgba(245,239,227,0.28);
+    border-bottom: 1px dotted rgba(240,222,121,0.30);
     margin-bottom: 5px;
   }
-  .menu-price { flex-shrink: 0; color: var(--gold-soft); font-weight: 600; font-size: 1rem; white-space: nowrap; }
+  .menu-price { flex-shrink: 0; color: var(--gold-bright); font-weight: 700; font-size: 1rem; white-space: nowrap; }
   .menu-meta { font-size: 0.9375rem; color: var(--cream); opacity: 0.75; margin-top: 3px; }
 
   /* ---------- Showcase foto komposisi (satu foto besar di atas kategori) ---------- */
@@ -478,8 +499,8 @@
   .dish-photo img { width: 100%; height: 100%; object-fit: cover; }
   .dish-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
   .dish-name-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-  .dish-name { font-weight: 500; color: var(--white); font-size: 1rem; }
-  .dish-price { color: var(--gold-soft); font-weight: 600; font-size: 1rem; white-space: nowrap; }
+  .dish-name { font-weight: 500; color: var(--gold-name); font-size: 1rem; }
+  .dish-price { color: var(--gold-bright); font-weight: 700; font-size: 1rem; white-space: nowrap; }
   .dish-meta { font-size: 0.9375rem; color: var(--cream); opacity: 0.75; }
   @media (hover: hover) and (pointer: fine) {
     .dish-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
@@ -489,10 +510,12 @@
   /* ---------- Signature dish (hitam-emas, ala hlm 5) ---------- */
   .category--signature {
     background:
-      radial-gradient(120% 60% at 50% 0%, rgba(226,183,78,0.08) 0%, transparent 55%),
+      radial-gradient(90% 55% at 12% 0%, rgba(240,222,121,0.16) 0%, transparent 60%),
+      radial-gradient(120% 60% at 50% 100%, rgba(240,222,121,0.06) 0%, transparent 55%),
       var(--black-lux);
-    border-top: 1px solid rgba(226,183,78,0.35);
-    border-bottom: 1px solid rgba(226,183,78,0.35);
+    border-top: 1px solid rgba(240,222,121,0.5);
+    border-bottom: 1px solid rgba(240,222,121,0.5);
+    box-shadow: 0 0 40px rgba(240,222,121,0.08) inset;
     padding: 44px 0 52px;
   }
   .sig-head { padding: 0 18px; margin-bottom: 28px; text-align: center; }
@@ -531,25 +554,28 @@
     .category--signature h2 { color: var(--gold-bright); -webkit-text-fill-color: initial; }
   }
   .sig-subtag {
-    font: 500 0.8125rem/1.4 var(--font-sans);
+    display: inline-block;
+    font: 600 0.8125rem/1.4 var(--font-sans);
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: rgba(245,239,227,0.75);
-    margin-top: 10px;
+    background: var(--gold-grad);
+    color: #241A05;
+    padding: 6px 20px;
+    margin-top: 14px;
   }
 
   .sig-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
   .sig-card {
     position: relative;
     background: var(--black-lux-2);
-    border: 1px solid rgba(226,183,78,0.30);
+    border: 1px solid rgba(240,222,121,0.45);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 12px 32px rgba(0,0,0,0.5);
   }
   @media (hover: hover) and (pointer: fine) {
     .sig-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-    .sig-card:hover, .sig-card:focus-within { border-color: rgba(226,183,78,0.6); transform: translateY(-2px); }
+    .sig-card:hover, .sig-card:focus-within { border-color: rgba(240,222,121,0.75); transform: translateY(-2px); }
   }
   .sig-badge {
     position: absolute;
@@ -587,7 +613,7 @@
     justify-content: space-between;
     gap: 10px;
     padding: 8px 0;
-    border-top: 1px solid rgba(226,183,78,0.15);
+    border-top: 1px solid rgba(240,222,121,0.15);
   }
   .sig-size-label { font-size: 0.9375rem; color: var(--cream); }
   .sig-size-price { color: var(--gold-bright); font-weight: 600; font-size: 1rem; white-space: nowrap; }
@@ -596,14 +622,14 @@
   .category--segar {
     position: relative;
     isolation: isolate;
-    background: url("assets/bg/bg-waves-deep.webp") center / cover no-repeat, var(--navy-ink);
+    background: url("assets/bg2/bg2-cover-deep.webp") center / cover no-repeat, var(--navy-ink);
   }
   .category--segar::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(180deg, rgba(6,24,43,0.55), rgba(6,24,43,0.75));
+    background: linear-gradient(180deg, rgba(6,14,25,0.55), rgba(6,14,25,0.78));
   }
   .category--segar .category-head { padding-bottom: 0; }
   .category--segar h2 { font-size: clamp(2rem, 8vw, 3rem); }
@@ -612,8 +638,9 @@
     max-width: 760px;
     margin: 0 auto 16px;
     padding: 10px 18px;
-    background: var(--red);
-    color: #FFF;
+    background: rgba(11,25,43,0.85);
+    border: 1px solid rgba(240,222,121,0.55);
+    color: var(--cream);
     border-radius: 999px;
     font-weight: 600;
     font-size: 0.9375rem;
@@ -621,12 +648,12 @@
   }
   .segar-block { margin-bottom: 18px; }
   .segar-block h3 { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--gold-soft); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.03em; }
-  .segar-block--paper { background: var(--paper); border-radius: 14px; padding: 16px 18px; }
+  .segar-block--paper { background: var(--gold-grad-panel); border-radius: 16px; padding: 16px 18px; }
   .segar-block--paper h3 {
     font-family: var(--font-serif);
     font-weight: 700;
     font-size: 1.125rem;
-    color: var(--navy-ink);
+    color: #12233F;
     text-transform: none;
     letter-spacing: 0;
     margin-bottom: 10px;
@@ -634,11 +661,11 @@
   .segar-varian-list { display: grid; grid-template-columns: 1fr; gap: 6px; }
   .segar-varian-list li {
     font-size: 1rem;
-    color: #27435F;
+    color: #12233F;
     padding: 4px 0 4px 16px;
     position: relative;
   }
-  .segar-varian-list li::before { content: "–"; position: absolute; left: 0; color: var(--sea-bright); }
+  .segar-varian-list li::before { content: "–"; position: absolute; left: 0; color: #8A6A1E; }
   .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
   .pill {
     display: inline-flex;
@@ -646,12 +673,12 @@
     min-height: 36px;
     padding: 6px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(237,198,107,0.45);
-    background: rgba(237,198,107,0.06);
+    border: 1px solid rgba(240,222,121,0.45);
+    background: rgba(11,25,43,0.6);
     color: var(--cream);
     font-size: 0.9375rem;
   }
-  .pill--hot { background: var(--red-deep); border-color: transparent; color: #FFF; font-weight: 600; }
+  .pill--hot { background: var(--gold-grad); border-color: transparent; color: #241A05; font-weight: 600; }
 
   /* ---------- Footer ---------- */
   .site-footer {
@@ -911,7 +938,7 @@
   CATATAN_TRANSLATE[SERVICE_CHARGE_RAW] = SERVICE_CHARGE_ID;
 
   // Kategori yang dirender sebagai grid kartu bergambar (bukan daftar teks polos)
-  var CARD_CATEGORIES = { "special-menu": true, "nasi-liwet": true, "dessert": true };
+  var CARD_CATEGORIES = { "special-menu": true, "nasi-liwet": true, "dessert": true, "sweets-delights": true };
 
   // Olahan "signature" ala cetakan (Saus Kurnia, Garlic Caramel, Saus Padang) ->
   // pill ditonjolkan (varian --hot) di section seafood segar. Daftar exact-match,
@@ -1025,12 +1052,13 @@
       '</div>';
   }
 
-  // Satu komponen divider gelombang, dipakai berulang di titik transisi besar.
+  // Divider rule+diamond emas, dipakai berulang di titik transisi besar.
+  // Nama fungsi & parameter dipertahankan (call-site tidak berubah) -- param
+  // colorToken/flip lama sudah tidak dipakai isinya, motif sekarang selalu emas.
   function renderWaveDivider(colorToken, flip) {
-    return '<div class="wave-divider' + (flip ? ' wave-divider--flip' : '') + '" style="color:var(' + colorToken + ')" aria-hidden="true">' +
-      '<svg viewBox="0 0 1440 48" preserveAspectRatio="none" focusable="false">' +
-      '<path d="M0,28 C240,8 480,44 720,26 C960,8 1200,40 1440,22 L1440,48 L0,48 Z" fill="currentColor"/>' +
-      '</svg></div>';
+    return '<div class="rule-divider" aria-hidden="true">' +
+      '<span class="rule-line"></span><span class="rule-diamond"></span><span class="rule-line rule-line--flip"></span>' +
+      '</div>';
   }
 
   // Baris daftar teks polos -- TIDAK PERNAH pakai thumbnail inline, supaya

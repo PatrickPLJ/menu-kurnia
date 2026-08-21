@@ -39,8 +39,8 @@
       "catatan": null,
       "item": [
         { "nama": "Gohyong", "harga": 46000, "harga_label": "46K", "satuan": null, "deskripsi": null },
-        { "nama": "Jamur Krispi", "harga": 29000, "harga_label": "29K", "satuan": null, "deskripsi": null },
-        { "nama": "Kangkung Krispi", "harga": 20000, "harga_label": "20K", "satuan": null, "deskripsi": null },
+        { "nama": "Jamur Crispy", "harga": 29000, "harga_label": "29K", "satuan": null, "deskripsi": null },
+        { "nama": "Kangkung Crispy", "harga": 20000, "harga_label": "20K", "satuan": null, "deskripsi": null },
         { "nama": "Kentang Goreng", "harga": 33000, "harga_label": "33K", "satuan": null, "deskripsi": null },
         { "nama": "Lumpia Udang", "harga": 37000, "harga_label": "37K", "satuan": null, "deskripsi": null },
         { "nama": "Mantau", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": null },
@@ -59,9 +59,9 @@
       "item": [
         {
           "nama": "Alaska King Crab",
-          "harga": null,
-          "harga_label": "Harga pasar",
-          "satuan": "± 1,2 - 1,5 kg",
+          "harga": 275000,
+          "harga_label": "275K",
+          "satuan": "per ons (100 gr), berat ± 1,2–1,5 kg",
           "deskripsi": "Ideal for Sharing (3-4 pax) · Singapore Sauce Style · Halal Certified. Dikenal sebagai rajanya laut, hidup di perairan dingin Alaska, dagingnya lembut dan manis, diolah langsung oleh chef untuk mempertahankan cita rasa alaminya."
         },
         {
@@ -385,15 +385,22 @@
       ]
     },
     {
+      "id": "sweets-delights",
+      "nama": "Sweets & Delights",
+      "catatan": null,
+      "item": [
+        { "nama": "Rujak Ice Cream Pesona", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": null },
+        { "nama": "Kurnia Signature Sorbet", "harga": 63000, "harga_label": "63K", "satuan": null, "deskripsi": null },
+        { "nama": "Es Pisang Ijo", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": null },
+        { "nama": "Es Serut Kurnia Spesial", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": null },
+        { "nama": "Mango Sago Kelapa", "harga": 53000, "harga_label": "53K", "satuan": null, "deskripsi": null }
+      ]
+    },
+    {
       "id": "dessert",
       "nama": "Dessert",
       "catatan": null,
       "item": [
-        { "nama": "Rujak Ice Cream Pesona", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": "Menu baru (NEW)" },
-        { "nama": "Kurnia Signature Sorbet", "harga": 63000, "harga_label": "63K", "satuan": null, "deskripsi": "Menu baru (NEW)" },
-        { "nama": "Es Pisang Ijo", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": "Menu baru (NEW)" },
-        { "nama": "Es Serut Kurnia Spesial", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": "Menu baru (NEW)" },
-        { "nama": "Mango Sago Kelapa", "harga": 53000, "harga_label": "53K", "satuan": null, "deskripsi": "Menu baru (NEW)" },
         { "nama": "Es Campur", "harga": 38000, "harga_label": "38K", "satuan": null, "deskripsi": null },
         { "nama": "Signature Ice Cream", "harga": 36000, "harga_label": "36K", "satuan": null, "deskripsi": null },
         { "nama": "Margareta Ice Cream", "harga": 26000, "harga_label": "26K", "satuan": null, "deskripsi": null },

@@ -12,7 +12,7 @@
   },
   {
     "file": "appetizer-platter.webp",
-    "nama": "Appetizer Platter (Gohyong, Kangkung Krispi, Terong Raos, Mantau, Tahu Bawang Lombok, Lumpia Udang)",
+    "nama": "Appetizer Platter (Gohyong, Kangkung Crispy, Terong Raos, Mantau, Tahu Bawang Lombok, Lumpia Udang)",
     "kategori": "appetizer",
     "halaman": 4,
     "alpha": false,
@@ -164,7 +164,7 @@
     "alpha": true,
     "yakin": true,
     "tipe": "hidangan",
-    "kategori_id": "dessert",
+    "kategori_id": "sweets-delights",
     "item": "Rujak Ice Cream Pesona"
   },
   {
@@ -175,7 +175,7 @@
     "alpha": true,
     "yakin": true,
     "tipe": "hidangan",
-    "kategori_id": "dessert",
+    "kategori_id": "sweets-delights",
     "item": "Kurnia Signature Sorbet"
   },
   {
@@ -186,7 +186,7 @@
     "alpha": true,
     "yakin": true,
     "tipe": "hidangan",
-    "kategori_id": "dessert",
+    "kategori_id": "sweets-delights",
     "item": "Es Pisang Ijo"
   },
   {
@@ -197,7 +197,7 @@
     "alpha": true,
     "yakin": true,
     "tipe": "hidangan",
-    "kategori_id": "dessert",
+    "kategori_id": "sweets-delights",
     "item": "Es Serut Kurnia Spesial"
   },
   {
@@ -208,7 +208,7 @@
     "alpha": true,
     "yakin": true,
     "tipe": "hidangan",
-    "kategori_id": "dessert",
+    "kategori_id": "sweets-delights",
     "item": "Mango Sago Kelapa"
   },
   {
