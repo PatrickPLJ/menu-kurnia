@@ -1,0 +1,631 @@
+{
+  "ui": {
+    "skip_link": "Skip to menu list",
+    "loading": "Loading menu…",
+    "error_title": "Menu Can't Be Opened Yet",
+    "error_file_html": "This menu can't be opened by double-clicking the file (e.g. via Finder). Please open it through the <strong>link sent by our staff</strong> via WhatsApp, or run it via a local server (e.g. <code>python3 -m http.server</code>) and access it at <code>http://localhost/</code> in your browser.",
+    "error_network_html": "The menu failed to load. Make sure your internet connection is stable, then reload this page. If the problem continues, contact staff for the latest menu link.",
+    "js_required_title": "JavaScript Required",
+    "js_required_body": "This menu page requires JavaScript to be enabled in your browser to display the menu list.",
+    "back_to_top": "Back to top",
+    "hero_tagline": "Fresh & Live Seafood",
+    "halal_certified": "Halal Certified",
+    "share_menu": "Share Menu",
+    "view_menu": "View Menu",
+    "service_charge_notice": "Prices do not include service charge & government tax",
+    "info_harga_catatan": "Price info & notes",
+    "search_placeholder": "Search menu, e.g.: crab",
+    "search_input_label": "Search menu",
+    "search_clear_label": "Clear search",
+    "nav_kategori_label": "Menu categories",
+    "search_result_count": "{n} menu items found",
+    "search_empty": "No menu items match \"{q}\". Try another keyword, such as a dish name or category.",
+    "badge_new": "NEW",
+    "signature_badge": "Signature",
+    "signature_kicker": "Signature Dish",
+    "signature_subtag": "Limited · Exclusive · Premium",
+    "signature_ribbon_king": "The King of the Crab",
+    "pilihan_ukuran": "Size Options",
+    "pilihan_olahan": "Preparation Options",
+    "tampak_di_foto_prefix": "Shown in photo: ",
+    "kunjungi_kami": "Visit Us",
+    "buka_di_google_maps": "Open in Google Maps",
+    "fasilitas_label": "Facilities",
+    "tersedia_untuk_label": "Available For",
+    "catatan_label": "Notes",
+    "toast_link_copied": "Menu link copied to clipboard",
+    "toast_copy_failed": "Failed to copy link, please copy manually from the address bar",
+    "toast_copy_manual": "Please copy the link from your browser's address bar",
+    "lang_switch_label": "Choose language"
+  },
+  "kategori": {
+    "appetizer": {
+      "nama": "Appetizer"
+    },
+    "signature-dish": {
+      "nama": "Signature Dish"
+    },
+    "seafood-kepiting": {
+      "nama": "Crab"
+    },
+    "seafood-udang-lobster": {
+      "nama": "Shrimp & Lobster"
+    },
+    "seafood-cumi": {
+      "nama": "Squid"
+    },
+    "seafood-kerang": {
+      "nama": "Shellfish"
+    },
+    "seafood-ikan": {
+      "nama": "Fish"
+    },
+    "special-menu": {
+      "nama": "Special Menu"
+    },
+    "menu-nusantara": {
+      "nama": "Indonesian Specialties",
+      "catatan": "Chicken & Beef"
+    },
+    "nasi-liwet": {
+      "nama": "Nasi Liwet"
+    },
+    "nasi-mie": {
+      "nama": "Rice & Noodles"
+    },
+    "sup": {
+      "nama": "Soup"
+    },
+    "sambal": {
+      "nama": "Sambal"
+    },
+    "sayur": {
+      "nama": "Vegetables",
+      "catatan": "Garnish and plating details may differ from the photo"
+    },
+    "sweets-delights": {
+      "nama": "Sweets & Delights"
+    },
+    "dessert": {
+      "nama": "Dessert"
+    },
+    "degan-series": {
+      "nama": "Degan Series"
+    },
+    "juice-series": {
+      "nama": "Juice Series"
+    },
+    "special-drink": {
+      "nama": "Special Drink"
+    },
+    "milk-series": {
+      "nama": "Milk Series"
+    },
+    "tea-series": {
+      "nama": "Tea Series",
+      "catatan": "Available in Hot/Iced"
+    },
+    "traditional": {
+      "nama": "Traditional"
+    },
+    "others": {
+      "nama": "Others"
+    },
+    "coffee-series": {
+      "nama": "Coffee Series"
+    }
+  },
+  "items": {
+    "appetizer|Gohyong": {
+      "gloss": ""
+    },
+    "appetizer|Jamur Crispy": {
+      "gloss": ""
+    },
+    "appetizer|Kangkung Crispy": {
+      "gloss": "crispy fried water spinach"
+    },
+    "appetizer|Kentang Goreng": {
+      "gloss": "fried potatoes"
+    },
+    "appetizer|Lumpia Udang": {
+      "gloss": "shrimp spring rolls"
+    },
+    "appetizer|Mantau": {
+      "gloss": ""
+    },
+    "appetizer|Mendoan": {
+      "gloss": "battered fried tempeh"
+    },
+    "appetizer|Tahu Goreng": {
+      "gloss": "fried tofu"
+    },
+    "appetizer|Tempe/Tahu Goreng": {
+      "gloss": "fried tempeh & tofu"
+    },
+    "appetizer|Tahu Bawang Lombok": {
+      "gloss": "fried tofu with garlic chili"
+    },
+    "appetizer|Terong Raos": {
+      "gloss": "fried eggplant"
+    },
+    "appetizer|Otak-Otak": {
+      "gloss": "grilled fish cake",
+      "satuan": "per piece"
+    },
+    "signature-dish|Alaska King Crab": {
+      "gloss": "",
+      "satuan": "per 100g (ons), weight approx. 1.2–1.5 kg",
+      "deskripsi": "Ideal for Sharing (3-4 pax) · Singapore Sauce Style · Halal Certified. Known as the king of the sea, it lives in Alaska's cold waters and has tender, sweet meat, prepared fresh by our chef to preserve its natural flavor."
+    },
+    "signature-dish|Rahang Tuna Bakar (L)": {
+      "gloss": "grilled tuna jaw (collar cut)",
+      "satuan": "600 - 800 g",
+      "deskripsi": "Choice of flavor: Bakar Merah Bara (spicy, savory with aromatic shrimp paste and dried shrimp), Bakar Saus Malaka (savory, sweet, bold, creamy coconut), Bakar Saus Kurnia (savory, mildly spicy, aromatic signature spices)"
+    },
+    "signature-dish|Rahang Tuna Bakar (XL)": {
+      "gloss": "grilled tuna jaw (collar cut)",
+      "satuan": "800 g - 1 kg",
+      "deskripsi": "Choice of flavor: Bakar Merah Bara (spicy, savory with aromatic shrimp paste and dried shrimp), Bakar Saus Malaka (savory, sweet, bold, creamy coconut), Bakar Saus Kurnia (savory, mildly spicy, aromatic signature spices)"
+    },
+    "signature-dish|Rahang Tuna Bakar (XXL)": {
+      "gloss": "grilled tuna jaw (collar cut)",
+      "satuan": "1 kg up",
+      "deskripsi": "Choice of flavor: Bakar Merah Bara (spicy, savory with aromatic shrimp paste and dried shrimp), Bakar Saus Malaka (savory, sweet, bold, creamy coconut), Bakar Saus Kurnia (savory, mildly spicy, aromatic signature spices)"
+    },
+    "signature-dish|Pleasure Platter Premium": {
+      "gloss": "",
+      "deskripsi": "Lobster, Shrimp, Squid, Mixed Shellfish, Sweet Corn, Saus Kurnia/Saus Padang"
+    },
+    "signature-dish|Pleasure Platter Reguler": {
+      "gloss": "",
+      "deskripsi": "Crab, Shrimp, Squid, Mixed Shellfish, Sweet Corn, Saus Kurnia/Saus Padang"
+    },
+    "special-menu|Kepiting Soka (Cabe Bawang/Telur Asin)": {
+      "gloss": "crispy soft-shell crab",
+      "deskripsi": "Crispy soft-shell crab coated in your choice of seasoning, available in Cabe Bawang (chili garlic) or Telur Asin (salted egg) — savory, fragrant, and full of flavor in every bite."
+    },
+    "menu-nusantara|Ayam Goreng Kremes": {
+      "gloss": "fried chicken with crispy batter bits"
+    },
+    "menu-nusantara|Ayam Bakar": {
+      "gloss": "grilled chicken"
+    },
+    "menu-nusantara|Ayam Bakar Serundeng": {
+      "gloss": "grilled chicken with spiced grated coconut"
+    },
+    "menu-nusantara|Ayam Goreng Serundeng": {
+      "gloss": "fried chicken with spiced grated coconut"
+    },
+    "menu-nusantara|Ayam Sambal Mangga": {
+      "gloss": "chicken with mango chili sambal"
+    },
+    "menu-nusantara|Sup Buntut (2 Porsi)": {
+      "gloss": "oxtail soup",
+      "satuan": "2 servings"
+    },
+    "menu-nusantara|Sup Iga (2 Porsi)": {
+      "gloss": "beef rib soup",
+      "satuan": "2 servings"
+    },
+    "menu-nusantara|Sup Buntut (1 Porsi)": {
+      "gloss": "oxtail soup",
+      "satuan": "1 serving"
+    },
+    "menu-nusantara|Sup Iga (1 Porsi)": {
+      "gloss": "beef rib soup",
+      "satuan": "1 serving"
+    },
+    "nasi-liwet|Nasi Liwet Ayam Bekakak": {
+      "gloss": "rice set with whole grilled chicken",
+      "deskripsi": "Nasi Liwet served in 1 pot (ketel), 1 whole grilled chicken, black squid (cooked in squid ink), salted fish, tofu, tempeh, stink beans (pete), sambal, and fresh vegetables (lalapan)"
+    },
+    "nasi-liwet|Nasi Liwet Gurami Terbang": {
+      "gloss": "rice set with crispy whole fried gourami",
+      "deskripsi": "Nasi Liwet served in 1 pot (ketel), 1 whole crispy fried gourami (terbang style), fried shrimp, salted fish, tofu, tempeh, stink beans (pete), sambal, and fresh vegetables (lalapan)"
+    },
+    "nasi-mie|Nasi Putih (Porsi)": {
+      "gloss": "steamed white rice",
+      "satuan": "serving"
+    },
+    "nasi-mie|Nasi Putih Bakul Kecil": {
+      "gloss": "steamed white rice, small basket"
+    },
+    "nasi-mie|Nasi Putih Bakul Besar": {
+      "gloss": "steamed white rice, large basket"
+    },
+    "nasi-mie|Nasi Liwet (Porsi)": {
+      "gloss": "",
+      "satuan": "serving"
+    },
+    "nasi-mie|Nasi Liwet Ketel": {
+      "gloss": ""
+    },
+    "nasi-mie|Nasi Goreng Seafood": {
+      "gloss": "Indonesian fried rice with seafood"
+    },
+    "nasi-mie|Nasi Goreng Telur": {
+      "gloss": "Indonesian fried rice with egg"
+    },
+    "nasi-mie|Nasi Goreng Ikan Asin": {
+      "gloss": "Indonesian fried rice with salted fish"
+    },
+    "nasi-mie|Mie Goreng Seafood": {
+      "gloss": "Indonesian fried noodles with seafood"
+    },
+    "nasi-mie|Mie Goreng Telur": {
+      "gloss": "Indonesian fried noodles with egg"
+    },
+    "nasi-mie|Mie Kuah Hongkong": {
+      "gloss": "Hong Kong-style noodle soup"
+    },
+    "nasi-mie|Char Kwetiaw": {
+      "gloss": "stir-fried flat rice noodles"
+    },
+    "nasi-mie|Pathai Kwetiaw": {
+      "gloss": "Thai-style stir-fried flat rice noodles"
+    },
+    "sup|Sup Kental Jagung": {
+      "gloss": "creamy corn soup"
+    },
+    "sup|Sup Tomyum Seafood": {
+      "gloss": "spicy & sour Tom Yum seafood soup"
+    },
+    "sup|Sup Kental Tahu Seafood": {
+      "gloss": "creamy tofu seafood soup"
+    },
+    "sup|Sup Telur Kepiting": {
+      "gloss": "crab egg drop soup"
+    },
+    "sambal|Sambal Mangga": {
+      "gloss": "spicy mango sambal"
+    },
+    "sambal|Sambal Dabu-dabu": {
+      "gloss": "Manadonese fresh chili & tomato sambal"
+    },
+    "sayur|Kangkung Terasi": {
+      "gloss": "water spinach stir-fried in shrimp paste"
+    },
+    "sayur|Kangkung Bawang Putih": {
+      "gloss": "water spinach stir-fried with garlic"
+    },
+    "sayur|Tauge Ikan Asin": {
+      "gloss": "bean sprouts stir-fried with salted fish"
+    },
+    "sayur|Tauge Bawang Putih": {
+      "gloss": "bean sprouts stir-fried with garlic"
+    },
+    "sayur|Tauge Tauco Seafood": {
+      "gloss": "bean sprouts with fermented soybean paste & seafood"
+    },
+    "sayur|Terong Balado": {
+      "gloss": "eggplant in spicy chili sauce (balado)"
+    },
+    "sayur|Tumis Brokoli": {
+      "gloss": "stir-fried broccoli"
+    },
+    "sayur|Tumis Brokoli Seafood": {
+      "gloss": "stir-fried broccoli with seafood"
+    },
+    "sayur|Baby Kaylan Tumis Teri": {
+      "gloss": "baby Chinese broccoli stir-fried with anchovies"
+    },
+    "sayur|Baby Kaylan Bawang Putih": {
+      "gloss": "baby Chinese broccoli stir-fried with garlic"
+    },
+    "sayur|Genjer Tumis Teri": {
+      "gloss": "stir-fried genjer greens with anchovies"
+    },
+    "sayur|Genjer Bawang Putih": {
+      "gloss": "stir-fried genjer greens with garlic"
+    },
+    "sayur|Lalapan": {
+      "gloss": "fresh raw vegetable side dish"
+    },
+    "sweets-delights|Rujak Ice Cream Pesona": {
+      "gloss": "fruit salad (rujak) topped with ice cream"
+    },
+    "sweets-delights|Kurnia Signature Sorbet": {
+      "gloss": ""
+    },
+    "sweets-delights|Es Pisang Ijo": {
+      "gloss": "green banana wrapped in pandan crepe, served with ice"
+    },
+    "sweets-delights|Es Serut Kurnia Spesial": {
+      "gloss": "shaved ice dessert, Kurnia special recipe"
+    },
+    "sweets-delights|Mango Sago Kelapa": {
+      "gloss": "mango with sago pearls & coconut"
+    },
+    "dessert|Es Campur": {
+      "gloss": "Indonesian mixed shaved ice dessert"
+    },
+    "dessert|Signature Ice Cream": {
+      "gloss": ""
+    },
+    "dessert|Margareta Ice Cream": {
+      "gloss": ""
+    },
+    "dessert|Slice Fruit Large": {
+      "gloss": ""
+    },
+    "dessert|Es Cao Kombinasi": {
+      "gloss": ""
+    },
+    "degan-series|Es Degan Jeruk": {
+      "gloss": "young coconut drink with citrus"
+    },
+    "degan-series|Es Degan Selasih": {
+      "gloss": "young coconut drink with basil seeds"
+    },
+    "degan-series|Es Degan Murni": {
+      "gloss": "pure young coconut drink"
+    },
+    "degan-series|Kelapa Muda Utuh": {
+      "gloss": "whole young coconut"
+    },
+    "juice-series|Jus Semangka": {
+      "gloss": "watermelon juice"
+    },
+    "juice-series|Jus Melon": {
+      "gloss": ""
+    },
+    "juice-series|Jus Strawberry": {
+      "gloss": ""
+    },
+    "juice-series|Jus Sirsak": {
+      "gloss": "soursop juice"
+    },
+    "juice-series|Jus Mangga": {
+      "gloss": "mango juice"
+    },
+    "juice-series|Jus Alpukat": {
+      "gloss": "avocado juice"
+    },
+    "juice-series|Jus Jambu": {
+      "gloss": "guava juice"
+    },
+    "juice-series|Jus Orange": {
+      "gloss": ""
+    },
+    "juice-series|Jus Buah Naga": {
+      "gloss": "dragon fruit juice"
+    },
+    "special-drink|Cinematic Milo": {
+      "gloss": ""
+    },
+    "special-drink|Deep Blue Sea": {
+      "gloss": ""
+    },
+    "special-drink|Italian Green Soda": {
+      "gloss": ""
+    },
+    "special-drink|Italian Red Soda": {
+      "gloss": ""
+    },
+    "special-drink|Lychee Squash": {
+      "gloss": ""
+    },
+    "special-drink|Lemon Squash": {
+      "gloss": ""
+    },
+    "special-drink|Mango Squash": {
+      "gloss": ""
+    },
+    "special-drink|Es Melon Serut": {
+      "gloss": "shaved ice with melon"
+    },
+    "milk-series|Chocomilk": {
+      "gloss": ""
+    },
+    "milk-series|Milkshake Strawberry": {
+      "gloss": ""
+    },
+    "milk-series|Milkshake Chocolate": {
+      "gloss": ""
+    },
+    "milk-series|Milkshake Vanilla": {
+      "gloss": ""
+    },
+    "tea-series|Lemon Tea": {
+      "gloss": ""
+    },
+    "tea-series|Lychee Tea": {
+      "gloss": ""
+    },
+    "tea-series|Teh Manis": {
+      "gloss": "sweet tea"
+    },
+    "tea-series|Teh Tawar": {
+      "gloss": "plain unsweetened tea"
+    },
+    "tea-series|Teh Kerampul": {
+      "gloss": "traditional herbal tea"
+    },
+    "traditional|Wedang Jahe Sereh": {
+      "gloss": "hot ginger & lemongrass drink"
+    },
+    "traditional|Wedang Jahe": {
+      "gloss": "hot ginger drink"
+    },
+    "traditional|Wedang Sejuk": {
+      "gloss": "refreshing herbal drink"
+    },
+    "traditional|Wedang Susu": {
+      "gloss": "hot milk drink"
+    },
+    "others|Mineral": {
+      "gloss": "mineral water",
+      "satuan": "Hot/Ice"
+    },
+    "others|Jeruk Manis": {
+      "gloss": "sweet orange drink"
+    },
+    "others|Jeruk Nipis": {
+      "gloss": "lime drink"
+    },
+    "others|Tropical Rum": {
+      "gloss": ""
+    },
+    "others|Tropical Blueberry/Lychee": {
+      "gloss": ""
+    },
+    "others|Fresh Tape Blend": {
+      "gloss": "fermented cassava (tape) smoothie",
+      "deskripsi": "Chocolate, Milky, Original"
+    },
+    "coffee-series|Americano": {
+      "gloss": "",
+      "satuan": "Hot/Ice"
+    },
+    "coffee-series|Affogato": {
+      "gloss": ""
+    },
+    "coffee-series|Cafe Latte": {
+      "gloss": "",
+      "satuan": "Hot/Ice"
+    },
+    "coffee-series|Cappucino": {
+      "gloss": "",
+      "satuan": "Hot/Ice"
+    },
+    "coffee-series|Espresso": {
+      "gloss": ""
+    },
+    "coffee-series|Es Kopi Susu Gula Aren": {
+      "gloss": "iced coffee with milk & palm sugar"
+    },
+    "coffee-series|Moccacino": {
+      "gloss": ""
+    },
+    "coffee-series|Kopi Susu Avocado": {
+      "gloss": "coffee with milk & avocado"
+    },
+    "coffee-series|Batavia Coffee": {
+      "gloss": ""
+    }
+  },
+  "olahan": {
+    "Kepiting (300 gr up)": "Kepiting (300 gr up)",
+    "Kepiting (400 gr up)": "Kepiting (400 gr up)",
+    "Kepiting (500 gr up)": "Kepiting (500 gr up)",
+    "Kepiting (600 gr up)": "Kepiting (600 gr up)",
+    "Kepiting (700 gr up)": "Kepiting (700 gr up)",
+    "Kepiting (800 gr up)": "Kepiting (800 gr up)",
+    "Kepiting (1 kg up)": "Kepiting (1 kg up)",
+    "Kepiting Telur": "Kepiting Telur",
+    "Garlic Caramel": "Garlic Caramel",
+    "Saus Kurnia": "Saus Kurnia",
+    "Saus Telur Asin": "Salted Egg Sauce",
+    "Tauco Asap": "Smoked Tauco Sauce",
+    "Masak Gulai": "Curry (Gulai Style)",
+    "Saus Woku": "Woku Sauce",
+    "Saus Lada Hitam": "Black Pepper Sauce",
+    "Saus Asam Manis": "Sweet & Sour Sauce",
+    "Saus Padang (Khas Kurnia)": "Padang Sauce (Kurnia Signature)",
+    "Saus Mentega": "Butter Sauce",
+    "Saus Tiram": "Oyster Sauce",
+    "Saus Malaka": "Malacca Sauce",
+    "Lobster (Live)": "Lobster (Live)",
+    "Lobster (Fresh)": "Lobster (Fresh)",
+    "Lobster Mutiara": "Lobster Mutiara",
+    "Udang Pancet": "Udang Pancet",
+    "Udang Galah": "Udang Galah",
+    "Udang Vaname": "Udang Vaname",
+    "Tiger Prawn": "Tiger Prawn",
+    "Bakar Madu": "Honey Grilled",
+    "Steam Bawang Putih": "Garlic Steamed",
+    "Goreng Kering": "Crispy Fried",
+    "Goreng Tepung": "Battered Fried",
+    "Goreng Cabe Bawang": "Chili Garlic Fried",
+    "Masak Raja Bawang": "Garlic King Style",
+    "Cumi": "Cumi",
+    "Baby Gurita": "Baby Gurita",
+    "Sotong": "Sotong",
+    "Bakar Bumbu Rujak": "Bumbu Rujak Grilled",
+    "Saus Thai": "Thai Sauce",
+    "Kerang Hijau": "Kerang Hijau",
+    "Kerang Bambu": "Kerang Bambu",
+    "Kerang Srimping": "Kerang Srimping",
+    "Kerang Kapak": "Kerang Kapak",
+    "Kerang Madu": "Kerang Madu",
+    "Kerang Bali": "Kerang Bali",
+    "Kerang Dara": "Kerang Dara",
+    "Kerang Batik": "Kerang Batik",
+    "Fresh Oyster": "Fresh Oyster",
+    "Bakar Kurnia (oyster)": "Kurnia-Style Grilled (Oyster)",
+    "Steam Bawang Putih (oyster)": "Garlic Steamed (Oyster)",
+    "Bakar Jimbaran (Oyster)": "Jimbaran-Style Grilled (Oyster)",
+    "Rebus Cocol": "Boiled with Dipping Sauce",
+    "Kerapu Cantang - Live": "Kerapu Cantang - Live",
+    "Baramundi - Live": "Baramundi - Live",
+    "Gurami - Live": "Gurami - Live",
+    "Baronang": "Baronang",
+    "Baramundi": "Baramundi",
+    "Dorang": "Dorang",
+    "Gurami": "Gurami",
+    "Ekor Kuning": "Ekor Kuning",
+    "Kakap Putih": "Kakap Putih",
+    "Kakap Merah": "Kakap Merah",
+    "Kaca Piring": "Kaca Piring",
+    "Kerapu Totol": "Kerapu Totol",
+    "Ikan Kwe": "Ikan Kwe",
+    "Sukang": "Sukang",
+    "Bakar Kurnia": "Kurnia-Style Grilled",
+    "Bakar Rica Makassar": "Makassar Rica Grilled",
+    "Steam Saus Kurnia": "Steamed in Kurnia Sauce",
+    "Bakar Jimbaran": "Jimbaran-Style Grilled",
+    "Goreng Saus Asam Manis": "Fried with Sweet & Sour Sauce",
+    "Goreng Saus Padang": "Fried with Padang Sauce",
+    "Goreng Saus Woku": "Fried with Woku Sauce",
+    "Bakar Dabu-dabu": "Dabu-Dabu Grilled",
+    "Bakar Kecap": "Sweet Soy Grilled",
+    "Sup Gurih": "Savory Soup",
+    "Steam Hongkong": "Hong Kong-Style Steamed",
+    "Steam Limau": "Lime Steamed",
+    "Kuah Asam": "Sour Broth",
+    "Kuah Asam Pedas": "Spicy Sour Broth",
+    "Goreng Saus Thai": "Fried with Thai Sauce",
+    "Saus Lotis Pesona": "Lotis Pesona Sauce",
+    "Harga per 100 gram · minimal order 250 gram · harga pasar, tanya staff": "Price per 100 grams · minimum order 250 grams · market price, ask staff"
+  },
+  "catatan_global": [
+    "All prices exclude service charge and government tax",
+    "Seafood prices are calculated per 100 grams, with a minimum order of 250 grams",
+    "Fresh seafood items (Crab, Shrimp & Lobster, Squid, Shellfish, Fish) are based on market price — contact staff for the latest pricing",
+    "Garnish and plating details may differ from the photo"
+  ],
+  "restoran": {
+    "tentang": "Kurnia Seafood offers the finest selection of Fresh & Live Seafood, from lobster and fish to crab and shrimp. With more than 25 preparation choices, every dish can be enjoyed through a variety of cooking techniques — grilled, fried, and steamed sauces that are signature to Kurnia Seafood, including the rich and distinctive Saus Kurnia, the uniquely savory-sweet Saus Garlic Caramel, to the bold and appetizing Saus Padang. We provide comfort for every guest, whether dining with family or hosting various events, with complete facilities and a warm atmosphere. Halal certified, Kurnia Seafood is committed to serving seafood that is safe, high-quality, and enjoyable for everyone.",
+    "fasilitas": [
+      "Dining Room Area (Indoor & Outdoor)",
+      "VIP Room Karaoke (Anyer, Carita)",
+      "VIP Room Bunaken",
+      "Mini Playground",
+      "Prayer Room",
+      "Lift/Elevator",
+      "Spacious Parking"
+    ],
+    "tersedia_untuk": [
+      "À La Carte",
+      "Meeting",
+      "Conference",
+      "Gathering",
+      "Catering",
+      "Birthday Celebration",
+      "Engagement"
+    ]
+  },
+  "gloss_ragu": [
+    "appetizer|Tahu Bawang Lombok",
+    "appetizer|Terong Raos",
+    "nasi-liwet|Nasi Liwet Gurami Terbang",
+    "sup|Sup Telur Kepiting",
+    "sweets-delights|Rujak Ice Cream Pesona",
+    "sweets-delights|Es Pisang Ijo",
+    "juice-series|Jus Jambu",
+    "tea-series|Teh Kerampul",
+    "traditional|Wedang Sejuk",
+    "others|Fresh Tape Blend"
+  ]
+}

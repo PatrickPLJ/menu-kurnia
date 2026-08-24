@@ -194,6 +194,18 @@
   .thumb-preview img { width: 100%; height: 100%; object-fit: cover; }
   .file-status { font-size: 12px; margin-top: 6px; }
 
+  /* ---------- Preview ganda "kartu" vs "cutout" (deteksi alpha otomatis) ---------- */
+  .dual-preview-row { display: flex; gap: 10px; margin-top: 10px; }
+  .dual-preview { flex: 1; min-width: 0; }
+  .dual-preview-frame { width: 100%; aspect-ratio: 4/3; border-radius: 10px; overflow: hidden; background: var(--navy-ink);
+    border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+  .dual-preview-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .dual-preview-frame--contain { padding: 6px; }
+  .dual-preview-frame--contain img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; }
+  .dual-preview-label { display: block; text-align: center; font-size: 11px; color: rgba(245,239,227,0.55); margin-top: 5px; }
+  .dual-preview.is-picked .dual-preview-frame { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+  .dual-preview.is-picked .dual-preview-label { color: var(--gold-soft); font-weight: 700; }
+
   .problem-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
   .problem-list li { background: rgba(212,42,32,0.14); border: 1px solid var(--red); border-radius: 10px; padding: 9px 11px; font-size: 13px; }
 
@@ -1682,6 +1694,22 @@
   /* =========================================================
      Resize gambar (client-side, canvas)
      ========================================================= */
+  // Scan channel alpha di canvas hasil resize -- true kalau ada piksel yang
+  // benar-benar tembus pandang (bukan cuma anti-alias tepi). Dipakai supaya
+  // tim tidak perlu paham istilah "alpha"/"cutout" sama sekali saat upload.
+  function detectCanvasAlpha(ctx, w, h) {
+    var data;
+    try {
+      data = ctx.getImageData(0, 0, w, h).data;
+    } catch (e) {
+      return false;
+    }
+    for (var i = 3; i < data.length; i += 4) {
+      if (data[i] < 250) return true;
+    }
+    return false;
+  }
+
   function resizeImageFile(file) {
     return new Promise(function (resolve, reject) {
       var url = URL.createObjectURL(file);
@@ -1693,15 +1721,16 @@
         canvas.height = dims.h;
         var ctx = canvas.getContext("2d");
         ctx.drawImage(img, 0, 0, dims.w, dims.h);
+        var hasAlpha = detectCanvasAlpha(ctx, dims.w, dims.h);
         URL.revokeObjectURL(url);
         canvas.toBlob(function (webpBlob) {
           if (webpBlob && webpBlob.type === "image/webp") {
-            resolve({ blob: webpBlob, ext: "webp", width: dims.w, height: dims.h });
+            resolve({ blob: webpBlob, ext: "webp", width: dims.w, height: dims.h, hasAlpha: hasAlpha });
             return;
           }
           canvas.toBlob(function (jpegBlob) {
             if (!jpegBlob) { reject(new Error("Browser tidak bisa memproses gambar ini.")); return; }
-            resolve({ blob: jpegBlob, ext: "jpg", width: dims.w, height: dims.h });
+            resolve({ blob: jpegBlob, ext: "jpg", width: dims.w, height: dims.h, hasAlpha: false });
           }, "image/jpeg", 0.82);
         }, "image/webp", 0.8);
       };
@@ -1754,6 +1783,16 @@
         '<div class="thumb-preview" id="fotoPreviewWrap">' + (f.file ? '<img id="fotoPreviewImg" src="' + escapeHtml(photoSrc(f.file)) + '" alt="">' : '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:rgba(245,239,227,.4);font-size:12px;">Belum ada foto</div>') + '</div>' +
         '<input type="file" accept="image/*" id="fFile" class="input">' +
         '<div class="file-status" id="fFileStatus"></div>' +
+        '<div class="dual-preview-row is-hidden" id="fFotoDualPreview">' +
+          '<div class="dual-preview" id="fFotoDualKartu">' +
+            '<div class="dual-preview-frame"><img id="fFotoDualKartuImg" alt=""></div>' +
+            '<span class="dual-preview-label">Nanti tampil seperti ini: Kartu</span>' +
+          '</div>' +
+          '<div class="dual-preview" id="fFotoDualCutout">' +
+            '<div class="dual-preview-frame dual-preview-frame--contain"><img id="fFotoDualCutoutImg" alt=""></div>' +
+            '<span class="dual-preview-label">Nanti tampil seperti ini: Cutout</span>' +
+          '</div>' +
+        '</div>' +
       '</div>' +
       '<div class="field"><label for="fFotoNama">Nama / caption</label><input class="input" id="fFotoNama" value="' + escapeHtml(f.nama || "") + '" placeholder="mis. Alaska King Crab"></div>' +
       (isHero ?
@@ -1827,10 +1866,24 @@
         pendingResize = result;
         var url = URL.createObjectURL(result.blob);
         document.getElementById("fotoPreviewWrap").innerHTML = '<img src="' + url + '" alt="">';
+
+        // Preview ganda: tunjukkan foto dalam 2 konteks kecil (kartu/cover
+        // vs cutout/contain), lalu tandai otomatis mana yang bakal dipakai
+        // di menu online -- sesuai hasil deteksi alpha, tanpa tim perlu
+        // paham istilah "alpha".
+        document.getElementById("fFotoDualKartuImg").src = url;
+        document.getElementById("fFotoDualCutoutImg").src = url;
+        document.getElementById("fFotoDualPreview").classList.remove("is-hidden");
+        document.getElementById("fFotoDualKartu").classList.toggle("is-picked", !result.hasAlpha);
+        document.getElementById("fFotoDualCutout").classList.toggle("is-picked", !!result.hasAlpha);
+
+        var alphaNote = result.hasAlpha ?
+          ' Foto ini terdeteksi ada bagian transparan -- otomatis dipasang sebagai "cutout" (utuh, tidak kepotong).' :
+          ' Foto ini terdeteksi penuh (tanpa transparan) -- otomatis dipasang sebagai "kartu" (cover).';
         if (result.blob.size > TARGET_PHOTO_BYTES) {
-          statusEl.innerHTML = '<div class="sheet-warn">Ukuran ' + formatKB(result.blob.size) + ' -- agak besar (idealnya di bawah 300 KB), tapi masih boleh dipakai.</div>';
+          statusEl.innerHTML = '<div class="sheet-warn">Ukuran ' + formatKB(result.blob.size) + ' -- agak besar (idealnya di bawah 300 KB), tapi masih boleh dipakai.' + alphaNote + '</div>';
         } else {
-          statusEl.innerHTML = '<div class="sheet-ok">Siap -- ukuran ' + formatKB(result.blob.size) + ' (format .' + result.ext + ').</div>';
+          statusEl.innerHTML = '<div class="sheet-ok">Siap -- ukuran ' + formatKB(result.blob.size) + ' (format .' + result.ext + ').' + alphaNote + '</div>';
         }
         setFotoBusy(false);
       }).catch(function (err) {
@@ -1884,6 +1937,9 @@
 
     var oldFile = original.file;
     if (pendingResize) {
+      // Foto baru diunggah -> deteksi alpha otomatis (dari resizeImageFile)
+      // menggantikan nilai alpha lama, supaya tim tidak perlu set manual.
+      entry.alpha = !!pendingResize.hasAlpha;
       var existingOthers = allFilenames().filter(function (fn) { return fn !== oldFile; });
       var newFilename = uniqueFilename(nama, pendingResize.ext, existingOthers);
       entry.file = newFilename;

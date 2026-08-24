@@ -8,6 +8,13 @@
 <meta name="theme-color" content="#0B192B">
 <link rel="icon" href="assets/logo-kurnia.webp" type="image/webp">
 <link rel="canonical" href="https://menu.kurniaseafood.co.id/">
+<link rel="alternate" hreflang="id" href="https://menu.kurniaseafood.co.id/">
+<link rel="alternate" hreflang="en" href="https://menu.kurniaseafood.co.id/?lang=en">
+<link rel="alternate" hreflang="ja" href="https://menu.kurniaseafood.co.id/?lang=ja">
+<link rel="alternate" hreflang="ko" href="https://menu.kurniaseafood.co.id/?lang=ko">
+<link rel="alternate" hreflang="zh" href="https://menu.kurniaseafood.co.id/?lang=zh">
+<link rel="alternate" hreflang="ms" href="https://menu.kurniaseafood.co.id/?lang=ms">
+<link rel="alternate" hreflang="x-default" href="https://menu.kurniaseafood.co.id/">
 
 <meta property="og:title" content="Menu Kurnia Seafood Surabaya">
 <meta property="og:description" content="Menu online Kurnia Seafood Surabaya: appetizer, seafood segar, signature dish Alaska King Crab, nasi liwet, dessert & minuman. Halal Certified.">
@@ -79,8 +86,8 @@
     --scrim-card: linear-gradient(180deg, rgba(6,14,25,0) 45%, rgba(6,14,25,0.82) 100%);
 
     --sticky-h: 132px;
-    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', 'Hiragino Mincho ProN', 'Yu Mincho', 'Apple SD Gothic Neo', 'PingFang SC', serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Yu Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', 'PingFang SC', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -243,6 +250,44 @@
   .hero-address { font-size: 0.9375rem; color: var(--cream); opacity: 0.9; max-width: 460px; margin: 0 auto; overflow-wrap: break-word; }
   .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 4px; max-width: 100%; }
 
+  /* ---------- Language switcher: pill di hero ---------- */
+  .lang-pill {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+    margin: 8px auto 0;
+    padding: 4px;
+    background: rgba(11,25,43,0.5);
+    border: 1px solid rgba(240,222,121,0.35);
+    border-radius: 999px;
+    max-width: 100%;
+  }
+  .lang-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    min-width: 34px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--cream);
+    opacity: 0.8;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .lang-pill-btn.is-active {
+    background: var(--gold-grad);
+    color: #241A05;
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(218,177,64,0.35);
+  }
+  .lang-pill-sep { color: rgba(245,239,227,0.35); font-size: 0.75rem; }
+
   .btn {
     display: inline-flex;
     align-items: center;
@@ -316,7 +361,55 @@
     border-bottom: 1px solid rgba(240,222,121,0.25);
   }
   .search-row { padding: 10px 18px 6px; }
-  .search-box { position: relative; }
+  .search-row-inner { display: flex; align-items: center; gap: 8px; }
+  .search-box { position: relative; flex: 1; min-width: 0; }
+
+  /* ---------- Language switcher: tombol globe di sticky-bar ---------- */
+  .lang-globe-wrap { position: relative; flex: none; }
+  .lang-globe-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(7,13,24,0.7);
+    border: 1px solid rgba(240,222,121,0.30);
+    color: var(--gold-soft);
+    cursor: pointer;
+  }
+  .lang-globe-btn:hover, .lang-globe-btn:focus-visible { border-color: var(--gold-soft); }
+  .lang-globe-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 45;
+    min-width: 176px;
+    background: var(--panel);
+    border: 1px solid var(--gold-soft);
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .lang-globe-item {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--cream);
+    text-align: left;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-globe-item:hover, .lang-globe-item:focus-visible { background: rgba(240,222,121,0.15); }
+  .lang-globe-item.is-active { background: var(--gold-grad); color: #241A05; font-weight: 600; }
   .search-box input[type="search"] {
     width: 100%;
     min-height: 44px;
@@ -492,6 +585,11 @@
   .menu-price { flex-shrink: 0; color: var(--gold-bright); font-weight: 700; font-size: 1rem; white-space: nowrap; }
   .menu-meta { font-size: 1rem; color: var(--cream); opacity: 0.75; margin-top: 3px; }
 
+  /* ---------- Gloss (penjelasan singkat nama hidangan) -- muncul saat kamus
+     bahasa aktif punya terjemahan gloss, lebih redup dari .menu-meta/.dish-meta ---------- */
+  .item-gloss { font-size: 0.9375rem; font-style: italic; color: var(--cream); opacity: 0.55; margin-top: 2px; }
+  .item-gloss.is-hidden { display: none; }
+
   /* ---------- Showcase foto komposisi (satu foto besar di atas kategori) ---------- */
   .category-showcase { max-width: 760px; margin: 0 auto 16px; padding: 0 18px; }
   .category-showcase .showcase-frame {
@@ -503,13 +601,29 @@
     border: 1px solid var(--panel-border);
   }
   .category-showcase .showcase-frame img { width: 100%; height: 100%; object-fit: cover; }
-  /* Foto showcase alpha:true (PNG-alpha diekstrak dari cetakan) -> contain,
-     supaya hidangan tidak terpotong. Sengaja TIDAK mengubah aspect-ratio frame
-     (tetap 16/9, atau 4/3 di kategori segar) -- sumbernya potret (666x1000),
-     kalau tinggi dibiarkan auto hasilnya jadi kotak raksasa yang aneh; dengan
-     contain di dalam frame landscape yang sama, foto full terlihat + dipagari
-     warna panel di kiri-kanan, tinggi tetap konsisten dgn showcase lain. */
-  .category-showcase .showcase-frame--contain img { object-fit: contain; }
+  /* Foto showcase alpha:true (PNG-alpha diekstrak dari cetakan, sudah di-trim
+     ke bounding box konten) -> bingkai TIDAK pakai letterbox rasio-tetap lagi
+     (dulu 16/9 atau 4/3 dgn contain = lautan panel kosong / foto terpotong
+     tanggung). Tinggi sekarang mengikuti konten, dibatasi max-height supaya
+     tidak jadi raksasa di layar besar. */
+  .category-showcase .showcase-frame--contain {
+    aspect-ratio: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+  }
+  .category-showcase .showcase-frame--contain img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  @media (min-width: 640px) {
+    .category-showcase .showcase-frame--contain img { max-height: 520px; }
+  }
   .category-showcase .showcase-caption {
     font-size: 1rem;
     color: var(--cream);
@@ -540,8 +654,16 @@
   }
   .dish-photo { width: 100%; aspect-ratio: 4 / 3; background: var(--navy-ink); }
   .dish-photo img { width: 100%; height: 100%; object-fit: cover; }
+  /* Foto alpha (PNG-alpha diekstrak dari cetakan) -> contain + padding
+     supaya hidangan tidak kepotong; foto komposisi biasa tetap cover. */
+  .dish-photo--contain { padding: 10px; }
+  .dish-photo--contain img { object-fit: contain; }
   .dish-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
-  .dish-name-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  /* margin-top:auto pada child PERTAMA .dish-body -> baris nama+harga (+ meta
+     yang mengikutinya) selalu nempel ke dasar kartu, apa pun tinggi foto atau
+     ada/tidaknya foto -- grid row stretch menyamakan tinggi kartu dalam satu
+     baris, jadi bar nama+harga jadi sejajar antar-kartu (tidak loncat-loncat). */
+  .dish-name-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-top: auto; }
   .dish-name { font-weight: 500; color: var(--gold-name); font-size: 1rem; }
   .dish-price { color: var(--gold-bright); font-weight: 700; font-size: 1rem; white-space: nowrap; }
   .dish-meta { font-size: 1rem; color: var(--cream); opacity: 0.75; }
@@ -680,6 +802,9 @@
   .category--segar .category-head { padding-bottom: 0; }
   .category--segar h2 { font-size: clamp(2rem, 8vw, 3rem); }
   .category--segar .category-showcase .showcase-frame { aspect-ratio: 4 / 3; }
+  /* Override khusus supaya foto showcase alpha (mis. udang, kerang) tetap
+     tinggi-mengikuti-konten -- bukan ikut letterbox 4/3 kategori segar. */
+  .category--segar .category-showcase .showcase-frame--contain { aspect-ratio: auto; }
   .segar-notice {
     max-width: 760px;
     margin: 0 auto 16px;
@@ -694,7 +819,10 @@
   }
   .segar-block { margin-bottom: 18px; }
   .segar-block h3 { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--gold-soft); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.03em; }
-  .segar-block--paper { background: var(--gold-grad-panel); border-radius: 16px; padding: 16px 18px; }
+  /* align-self:start -- panel tidak dipaksa ikut tinggi kolom sebelah (mis.
+     Pilihan Ukuran cuma 3 item vs Pilihan Olahan yang lebih panjang), supaya
+     tidak ada sisa ruang emas kosong di bawah isi. */
+  .segar-block--paper { background: var(--gold-grad-panel); border-radius: 16px; padding: 16px 18px; align-self: start; height: auto; }
   .segar-block--paper h3 {
     font-family: var(--font-serif);
     font-weight: 700;
@@ -711,25 +839,40 @@
     padding: 4px 0 4px 16px;
     position: relative;
   }
-  .segar-varian-list li::before { content: "–"; position: absolute; left: 0; color: #8A6A1E; }
-  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .segar-varian-list li::before { content: "•"; position: absolute; left: 0; color: #8A6A1E; }
+  /* Pill "Pilihan Olahan" -- INFORMASI, bukan kontrol. Sengaja tanpa border
+     kapsul/hover/gaya "terpilih" solid supaya tidak terbaca sebagai tombol
+     yang bisa dipencet (keluhan awal: "pill terlihat mati/tidak bisa
+     dipencet"). Dirender sebagai daftar label datar dengan pemisah titik
+     emas; olahan signature tetap menonjol lewat teks emas + ikon berlian. */
+  .pill-row { display: flex; flex-wrap: wrap; align-items: center; row-gap: 6px; }
   .pill {
     display: inline-flex;
     align-items: center;
-    min-height: 36px;
-    padding: 6px 14px;
-    border-radius: 999px;
-    border: 1px solid rgba(240,222,121,0.45);
-    background: rgba(11,25,43,0.6);
     color: var(--cream);
     font-size: 0.9375rem;
+    line-height: 1.3;
+    padding: 2px 0;
   }
-  .pill--hot { background: var(--gold-grad); border-color: transparent; color: #241A05; font-weight: 600; }
+  .pill:not(:last-child)::after {
+    content: "•";
+    color: rgba(240,222,121,0.5);
+    font-size: 0.7rem;
+    margin: 0 10px;
+  }
+  .pill--hot { color: var(--gold-bright); font-weight: 600; }
+  .pill--hot::before {
+    content: "◆";
+    display: inline-block;
+    color: var(--gold-bright);
+    font-size: 0.6rem;
+    margin-right: 5px;
+  }
 
   /* ---------- Footer ---------- */
   .site-footer {
     background: var(--navy-ink);
-    padding: 40px 18px 100px;
+    padding: 40px 18px 24px;
   }
   .footer-inner { max-width: 760px; margin: 0 auto; }
   .footer-address h2 { font-size: 1.25rem; }
@@ -874,23 +1017,23 @@
 </head>
 <body>
 
-<a class="skip-link" href="#mainContent">Langsung ke daftar menu</a>
+<a class="skip-link" href="#mainContent" data-i18n="skip_link">Langsung ke daftar menu</a>
 
 <div class="bg-ocean" aria-hidden="true"></div>
 
 <div id="loadingState" class="state-panel">
   <div class="spinner" aria-hidden="true"></div>
-  <p>Memuat menu…</p>
+  <p data-i18n="loading">Memuat menu…</p>
 </div>
 
 <div id="errorState" class="state-panel is-hidden" role="alert">
-  <h2>Menu Belum Bisa Dibuka</h2>
+  <h2 data-i18n="error_title">Menu Belum Bisa Dibuka</h2>
   <p id="errorMessage"></p>
 </div>
 
 <div id="app" class="is-hidden"></div>
 
-<button type="button" id="backToTop" class="back-to-top is-hidden" aria-label="Kembali ke atas">
+<button type="button" id="backToTop" class="back-to-top is-hidden" aria-label="Kembali ke atas" data-i18n-aria="back_to_top">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -912,35 +1055,188 @@
      ========================================================= */
   var PHOTO_DIMS = {
     "logo-kurnia.webp": [440, 158],
-    "alaska-king-crab.webp": [460, 1000],
+    "alaska-king-crab.webp": [458, 369],
     "appetizer-platter.webp": [667, 1000],
     "coffee-series.webp": [667, 1000],
     "cumi-trio.webp": [1000, 667],
-    "es-campur.webp": [763, 1000],
-    "es-cao-kombinasi.webp": [740, 911],
-    "es-pisang-ijo.webp": [1000, 863],
-    "es-serut-kurnia-spesial.webp": [892, 903],
-    "fresh-oyster.webp": [666, 1000],
-    "fresh-tape-blend.webp": [682, 977],
-    "ice-cream-duo.webp": [666, 1000],
+    "es-campur.webp": [667, 836],
+    "es-cao-kombinasi.webp": [601, 785],
+    "es-pisang-ijo.webp": [860, 743],
+    "es-serut-kurnia-spesial.webp": [825, 729],
+    "fresh-oyster.webp": [666, 443],
+    "fresh-tape-blend.webp": [413, 882],
+    "ice-cream-duo.webp": [575, 500],
     "ikan-trio.webp": [667, 1000],
-    "juice-series.webp": [666, 1000],
+    "juice-series.webp": [604, 525],
     "kepiting-garlic-caramel-saus-kurnia.webp": [667, 1000],
-    "kepiting-soka.webp": [1000, 666],
-    "kurnia-signature-sorbet.webp": [857, 740],
-    "mango-sago-kelapa.webp": [1000, 850],
+    "kepiting-soka.webp": [600, 424],
+    "kurnia-signature-sorbet.webp": [752, 589],
+    "mango-sago-kelapa.webp": [843, 611],
     "nasi-liwet-ayam-bekakak.webp": [667, 1000],
     "nasi-liwet-gurami-terbang.webp": [667, 1000],
     "pleasure-platter-premium.webp": [667, 1000],
     "pleasure-platter-reguler.webp": [667, 1000],
     "rahang-tuna-bakar.webp": [667, 1000],
-    "rujak-ice-cream-pesona.webp": [1000, 663],
+    "rujak-ice-cream-pesona.webp": [854, 506],
     "sayur-platter.webp": [667, 1000],
-    "seafood-segar.webp": [800, 738],
+    "seafood-segar.webp": [653, 708],
     "sup-buntut-iga-bakar.webp": [667, 1000],
-    "udang-saus-kurnia-steam-bawang-putih.webp": [666, 1000]
+    "udang-saus-kurnia-steam-bawang-putih.webp": [666, 703]
   };
   var DEFAULT_DIMS = [667, 1000];
+
+  /* =========================================================
+     I18N -- mesin multi-bahasa (id inline sebagai default, lainnya
+     di-fetch lazy dari data/i18n/{lang}.json saat dipilih).
+     ========================================================= */
+  var LANGS = ["id", "en", "ja", "ko", "zh", "ms"];
+  var LANG_LABELS = { id: "ID", en: "EN", ja: "日本", ko: "한국", zh: "中文", ms: "MS" };
+  var LANG_NAMES = { id: "Bahasa Indonesia", en: "English", ja: "日本語", ko: "한국어", zh: "中文", ms: "Bahasa Melayu" };
+  var DEFAULT_LANG = "id";
+  var LANG_STORAGE_KEY = "kurnia_lang";
+
+  // Kamus identitas UI Bahasa Indonesia -- SUMBER ASLI, inline (tidak perlu
+  // fetch). Isinya harus selalu sinkron dengan data/i18n/id.json (referensi
+  // key untuk penerjemah). Dipakai sebagai fallback per-string untuk semua
+  // bahasa lain saat key belum diterjemahkan.
+  var UI_ID = {
+    skip_link: "Langsung ke daftar menu",
+    loading: "Memuat menu…",
+    error_title: "Menu Belum Bisa Dibuka",
+    error_file_html: "Menu ini tidak bisa dibuka dengan cara dobel-klik file (misalnya lewat Finder). Silakan buka lewat <strong>link yang dikirim staff</strong> kami via WhatsApp, atau jalankan lewat server lokal (misalnya <code>python3 -m http.server</code>) lalu akses lewat <code>http://localhost/</code> di browser.",
+    error_network_html: "Menu gagal dimuat. Pastikan koneksi internet stabil, lalu muat ulang halaman ini. Jika masalah berlanjut, hubungi staff untuk link menu terbaru.",
+    js_required_title: "JavaScript Diperlukan",
+    js_required_body: "Halaman menu ini membutuhkan JavaScript aktif di browser untuk menampilkan daftar menu.",
+    back_to_top: "Kembali ke atas",
+    hero_tagline: "Fresh & Live Seafood",
+    halal_certified: "Halal Certified",
+    share_menu: "Bagikan Menu",
+    view_menu: "Lihat Menu",
+    service_charge_notice: "Harga belum termasuk service charge & pajak pemerintah",
+    info_harga_catatan: "Info harga & catatan",
+    search_placeholder: "Cari menu, misalnya: kepiting",
+    search_input_label: "Cari menu",
+    search_clear_label: "Hapus pencarian",
+    nav_kategori_label: "Kategori menu",
+    search_result_count: "{n} menu ditemukan",
+    search_empty: 'Tidak ada menu yang cocok dengan "{q}". Coba kata kunci lain, misalnya nama hidangan atau kategori.',
+    badge_new: "NEW",
+    signature_badge: "Signature",
+    signature_kicker: "Signature Dish",
+    signature_subtag: "Limited · Exclusive · Premium",
+    signature_ribbon_king: "The King of the Crab",
+    pilihan_ukuran: "Pilihan Ukuran",
+    pilihan_olahan: "Pilihan Olahan",
+    tampak_di_foto_prefix: "Tampak di foto: ",
+    kunjungi_kami: "Kunjungi Kami",
+    buka_di_google_maps: "Buka di Google Maps",
+    fasilitas_label: "Fasilitas",
+    tersedia_untuk_label: "Tersedia Untuk",
+    catatan_label: "Catatan",
+    toast_link_copied: "Link menu disalin ke clipboard",
+    toast_copy_failed: "Gagal menyalin link, silakan salin manual dari address bar",
+    toast_copy_manual: "Silakan salin link dari address bar browser",
+    lang_switch_label: "Pilih bahasa"
+  };
+
+  var currentLang = DEFAULT_LANG;
+  var langDictCache = {}; // lang -> parsed JSON dari data/i18n/{lang}.json (id tidak pernah masuk sini)
+  var menuDataGlobal = null; // menu.json mentah (Indonesia) -- sumber fallback semua string
+  var catByIdGlobal = {};
+
+  function getDict(lang) {
+    return lang === DEFAULT_LANG ? null : (langDictCache[lang] || null);
+  }
+
+  // t(key) -- string UI antarmuka, selalu ada fallback ke UI_ID (tidak pernah kosong).
+  function t(key) {
+    var dict = getDict(currentLang);
+    if (dict && dict.ui && dict.ui[key]) return dict.ui[key];
+    return UI_ID[key] || "";
+  }
+
+  function tCat(catId, field, fallback) {
+    var dict = getDict(currentLang);
+    if (dict && dict.kategori && dict.kategori[catId] && dict.kategori[catId][field]) return dict.kategori[catId][field];
+    return fallback;
+  }
+
+  function tItemField(catId, nama, field, fallback) {
+    var dict = getDict(currentLang);
+    var key = catId + "|" + nama;
+    if (dict && dict.items && dict.items[key] && dict.items[key][field]) return dict.items[key][field];
+    return fallback;
+  }
+
+  // Gloss (penjelasan singkat arti nama hidangan) TIDAK punya fallback ID --
+  // kalau belum diterjemahkan, tidak ada baris gloss yang ditampilkan sama sekali.
+  function tGloss(catId, nama) {
+    var dict = getDict(currentLang);
+    var key = catId + "|" + nama;
+    if (dict && dict.items && dict.items[key] && dict.items[key].gloss) return dict.items[key].gloss;
+    return "";
+  }
+
+  // Olahan/varian_ukuran/catatan seafood-segar -- daftar unik lintas kategori,
+  // fallback ke string aslinya sendiri (karena itu memang teksnya di Bahasa Indonesia).
+  function tOlahan(str) {
+    var dict = getDict(currentLang);
+    if (dict && dict.olahan && dict.olahan[str]) return dict.olahan[str];
+    return str;
+  }
+
+  function tCatatan(idx, fallback) {
+    var dict = getDict(currentLang);
+    if (dict && dict.catatan_global && dict.catatan_global[idx]) return dict.catatan_global[idx];
+    return fallback;
+  }
+
+  function tRestoran(field, idx, fallback) {
+    var dict = getDict(currentLang);
+    if (dict && dict.restoran && dict.restoran[field] && dict.restoran[field][idx]) return dict.restoran[field][idx];
+    return fallback;
+  }
+
+  function getUrlLang() {
+    var params = new URLSearchParams(location.search);
+    var l = params.get("lang");
+    return LANGS.indexOf(l) !== -1 ? l : null;
+  }
+
+  function getStoredLang() {
+    try {
+      var l = localStorage.getItem(LANG_STORAGE_KEY);
+      return LANGS.indexOf(l) !== -1 ? l : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Fetch lazy + cache di variabel (langDictCache) supaya ganti-ganti bahasa
+  // bolak-balik tidak fetch ulang. File yang belum ada (404) ditangani mulus:
+  // tidak melempar error ke console selain satu console.warn informatif, dan
+  // seluruh string tetap fallback ke Bahasa Indonesia lewat t()/tCat()/dst.
+  function loadLangDict(lang) {
+    if (lang === DEFAULT_LANG) return Promise.resolve(null);
+    // hasOwnProperty (bukan cuma truthy-check) supaya kegagalan (404) pun
+    // ke-cache sebagai null -- tidak fetch ulang tiap kali bahasa yang sama
+    // dipilih lagi/di-load ulang dalam sesi yang sama.
+    if (Object.prototype.hasOwnProperty.call(langDictCache, lang)) return Promise.resolve(langDictCache[lang]);
+    return fetch("data/i18n/" + lang + ".json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        langDictCache[lang] = data;
+        return data;
+      })
+      .catch(function (err) {
+        console.warn("i18n: data/i18n/" + lang + ".json belum tersedia, memakai Bahasa Indonesia untuk string yang belum diterjemahkan.", err);
+        langDictCache[lang] = null;
+        return null;
+      });
+  }
 
   /* =========================================================
      Util murni (tidak menyentuh document) -> bisa dites lewat
@@ -981,16 +1277,14 @@
   // kurung, seluruh nama sudah berupa daftar hidangan itu sendiri.
   function buildKomposisiCaption(nama) {
     var m = String(nama).match(/\(([^)]+)\)\s*$/);
-    var list = m ? m[1] : nama;
-    return "Tampak di foto: " + list;
+    return m ? m[1] : nama;
   }
 
   // Beberapa catatan_global sumbernya berbahasa Inggris; brief minta
-  // frasa Indonesia persis untuk catatan biaya layanan & pajak.
+  // frasa Indonesia persis untuk catatan biaya layanan & pajak. String ID-nya
+  // (SERVICE_CHARGE_ID) sekaligus jadi nilai UI_ID.service_charge_notice.
   var SERVICE_CHARGE_RAW = "All prices exclude service charge and government tax";
   var SERVICE_CHARGE_ID = "Harga belum termasuk service charge & pajak pemerintah";
-  var CATATAN_TRANSLATE = {};
-  CATATAN_TRANSLATE[SERVICE_CHARGE_RAW] = SERVICE_CHARGE_ID;
 
   // Kategori yang dirender sebagai grid kartu bergambar (bukan daftar teks polos)
   var CARD_CATEGORIES = { "special-menu": true, "nasi-liwet": true, "dessert": true, "sweets-delights": true };
@@ -1034,7 +1328,7 @@
       }
 
       if (f.tipe === "komposisi") {
-        komposisiMap[f.kategori_id] = { file: f.file, caption: buildKomposisiCaption(f.nama), alpha: !!f.alpha };
+        komposisiMap[f.kategori_id] = { file: f.file, captionList: buildKomposisiCaption(f.nama), alpha: !!f.alpha };
         return;
       }
 
@@ -1070,7 +1364,7 @@
       if (key.indexOf(prefix) === 0) {
         var itemNama = key.slice(prefix.length);
         var file = photoIndex.itemPhotoMap[key];
-        return { file: file, caption: "Tampak di foto: " + itemNama, alpha: !!photoIndex.alphaByFile[file] };
+        return { file: file, captionList: itemNama, alpha: !!photoIndex.alphaByFile[file] };
       }
     }
     return null;
@@ -1084,7 +1378,9 @@
     var frameClass = showcase.alpha ? "showcase-frame showcase-frame--contain" : "showcase-frame";
     return '<figure class="category-showcase"><div class="' + frameClass + '"><img src="assets/foto/' + showcase.file +
       '" alt="" width="' + dims[0] + '" height="' + dims[1] +
-      '" loading="lazy" decoding="async"></div><figcaption class="showcase-caption">' + escapeHtml(showcase.caption) + '</figcaption></figure>';
+      '" loading="lazy" decoding="async"></div><figcaption class="showcase-caption">' +
+      '<span data-i18n="tampak_di_foto_prefix">Tampak di foto: </span>' + escapeHtml(showcase.captionList) +
+      '</figcaption></figure>';
   }
 
   /* =========================================================
@@ -1097,11 +1393,12 @@
     opts = opts || {};
     var num = String(idx + 1);
     if (num.length < 2) num = "0" + num;
-    var noteHtml = (!opts.hideNote && cat.catatan) ? '<p class="category-note">' + escapeHtml(cat.catatan) + '</p>' : "";
+    var noteHtml = (!opts.hideNote && cat.catatan) ?
+      '<p class="category-note" data-i18n-cat-catatan="' + cat.id + '">' + escapeHtml(cat.catatan) + '</p>' : "";
     return '' +
       '<div class="category-head">' +
-        '<p class="cat-kicker"><span class="cat-num">' + num + '</span> &middot; ' + escapeHtml(cat.nama) + '</p>' +
-        '<h2>' + escapeHtml(cat.nama) + '</h2>' +
+        '<p class="cat-kicker"><span class="cat-num">' + num + '</span> &middot; <span data-i18n-cat-nama="' + cat.id + '">' + escapeHtml(cat.nama) + '</span></p>' +
+        '<h2 data-i18n-cat-nama="' + cat.id + '">' + escapeHtml(cat.nama) + '</h2>' +
         '<div class="gold-rule" aria-hidden="true"><span class="gold-rule-diamond"></span></div>' +
         noteHtml +
       '</div>';
@@ -1118,22 +1415,24 @@
 
   // Baris daftar teks polos -- TIDAK PERNAH pakai thumbnail inline, supaya
   // kolom nama & dotted leader rata konsisten di seluruh daftar.
-  function renderMenuRow(item) {
+  function renderMenuRow(item, catId) {
     var isNewBadge = item.deskripsi === "Menu baru (NEW)";
     var metaText = (!isNewBadge && item.deskripsi) ? item.deskripsi : "";
     var satuanText = item.satuan || "";
     var metaParts = [satuanText, metaText].filter(Boolean).map(escapeHtml).join(" · ");
     var searchText = (item.nama + " " + (item.deskripsi || "")).toLowerCase();
+    var itemKey = catId + "|" + item.nama;
 
     return '' +
-      '<li class="menu-row" data-search="' + escapeHtml(searchText) + '">' +
+      '<li class="menu-row" data-search="' + escapeHtml(searchText) + '" data-i18n-item-key="' + escapeHtml(itemKey) + '">' +
         '<div class="menu-info">' +
           '<div class="menu-name-row">' +
-            '<span class="menu-name">' + escapeHtml(item.nama) + (isNewBadge ? ' <span class="badge-new">NEW</span>' : "") + '</span>' +
+            '<span class="menu-name">' + escapeHtml(item.nama) + (isNewBadge ? ' <span class="badge-new" data-i18n="badge_new">NEW</span>' : "") + '</span>' +
             '<span class="menu-dots" aria-hidden="true"></span>' +
             '<span class="menu-price">' + formatPrice(item) + '</span>' +
           '</div>' +
           (metaParts ? '<div class="menu-meta">' + metaParts + '</div>' : "") +
+          '<p class="item-gloss is-hidden"></p>' +
         '</div>' +
       '</li>';
   }
@@ -1141,7 +1440,7 @@
   function renderListSection(cat, photoIndex, idx) {
     var searchParts = (cat.nama + " " + (cat.catatan || "")).toLowerCase();
     var showcase = getShowcase(cat, photoIndex);
-    var itemsHtml = cat.item.map(function (item) { return renderMenuRow(item); }).join("");
+    var itemsHtml = cat.item.map(function (item) { return renderMenuRow(item, cat.id); }).join("");
     return '' +
       '<section class="category" id="cat-' + cat.id + '" data-search="' + escapeHtml(searchParts) + '">' +
         renderCategoryHeadHtml(cat, idx) +
@@ -1160,23 +1459,26 @@
     var satuanText = item.satuan || "";
     var metaParts = [satuanText, metaText].filter(Boolean).map(escapeHtml).join(" · ");
     var searchText = (item.nama + " " + (item.deskripsi || "")).toLowerCase();
+    var itemKey = catId + "|" + item.nama;
 
     var photoHtml = "";
     if (fotoFile) {
       var d = photoDims(fotoFile);
-      photoHtml = '<div class="dish-photo"><img src="assets/foto/' + fotoFile + '" alt="' + escapeHtml(item.nama) +
+      var photoClass = photoIndex.alphaByFile[fotoFile] ? "dish-photo dish-photo--contain" : "dish-photo";
+      photoHtml = '<div class="' + photoClass + '"><img src="assets/foto/' + fotoFile + '" alt="' + escapeHtml(item.nama) +
         '" width="' + d[0] + '" height="' + d[1] + '" loading="lazy" decoding="async"></div>';
     }
 
     return '' +
-      '<article class="dish-card" data-search="' + escapeHtml(searchText) + '">' +
+      '<article class="dish-card" data-search="' + escapeHtml(searchText) + '" data-i18n-item-key="' + escapeHtml(itemKey) + '">' +
         photoHtml +
         '<div class="dish-body">' +
           '<div class="dish-name-row">' +
-            '<span class="dish-name">' + escapeHtml(item.nama) + (isNewBadge ? ' <span class="badge-new">NEW</span>' : "") + '</span>' +
+            '<span class="dish-name">' + escapeHtml(item.nama) + (isNewBadge ? ' <span class="badge-new" data-i18n="badge_new">NEW</span>' : "") + '</span>' +
             '<span class="dish-price">' + formatPrice(item) + '</span>' +
           '</div>' +
           (metaParts ? '<div class="dish-meta">' + metaParts + '</div>' : "") +
+          '<p class="item-gloss is-hidden"></p>' +
         '</div>' +
       '</article>';
   }
@@ -1203,17 +1505,17 @@
       '<section class="category category--segar" id="cat-' + cat.id + '" data-search="' + escapeHtml(searchParts) + '">' +
         renderCategoryHeadHtml(cat, idx, { hideNote: true }) +
         renderShowcaseHtml(banner) +
-        (cat.catatan ? '<p class="segar-notice">' + escapeHtml(cat.catatan) + '</p>' : "") +
+        (cat.catatan ? '<p class="segar-notice" data-i18n-olahan-key="' + escapeHtml(cat.catatan) + '">' + escapeHtml(cat.catatan) + '</p>' : "") +
         '<div class="segar-grid"><div class="segar-grid-inner">' +
           '<div class="segar-block segar-block--paper">' +
-            '<h3>Pilihan Ukuran</h3>' +
-            '<ul class="segar-varian-list">' + varian.map(function (v) { return '<li>' + escapeHtml(v) + '</li>'; }).join("") + '</ul>' +
+            '<h3 data-i18n="pilihan_ukuran">Pilihan Ukuran</h3>' +
+            '<ul class="segar-varian-list">' + varian.map(function (v) { return '<li data-i18n-olahan-key="' + escapeHtml(v) + '">' + escapeHtml(v) + '</li>'; }).join("") + '</ul>' +
           '</div>' +
           '<div class="segar-block">' +
-            '<h3>Pilihan Olahan</h3>' +
+            '<h3 data-i18n="pilihan_olahan">Pilihan Olahan</h3>' +
             '<div class="pill-row">' + olahan.map(function (p) {
               var cls = HOT_OLAHAN[p] ? "pill pill--hot" : "pill";
-              return '<span class="' + cls + '">' + escapeHtml(p) + '</span>';
+              return '<span class="' + cls + '" data-i18n-olahan-key="' + escapeHtml(p) + '">' + escapeHtml(p) + '</span>';
             }).join("") + '</div>' +
           '</div>' +
         '</div></div>' +
@@ -1225,6 +1527,7 @@
     var fotoFile = getItemPhoto(photoIndex, catId, first.nama);
     var dims = fotoFile ? photoDims(fotoFile) : DEFAULT_DIMS;
     var searchText = items.map(function (i) { return i.nama + " " + (i.deskripsi || ""); }).join(" ").toLowerCase();
+    var itemKey = catId + "|" + first.nama;
 
     var bodyHtml;
     if (items.length > 1) {
@@ -1232,8 +1535,9 @@
         var m = it.nama.match(/\(([^)]+)\)\s*$/);
         var sizeLabel = m ? m[1] : it.nama;
         var satuan = it.satuan ? " · " + escapeHtml(it.satuan) : "";
-        return '<div class="sig-size-row"><span class="sig-size-label">' + escapeHtml(sizeLabel) + satuan +
-          '</span><span class="sig-size-price">' + formatPrice(it) + '</span></div>';
+        var sizeKey = catId + "|" + it.nama;
+        return '<div class="sig-size-row" data-i18n-size-key="' + escapeHtml(sizeKey) + '"><span class="sig-size-label">' + escapeHtml(sizeLabel) +
+          '<span class="sig-size-satuan">' + satuan + '</span></span><span class="sig-size-price">' + formatPrice(it) + '</span></div>';
       }).join("");
       bodyHtml = '<p class="sig-desc">' + escapeHtml(first.deskripsi || "") + '</p>' +
         '<div class="sig-sizes">' + sizeRows + '</div>';
@@ -1244,14 +1548,16 @@
     }
 
     return '' +
-      '<article class="sig-card' + (isKing ? ' sig-card--king' : '') + '" data-search="' + escapeHtml(searchText) + '">' +
-        '<span class="sig-badge">Signature</span>' +
+      '<article class="sig-card' + (isKing ? ' sig-card--king' : '') + '" data-search="' + escapeHtml(searchText) + '" data-i18n-item-key="' + escapeHtml(itemKey) + '">' +
+        '<span class="sig-badge" data-i18n="signature_badge">Signature</span>' +
         (fotoFile ?
           '<div class="sig-photo"><img src="assets/foto/' + fotoFile + '" alt="' + escapeHtml(key) +
           '" width="' + dims[0] + '" height="' + dims[1] + '" loading="lazy" decoding="async"></div>' : "") +
         '<div class="sig-body">' +
-          (isKing ? '<p class="sig-ribbon">The King of the Crab</p>' : "") +
-          '<h3>' + escapeHtml(key) + '</h3>' + bodyHtml +
+          (isKing ? '<p class="sig-ribbon" data-i18n="signature_ribbon_king">The King of the Crab</p>' : "") +
+          '<h3>' + escapeHtml(key) + '</h3>' +
+          '<p class="item-gloss is-hidden"></p>' +
+          bodyHtml +
         '</div>' +
       '</article>';
   }
@@ -1274,9 +1580,9 @@
     return '' +
       '<section class="category category--signature" id="cat-' + cat.id + '" data-search="' + escapeHtml(searchParts) + '">' +
         '<div class="sig-head">' +
-          '<p class="sig-kicker"><span class="sig-kicker-line" aria-hidden="true"></span>Signature Dish<span class="sig-kicker-line" aria-hidden="true"></span></p>' +
-          '<h2>' + escapeHtml(cat.nama) + '</h2>' +
-          '<p class="sig-subtag">Limited &middot; Exclusive &middot; Premium</p>' +
+          '<p class="sig-kicker"><span class="sig-kicker-line" aria-hidden="true"></span><span data-i18n="signature_kicker">Signature Dish</span><span class="sig-kicker-line" aria-hidden="true"></span></p>' +
+          '<h2 data-i18n-cat-nama="' + cat.id + '">' + escapeHtml(cat.nama) + '</h2>' +
+          '<p class="sig-subtag" data-i18n="signature_subtag">Limited &middot; Exclusive &middot; Premium</p>' +
         '</div>' +
         '<div class="sig-grid">' + cardsHtml + '</div>' +
       '</section>';
@@ -1296,6 +1602,33 @@
     return short;
   }
 
+  // Pill "ID | EN | 日本 | 한국 | 中文 | MS" di hero -- label bahasa sendiri
+  // TIDAK diterjemahkan (nama bahasa selalu tampil apa adanya di semua bahasa).
+  function renderLangPillHtml() {
+    var buttons = LANGS.map(function (l, i) {
+      var btn = '<button type="button" class="lang-pill-btn' + (l === DEFAULT_LANG ? ' is-active' : '') +
+        '" data-lang="' + l + '" aria-pressed="' + (l === DEFAULT_LANG ? "true" : "false") +
+        '" title="' + escapeHtml(LANG_NAMES[l]) + '">' + escapeHtml(LANG_LABELS[l]) + '</button>';
+      return (i > 0 ? '<span class="lang-pill-sep" aria-hidden="true">|</span>' : "") + btn;
+    }).join("");
+    return '<div class="lang-pill" id="langPill" role="group" aria-label="Pilih bahasa" data-i18n-aria="lang_switch_label">' + buttons + '</div>';
+  }
+
+  // Tombol globe 44px di sticky-bar -- buka dropdown pilihan bahasa yang sama.
+  function renderLangGlobeHtml() {
+    var items = LANGS.map(function (l) {
+      return '<button type="button" class="lang-globe-item' + (l === DEFAULT_LANG ? ' is-active' : '') +
+        '" data-lang="' + l + '" role="menuitem">' + escapeHtml(LANG_LABELS[l]) + ' &middot; ' + escapeHtml(LANG_NAMES[l]) + '</button>';
+    }).join("");
+    return '' +
+      '<div class="lang-globe-wrap">' +
+        '<button type="button" id="langGlobeBtn" class="lang-globe-btn" aria-haspopup="true" aria-expanded="false" aria-label="Pilih bahasa" data-i18n-aria="lang_switch_label">' +
+          '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3z" stroke="currentColor" stroke-width="1.6"/></svg>' +
+        '</button>' +
+        '<div class="lang-globe-menu is-hidden" id="langGlobeMenu" role="menu">' + items + '</div>' +
+      '</div>';
+  }
+
   function renderHero(restoran, photoIndex, firstCatId) {
     var logoDims = photoDims("logo-kurnia.webp");
 
@@ -1306,15 +1639,16 @@
         '<div class="hero-content">' +
           '<img class="hero-logo" src="assets/logo-kurnia.webp" alt="' + escapeHtml(restoran.nama) + '" width="' + logoDims[0] + '" height="' + logoDims[1] + '" loading="eager">' +
           '<h1>' + escapeHtml(restoran.nama) + '</h1>' +
-          '<p class="hero-tagline">Fresh &amp; Live Seafood</p>' +
+          '<p class="hero-tagline" data-i18n="hero_tagline">Fresh &amp; Live Seafood</p>' +
           '<div class="hero-badges">' +
-            '<span class="badge-halal"><strong>Halal Certified</strong><span>' + escapeHtml(restoran.halal_id) + '</span></span>' +
+            '<span class="badge-halal"><strong data-i18n="halal_certified">Halal Certified</strong><span>' + escapeHtml(restoran.halal_id) + '</span></span>' +
           '</div>' +
           '<p class="hero-address">' + escapeHtml(shortAddress(restoran.alamat, restoran.kota)) + '</p>' +
           '<div class="hero-actions">' +
-            '<button type="button" id="shareBtn" class="btn btn-gold">Bagikan Menu</button>' +
-            '<a class="btn btn-outline" href="#cat-' + firstCatId + '">Lihat Menu</a>' +
+            '<button type="button" id="shareBtn" class="btn btn-gold" data-i18n="share_menu">Bagikan Menu</button>' +
+            '<a class="btn btn-outline" href="#cat-' + firstCatId + '" data-i18n="view_menu">Lihat Menu</a>' +
           '</div>' +
+          renderLangPillHtml() +
         '</div>' +
       '</header>';
   }
@@ -1323,29 +1657,34 @@
   // langsung, sisanya (catatan_global lain) disembunyikan di <details>
   // tertutup supaya chip kategori cepat kelihatan tanpa banyak scroll.
   function renderCatatanTop(list) {
-    var rest = (list || []).filter(function (c) { return c !== SERVICE_CHARGE_RAW; });
-    var restHtml = rest.map(function (c) {
-      return "<li>" + escapeHtml(CATATAN_TRANSLATE[c] || c) + "</li>";
+    var rest = [];
+    (list || []).forEach(function (c, idx) {
+      if (c === SERVICE_CHARGE_RAW) return;
+      rest.push({ idx: idx, text: c });
+    });
+    var restHtml = rest.map(function (r) {
+      return '<li data-i18n-catatan-idx="' + r.idx + '">' + escapeHtml(r.text) + '</li>';
     }).join("");
     return '' +
       '<div class="global-notice"><div class="global-notice-inner">' +
-        '<p class="global-notice-slim">' + escapeHtml(SERVICE_CHARGE_ID) + '</p>' +
-        (rest.length ? '<details class="global-details"><summary>Info harga & catatan</summary><ul>' + restHtml + '</ul></details>' : "") +
+        '<p class="global-notice-slim" data-i18n="service_charge_notice">' + escapeHtml(SERVICE_CHARGE_ID) + '</p>' +
+        (rest.length ? '<details class="global-details"><summary data-i18n="info_harga_catatan">Info harga & catatan</summary><ul>' + restHtml + '</ul></details>' : "") +
       '</div></div>';
   }
 
   // Daftar catatan_global LENGKAP, tetap tampil apa adanya (tidak collapsed) di footer.
   function renderFooterNotes(list) {
     if (!list || !list.length) return "";
-    var items = list.map(function (c) {
-      return "<li>" + escapeHtml(CATATAN_TRANSLATE[c] || c) + "</li>";
+    var items = list.map(function (c, idx) {
+      var text = c === SERVICE_CHARGE_RAW ? SERVICE_CHARGE_ID : c;
+      return '<li data-i18n-catatan-idx="' + idx + '">' + escapeHtml(text) + '</li>';
     }).join("");
-    return '<div class="footer-notes"><h3>Catatan</h3><ul>' + items + '</ul></div>';
+    return '<div class="footer-notes"><h3 data-i18n="catatan_label">Catatan</h3><ul>' + items + '</ul></div>';
   }
 
   function renderNav(categories) {
     return categories.map(function (c) {
-      return '<a class="chip" href="#cat-' + c.id + '" data-target="cat-' + c.id + '">' + escapeHtml(c.nama) + '</a>';
+      return '<a class="chip" href="#cat-' + c.id + '" data-target="cat-' + c.id + '" data-i18n-cat-nama="' + c.id + '">' + escapeHtml(c.nama) + '</a>';
     }).join("");
   }
 
@@ -1353,24 +1692,24 @@
     var mapsUrl = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(restoran.alamat);
     var igUrl = "https://instagram.com/" + restoran.instagram;
     var webUrl = "https://" + restoran.website;
-    var fasilitas = (restoran.fasilitas || []).map(function (f) { return "<li>" + escapeHtml(f) + "</li>"; }).join("");
-    var tersedia = (restoran.tersedia_untuk || []).map(function (f) { return "<li>" + escapeHtml(f) + "</li>"; }).join("");
+    var fasilitas = (restoran.fasilitas || []).map(function (f, idx) { return '<li data-i18n-restoran-key="fasilitas.' + idx + '">' + escapeHtml(f) + '</li>'; }).join("");
+    var tersedia = (restoran.tersedia_untuk || []).map(function (f, idx) { return '<li data-i18n-restoran-key="tersedia_untuk.' + idx + '">' + escapeHtml(f) + '</li>'; }).join("");
 
     return '' +
       '<footer class="site-footer"><div class="footer-inner">' +
         '<div class="footer-address">' +
-          '<h2>Kunjungi Kami</h2>' +
+          '<h2 data-i18n="kunjungi_kami">Kunjungi Kami</h2>' +
           '<div class="gold-rule" aria-hidden="true"><span class="gold-rule-diamond"></span></div>' +
           '<p>' + escapeHtml(restoran.alamat) + '</p>' +
-          '<a class="btn btn-outline" href="' + mapsUrl + '" target="_blank" rel="noopener">Buka di Google Maps</a>' +
+          '<a class="btn btn-outline" href="' + mapsUrl + '" target="_blank" rel="noopener" data-i18n="buka_di_google_maps">Buka di Google Maps</a>' +
         '</div>' +
         '<div class="footer-links">' +
           '<a href="' + igUrl + '" target="_blank" rel="noopener">Instagram @' + escapeHtml(restoran.instagram) + '</a>' +
           '<a href="' + webUrl + '" target="_blank" rel="noopener">' + escapeHtml(restoran.website) + '</a>' +
         '</div>' +
         '<div class="footer-cols">' +
-          '<div><h3>Fasilitas</h3><ul>' + fasilitas + '</ul></div>' +
-          '<div><h3>Tersedia Untuk</h3><ul>' + tersedia + '</ul></div>' +
+          '<div><h3 data-i18n="fasilitas_label">Fasilitas</h3><ul>' + fasilitas + '</ul></div>' +
+          '<div><h3 data-i18n="tersedia_untuk_label">Tersedia Untuk</h3><ul>' + tersedia + '</ul></div>' +
         '</div>' +
         renderFooterNotes(catatanGlobal) +
         '<p class="footer-bottom">' + escapeHtml(restoran.website) + ' | @' + escapeHtml(restoran.instagram) + '</p>' +
@@ -1400,14 +1739,17 @@
       renderCatatanTop(menu.catatan_global) +
       '<div class="sticky-bar">' +
         '<div class="search-row">' +
-          '<div class="search-box" id="searchBox">' +
-            '<input type="search" id="searchInput" placeholder="Cari menu, misalnya: kepiting" aria-label="Cari menu">' +
-            '<svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
-            '<button type="button" class="search-clear" id="searchClear" aria-label="Hapus pencarian"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>' +
+          '<div class="search-row-inner">' +
+            '<div class="search-box" id="searchBox">' +
+              '<input type="search" id="searchInput" placeholder="Cari menu, misalnya: kepiting" aria-label="Cari menu" data-i18n-placeholder="search_placeholder" data-i18n-aria="search_input_label">' +
+              '<svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
+              '<button type="button" class="search-clear" id="searchClear" aria-label="Hapus pencarian" data-i18n-aria="search_clear_label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>' +
+            '</div>' +
+            renderLangGlobeHtml() +
           '</div>' +
           '<div class="search-result" id="searchResult" aria-live="polite"></div>' +
         '</div>' +
-        '<nav class="chip-row" id="chipRow" aria-label="Kategori menu">' + renderNav(menu.kategori) + '</nav>' +
+        '<nav class="chip-row" id="chipRow" aria-label="Kategori menu" data-i18n-aria="nav_kategori_label">' + renderNav(menu.kategori) + '</nav>' +
       '</div>' +
       '<main id="mainContent">' + categoriesHtml + '</main>' +
       '<p class="search-empty is-hidden" id="searchEmpty"></p>' +
@@ -1432,16 +1774,231 @@
     var errorEl = document.getElementById("errorState");
     var msgEl = document.getElementById("errorMessage");
     if (loading) loading.classList.add("is-hidden");
-    if (errorEl) errorEl.classList.remove("is-hidden");
+    if (errorEl) {
+      errorEl.classList.remove("is-hidden");
+      errorEl.dataset.kind = kind;
+    }
     if (msgEl) {
-      if (kind === "file") {
-        msgEl.innerHTML = 'Menu ini tidak bisa dibuka dengan cara dobel-klik file (misalnya lewat Finder). ' +
-          'Silakan buka lewat <strong>link yang dikirim staff</strong> kami via WhatsApp, atau jalankan lewat server lokal ' +
-          '(misalnya <code>python3 -m http.server</code>) lalu akses lewat <code>http://localhost/</code> di browser.';
-      } else {
-        msgEl.innerHTML = 'Menu gagal dimuat. Pastikan koneksi internet stabil, lalu muat ulang halaman ini. ' +
-          'Jika masalah berlanjut, hubungi staff untuk link menu terbaru.';
+      msgEl.innerHTML = kind === "file" ? t("error_file_html") : t("error_network_html");
+    }
+  }
+
+  /* =========================================================
+     I18N -- terapkan bahasa ke DOM yang sudah dirender (baseline selalu
+     Bahasa Indonesia). Dipanggil sekali saat init, lalu tiap kali ganti
+     bahasa lewat switcher. Selalu jalan lewat satu jalur yang sama
+     (termasuk untuk "id") supaya konsisten & gampang dites.
+     ========================================================= */
+  function applyItemSimple(rowEl) {
+    var key = rowEl.getAttribute("data-i18n-item-key");
+    var sep = key.indexOf("|");
+    var catId = key.slice(0, sep);
+    var nama = key.slice(sep + 1);
+    var cat = catByIdGlobal[catId];
+    if (!cat) return;
+    var item = (cat.item || []).filter(function (it) { return it.nama === nama; })[0];
+    if (!item) return;
+
+    var isNewBadge = item.deskripsi === "Menu baru (NEW)";
+    var deskripsiSrc = isNewBadge ? "" : (item.deskripsi || "");
+    var deskripsi = isNewBadge ? "" : tItemField(catId, nama, "deskripsi", deskripsiSrc);
+    var satuan = tItemField(catId, nama, "satuan", item.satuan || "");
+    var metaParts = [satuan, deskripsi].filter(Boolean).join(" · ");
+    var metaEl = rowEl.querySelector(".menu-meta, .dish-meta");
+    if (metaEl) metaEl.textContent = metaParts;
+
+    var gloss = tGloss(catId, nama);
+    var glossEl = rowEl.querySelector(".item-gloss");
+    if (glossEl) {
+      glossEl.textContent = gloss;
+      glossEl.classList.toggle("is-hidden", !gloss);
+    }
+
+    var searchBits = [nama, deskripsiSrc, deskripsi, item.satuan || "", satuan, gloss].join(" ").toLowerCase();
+    rowEl.setAttribute("data-search", searchBits);
+  }
+
+  function applySigCard(cardEl) {
+    var key = cardEl.getAttribute("data-i18n-item-key");
+    var sep = key.indexOf("|");
+    var catId = key.slice(0, sep);
+    var firstNama = key.slice(sep + 1);
+    var cat = catByIdGlobal[catId];
+    if (!cat) return;
+    var groupKey = signatureGroupKey(firstNama);
+    var groupItems = (cat.item || []).filter(function (it) { return signatureGroupKey(it.nama) === groupKey; });
+    var first = groupItems[0];
+    if (!first) return;
+
+    var deskripsi = tItemField(catId, first.nama, "deskripsi", first.deskripsi || "");
+    var descEl = cardEl.querySelector(".sig-desc");
+    if (descEl) descEl.textContent = deskripsi;
+
+    var gloss = tGloss(catId, first.nama);
+    var glossEl = cardEl.querySelector(".item-gloss");
+    if (glossEl) {
+      glossEl.textContent = gloss;
+      glossEl.classList.toggle("is-hidden", !gloss);
+    }
+
+    var searchBits = [];
+    groupItems.forEach(function (it) { searchBits.push(it.nama, it.deskripsi || ""); });
+    searchBits.push(deskripsi, gloss);
+
+    if (groupItems.length > 1) {
+      cardEl.querySelectorAll(".sig-size-row[data-i18n-size-key]").forEach(function (rowEl) {
+        var sizeKey = rowEl.getAttribute("data-i18n-size-key");
+        var s2 = sizeKey.indexOf("|");
+        var itNama = sizeKey.slice(s2 + 1);
+        var it = groupItems.filter(function (g) { return g.nama === itNama; })[0];
+        if (!it) return;
+        var satuan = tItemField(catId, itNama, "satuan", it.satuan || "");
+        var satEl = rowEl.querySelector(".sig-size-satuan");
+        if (satEl) satEl.textContent = satuan ? " · " + satuan : "";
+        searchBits.push(satuan);
+      });
+    } else {
+      var satuan1 = tItemField(catId, first.nama, "satuan", first.satuan || "");
+      var satEl1 = cardEl.querySelector(".sig-satuan");
+      if (satEl1) satEl1.textContent = satuan1;
+      searchBits.push(satuan1);
+    }
+
+    cardEl.setAttribute("data-search", searchBits.join(" ").toLowerCase());
+  }
+
+  // Refresh data-search di level <section class="category"> supaya pencarian
+  // ikut mengenali nama/catatan kategori & varian/olahan yang sedang tampil.
+  function refreshCategorySearch() {
+    if (!menuDataGlobal) return;
+    menuDataGlobal.kategori.forEach(function (cat) {
+      var sec = document.getElementById("cat-" + cat.id);
+      if (!sec) return;
+      var namaT = tCat(cat.id, "nama", cat.nama);
+      var bits = [cat.nama, namaT];
+      if (cat.tipe === "seafood-segar") {
+        if (cat.catatan) bits.push(cat.catatan, tOlahan(cat.catatan));
+        (cat.varian_ukuran || []).forEach(function (v) { bits.push(v, tOlahan(v)); });
+        (cat.pilihan_olahan || []).forEach(function (p) { bits.push(p, tOlahan(p)); });
+      } else if (cat.catatan) {
+        bits.push(cat.catatan, tCat(cat.id, "catatan", cat.catatan));
       }
+      sec.setAttribute("data-search", bits.join(" ").toLowerCase());
+    });
+  }
+
+  function updateLangSwitcherUI(lang) {
+    document.querySelectorAll(".lang-pill-btn").forEach(function (btn) {
+      var isActive = btn.dataset.lang === lang;
+      btn.classList.toggle("is-active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+    document.querySelectorAll(".lang-globe-item").forEach(function (btn) {
+      btn.classList.toggle("is-active", btn.dataset.lang === lang);
+    });
+  }
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      el.textContent = t(el.getAttribute("data-i18n"));
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      el.setAttribute("placeholder", t(el.getAttribute("data-i18n-placeholder")));
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria")));
+    });
+
+    document.querySelectorAll("[data-i18n-cat-nama]").forEach(function (el) {
+      var catId = el.getAttribute("data-i18n-cat-nama");
+      var cat = catByIdGlobal[catId];
+      if (cat) el.textContent = tCat(catId, "nama", cat.nama);
+    });
+    document.querySelectorAll("[data-i18n-cat-catatan]").forEach(function (el) {
+      var catId = el.getAttribute("data-i18n-cat-catatan");
+      var cat = catByIdGlobal[catId];
+      if (cat) el.textContent = tCat(catId, "catatan", cat.catatan);
+    });
+    document.querySelectorAll("[data-i18n-olahan-key]").forEach(function (el) {
+      el.textContent = tOlahan(el.getAttribute("data-i18n-olahan-key"));
+    });
+    document.querySelectorAll("[data-i18n-restoran-key]").forEach(function (el) {
+      var parts = el.getAttribute("data-i18n-restoran-key").split(".");
+      var field = parts[0];
+      var idx = parseInt(parts[1], 10);
+      var fallback = menuDataGlobal && menuDataGlobal.restoran[field] ? menuDataGlobal.restoran[field][idx] : "";
+      el.textContent = tRestoran(field, idx, fallback);
+    });
+    document.querySelectorAll("[data-i18n-catatan-idx]").forEach(function (el) {
+      var idx = parseInt(el.getAttribute("data-i18n-catatan-idx"), 10);
+      var orig = menuDataGlobal ? menuDataGlobal.catatan_global[idx] : "";
+      el.textContent = orig === SERVICE_CHARGE_RAW ? t("service_charge_notice") : tCatatan(idx, orig);
+    });
+
+    document.querySelectorAll(".menu-row[data-i18n-item-key], .dish-card[data-i18n-item-key]").forEach(applyItemSimple);
+    document.querySelectorAll(".sig-card[data-i18n-item-key]").forEach(applySigCard);
+    refreshCategorySearch();
+
+    if (!document.getElementById("errorState").classList.contains("is-hidden")) {
+      showError(document.getElementById("errorState").dataset.kind || "network");
+    }
+
+    var input = document.getElementById("searchInput");
+    applySearch(input ? input.value : "");
+
+    updateLangSwitcherUI(lang);
+  }
+
+  function setLanguage(lang) {
+    if (LANGS.indexOf(lang) === -1) lang = DEFAULT_LANG;
+    return loadLangDict(lang).then(function () {
+      currentLang = lang;
+      applyLanguage(lang);
+      try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {}
+      var url = new URL(location.href);
+      if (lang === DEFAULT_LANG) { url.searchParams.delete("lang"); } else { url.searchParams.set("lang", lang); }
+      var newRelative = url.pathname + url.search + url.hash;
+      if (newRelative !== location.pathname + location.search + location.hash) {
+        history.replaceState(null, "", newRelative);
+      }
+    });
+  }
+
+  function closeLangGlobeMenu() {
+    var menu = document.getElementById("langGlobeMenu");
+    var btn = document.getElementById("langGlobeBtn");
+    if (menu) menu.classList.add("is-hidden");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+
+  function setupLangSwitcher() {
+    document.querySelectorAll(".lang-pill-btn, .lang-globe-item").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        setLanguage(btn.dataset.lang);
+        closeLangGlobeMenu();
+      });
+    });
+
+    var globeBtn = document.getElementById("langGlobeBtn");
+    var globeMenu = document.getElementById("langGlobeMenu");
+    if (globeBtn && globeMenu) {
+      globeBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var willOpen = globeMenu.classList.contains("is-hidden");
+        globeMenu.classList.toggle("is-hidden", !willOpen);
+        globeBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      });
+      document.addEventListener("click", function (e) {
+        if (!globeMenu.classList.contains("is-hidden") && !globeBtn.contains(e.target) && !globeMenu.contains(e.target)) {
+          closeLangGlobeMenu();
+        }
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLangGlobeMenu();
+      });
     }
   }
 
@@ -1520,10 +2077,10 @@
       }
     });
 
-    if (resultEl) resultEl.textContent = visibleCount + (visibleCount === 1 ? " menu ditemukan" : " menu ditemukan");
+    if (resultEl) resultEl.textContent = t("search_result_count").replace("{n}", String(visibleCount));
     if (emptyEl) {
       if (visibleCount === 0) {
-        emptyEl.textContent = 'Tidak ada menu yang cocok dengan "' + query.trim() + '". Coba kata kunci lain, misalnya nama hidangan atau kategori.';
+        emptyEl.textContent = t("search_empty").replace("{q}", query.trim());
         emptyEl.classList.remove("is-hidden");
       } else {
         emptyEl.classList.add("is-hidden");
@@ -1568,12 +2125,12 @@
         navigator.share(shareData).catch(function () { /* dibatalkan user, abaikan */ });
       } else if (navigator.clipboard) {
         navigator.clipboard.writeText(location.href).then(function () {
-          showToast("Link menu disalin ke clipboard");
+          showToast(t("toast_link_copied"));
         }).catch(function () {
-          showToast("Gagal menyalin link, silakan salin manual dari address bar");
+          showToast(t("toast_copy_failed"));
         });
       } else {
-        showToast("Silakan salin link dari address bar browser");
+        showToast(t("toast_copy_manual"));
       }
     });
   }
@@ -1632,15 +2189,27 @@
   }
 
   function initApp() {
+    // Resolve bahasa awal duluan (?lang= URL menang atas localStorage) supaya
+    // kamusnya sudah di-fetch PARALEL dengan menu.json/foto.json -- termasuk
+    // supaya state error (file:// / network) pun tampil di bahasa yang benar.
+    var initialLang = getUrlLang() || getStoredLang() || DEFAULT_LANG;
+    currentLang = initialLang;
+    document.documentElement.lang = initialLang;
+    var langDictPromise = loadLangDict(initialLang);
+
     if (location.protocol === "file:") {
-      showError("file");
+      langDictPromise.then(function () { showError("file"); });
       return;
     }
 
-    Promise.all([fetchJson("./data/menu.json"), fetchJson("./data/foto.json")])
+    Promise.all([fetchJson("./data/menu.json"), fetchJson("./data/foto.json"), langDictPromise])
       .then(function (results) {
         var menu = results[0];
         var fotoList = results[1];
+        menuDataGlobal = menu;
+        catByIdGlobal = {};
+        menu.kategori.forEach(function (c) { catByIdGlobal[c.id] = c; });
+
         var app = document.getElementById("app");
         app.innerHTML = renderAppHtml(menu, fotoList);
 
@@ -1655,6 +2224,9 @@
         setupBackToTop();
         setupSegarBgLazyLoad();
         setupChipRow();
+        setupLangSwitcher();
+
+        setLanguage(initialLang);
       })
       .catch(function (err) {
         console.error(err);

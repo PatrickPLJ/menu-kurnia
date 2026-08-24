@@ -1,0 +1,631 @@
+{
+  "ui": {
+    "skip_link": "直接跳转到菜单列表",
+    "loading": "菜单加载中…",
+    "error_title": "菜单暂时无法打开",
+    "error_file_html": "此菜单无法通过双击文件的方式打开（例如通过 Finder）。请通过我们员工经 WhatsApp 发送的<strong>菜单链接</strong>打开，或使用本地服务器运行（例如 <code>python3 -m http.server</code>），然后在浏览器中访问 <code>http://localhost/</code>。",
+    "error_network_html": "菜单加载失败。请确认网络连接稳定后重新加载此页面。如果问题持续，请联系店员获取最新菜单链接。",
+    "js_required_title": "需要启用 JavaScript",
+    "js_required_body": "此菜单页面需要浏览器启用 JavaScript 才能显示菜单列表。",
+    "back_to_top": "回到顶部",
+    "hero_tagline": "新鲜活海鲜",
+    "halal_certified": "清真认证",
+    "share_menu": "分享菜单",
+    "view_menu": "查看菜单",
+    "service_charge_notice": "价格不含服务费及政府税",
+    "info_harga_catatan": "价格信息与备注",
+    "search_placeholder": "搜索菜单，例如：螃蟹",
+    "search_input_label": "搜索菜单",
+    "search_clear_label": "清除搜索",
+    "nav_kategori_label": "菜单分类",
+    "search_result_count": "找到 {n} 个菜品",
+    "search_empty": "没有找到与“{q}”匹配的菜品。请尝试其他关键词，例如菜名或分类。",
+    "badge_new": "新品",
+    "signature_badge": "招牌",
+    "signature_kicker": "招牌菜品",
+    "signature_subtag": "限量 · 尊享 · 臻选",
+    "signature_ribbon_king": "蟹中之王",
+    "pilihan_ukuran": "尺寸选择",
+    "pilihan_olahan": "烹饪方式选择",
+    "tampak_di_foto_prefix": "图片中可见：",
+    "kunjungi_kami": "欢迎光临",
+    "buka_di_google_maps": "在 Google 地图中打开",
+    "fasilitas_label": "设施",
+    "tersedia_untuk_label": "适用场合",
+    "catatan_label": "备注",
+    "toast_link_copied": "菜单链接已复制到剪贴板",
+    "toast_copy_failed": "复制链接失败，请从地址栏手动复制",
+    "toast_copy_manual": "请从浏览器地址栏手动复制链接",
+    "lang_switch_label": "选择语言"
+  },
+  "kategori": {
+    "appetizer": {
+      "nama": "开胃菜"
+    },
+    "signature-dish": {
+      "nama": "招牌菜"
+    },
+    "seafood-kepiting": {
+      "nama": "蟹类"
+    },
+    "seafood-udang-lobster": {
+      "nama": "虾类与龙虾"
+    },
+    "seafood-cumi": {
+      "nama": "鱿鱼类"
+    },
+    "seafood-kerang": {
+      "nama": "贝类"
+    },
+    "seafood-ikan": {
+      "nama": "鱼类"
+    },
+    "special-menu": {
+      "nama": "特色菜单"
+    },
+    "menu-nusantara": {
+      "nama": "印尼风味菜",
+      "catatan": "鸡肉与牛肉"
+    },
+    "nasi-liwet": {
+      "nama": "Nasi Liwet"
+    },
+    "nasi-mie": {
+      "nama": "饭面类"
+    },
+    "sup": {
+      "nama": "汤类"
+    },
+    "sambal": {
+      "nama": "叁巴酱"
+    },
+    "sayur": {
+      "nama": "蔬菜类",
+      "catatan": "装饰与摆盘细节可能有所不同"
+    },
+    "sweets-delights": {
+      "nama": "甜品与小食"
+    },
+    "dessert": {
+      "nama": "甜品"
+    },
+    "degan-series": {
+      "nama": "椰子系列"
+    },
+    "juice-series": {
+      "nama": "果汁系列"
+    },
+    "special-drink": {
+      "nama": "特色饮品"
+    },
+    "milk-series": {
+      "nama": "牛奶系列"
+    },
+    "tea-series": {
+      "nama": "茶饮系列",
+      "catatan": "提供热/冰饮选择"
+    },
+    "traditional": {
+      "nama": "传统饮品"
+    },
+    "others": {
+      "nama": "其他"
+    },
+    "coffee-series": {
+      "nama": "咖啡系列"
+    }
+  },
+  "items": {
+    "appetizer|Gohyong": {
+      "gloss": ""
+    },
+    "appetizer|Jamur Crispy": {
+      "gloss": "香脆炸蘑菇"
+    },
+    "appetizer|Kangkung Crispy": {
+      "gloss": "香脆炸空心菜"
+    },
+    "appetizer|Kentang Goreng": {
+      "gloss": "炸薯条"
+    },
+    "appetizer|Lumpia Udang": {
+      "gloss": "虾肉春卷"
+    },
+    "appetizer|Mantau": {
+      "gloss": "中式炸馒头"
+    },
+    "appetizer|Mendoan": {
+      "gloss": "半熟裹粉炸天贝"
+    },
+    "appetizer|Tahu Goreng": {
+      "gloss": "炸豆腐"
+    },
+    "appetizer|Tempe/Tahu Goreng": {
+      "gloss": "炸天贝或豆腐"
+    },
+    "appetizer|Tahu Bawang Lombok": {
+      "gloss": "蒜香辣椒豆腐"
+    },
+    "appetizer|Terong Raos": {
+      "gloss": "香煎茄子"
+    },
+    "appetizer|Otak-Otak": {
+      "gloss": "香烤鱼糜卷",
+      "satuan": "每件"
+    },
+    "signature-dish|Alaska King Crab": {
+      "gloss": "阿拉斯加帝王蟹",
+      "deskripsi": "适合分享（3-4人）· 新加坡风味酱汁 · 清真认证。素有“海中之王”之称，生长于阿拉斯加寒冷海域，肉质柔嫩鲜甜，由主厨即时料理以保留其天然原味。",
+      "satuan": "每两（100克），单只重约1.2–1.5公斤"
+    },
+    "signature-dish|Rahang Tuna Bakar (L)": {
+      "gloss": "烤金枪鱼下巴",
+      "deskripsi": "口味可选：红焰炭烤（辣香浓郁，带虾酱与虾米香气）、马六甲酱烤（咸香微甜，浓郁椰香）、Kurnia酱烤（咸香微辣，香料风味浓郁）",
+      "satuan": "600–800克"
+    },
+    "signature-dish|Rahang Tuna Bakar (XL)": {
+      "gloss": "烤金枪鱼下巴",
+      "deskripsi": "口味可选：红焰炭烤（辣香浓郁，带虾酱与虾米香气）、马六甲酱烤（咸香微甜，浓郁椰香）、Kurnia酱烤（咸香微辣，香料风味浓郁）",
+      "satuan": "800克–1公斤"
+    },
+    "signature-dish|Rahang Tuna Bakar (XXL)": {
+      "gloss": "烤金枪鱼下巴",
+      "deskripsi": "口味可选：红焰炭烤（辣香浓郁，带虾酱与虾米香气）、马六甲酱烤（咸香微甜，浓郁椰香）、Kurnia酱烤（咸香微辣，香料风味浓郁）",
+      "satuan": "1公斤以上"
+    },
+    "signature-dish|Pleasure Platter Premium": {
+      "gloss": "",
+      "deskripsi": "龙虾、虾、鱿鱼、什锦贝类、甜玉米，搭配Kurnia酱或巴东酱"
+    },
+    "signature-dish|Pleasure Platter Reguler": {
+      "gloss": "",
+      "deskripsi": "螃蟹、虾、鱿鱼、什锦贝类、甜玉米，搭配Kurnia酱或巴东酱"
+    },
+    "special-menu|Kepiting Soka (Cabe Bawang/Telur Asin)": {
+      "gloss": "软壳蟹（蒜香辣椒／咸蛋口味）",
+      "deskripsi": "香脆软壳蟹裹上精选调味，提供蒜香辣椒或咸蛋口味，每一口都咸香浓郁、滋味丰富。"
+    },
+    "menu-nusantara|Ayam Goreng Kremes": {
+      "gloss": "香酥脆屑炸鸡"
+    },
+    "menu-nusantara|Ayam Bakar": {
+      "gloss": "烤鸡"
+    },
+    "menu-nusantara|Ayam Bakar Serundeng": {
+      "gloss": "烤鸡配香松椰丝"
+    },
+    "menu-nusantara|Ayam Goreng Serundeng": {
+      "gloss": "炸鸡配香松椰丝"
+    },
+    "menu-nusantara|Ayam Sambal Mangga": {
+      "gloss": "青芒果辣酱鸡"
+    },
+    "menu-nusantara|Sup Buntut (2 Porsi)": {
+      "gloss": "牛尾汤",
+      "satuan": "2人份"
+    },
+    "menu-nusantara|Sup Iga (2 Porsi)": {
+      "gloss": "牛肋骨汤",
+      "satuan": "2人份"
+    },
+    "menu-nusantara|Sup Buntut (1 Porsi)": {
+      "gloss": "牛尾汤",
+      "satuan": "1人份"
+    },
+    "menu-nusantara|Sup Iga (1 Porsi)": {
+      "gloss": "牛肋骨汤",
+      "satuan": "1人份"
+    },
+    "nasi-liwet|Nasi Liwet Ayam Bekakak": {
+      "gloss": "椰香焖饭配烤全鸡",
+      "deskripsi": "一锅椰香焖饭、一只烤全鸡、黑鱿鱼、咸鱼、豆腐、天贝、臭豆、参峇酱及生菜拼盘"
+    },
+    "nasi-liwet|Nasi Liwet Gurami Terbang": {
+      "gloss": "椰香焖饭配炸飞天鱼",
+      "deskripsi": "一锅椰香焖饭、一整只炸飞天鲈鱼、炸虾、咸鱼、豆腐、天贝、臭豆、参峇酱及生菜拼盘"
+    },
+    "nasi-mie|Nasi Putih (Porsi)": {
+      "gloss": "白饭",
+      "satuan": "份"
+    },
+    "nasi-mie|Nasi Putih Bakul Kecil": {
+      "gloss": "小份竹篮白饭"
+    },
+    "nasi-mie|Nasi Putih Bakul Besar": {
+      "gloss": "大份竹篮白饭"
+    },
+    "nasi-mie|Nasi Liwet (Porsi)": {
+      "gloss": "椰香焖饭",
+      "satuan": "份"
+    },
+    "nasi-mie|Nasi Liwet Ketel": {
+      "gloss": "一锅椰香焖饭"
+    },
+    "nasi-mie|Nasi Goreng Seafood": {
+      "gloss": "海鲜炒饭"
+    },
+    "nasi-mie|Nasi Goreng Telur": {
+      "gloss": "蛋炒饭"
+    },
+    "nasi-mie|Nasi Goreng Ikan Asin": {
+      "gloss": "咸鱼炒饭"
+    },
+    "nasi-mie|Mie Goreng Seafood": {
+      "gloss": "海鲜炒面"
+    },
+    "nasi-mie|Mie Goreng Telur": {
+      "gloss": "蛋炒面"
+    },
+    "nasi-mie|Mie Kuah Hongkong": {
+      "gloss": "港式汤面"
+    },
+    "nasi-mie|Char Kwetiaw": {
+      "gloss": "炒粿条"
+    },
+    "nasi-mie|Pathai Kwetiaw": {
+      "gloss": "泰式炒粿条"
+    },
+    "sup|Sup Kental Jagung": {
+      "gloss": "浓香玉米汤"
+    },
+    "sup|Sup Tomyum Seafood": {
+      "gloss": "冬阴功海鲜汤"
+    },
+    "sup|Sup Kental Tahu Seafood": {
+      "gloss": "浓汤豆腐海鲜羹"
+    },
+    "sup|Sup Telur Kepiting": {
+      "gloss": "蟹肉蛋花汤"
+    },
+    "sambal|Sambal Mangga": {
+      "gloss": "青芒果辣椒酱"
+    },
+    "sambal|Sambal Dabu-dabu": {
+      "gloss": "马纳多风味生辣椒酱"
+    },
+    "sayur|Kangkung Terasi": {
+      "gloss": "虾酱空心菜"
+    },
+    "sayur|Kangkung Bawang Putih": {
+      "gloss": "蒜蓉空心菜"
+    },
+    "sayur|Tauge Ikan Asin": {
+      "gloss": "咸鱼炒豆芽"
+    },
+    "sayur|Tauge Bawang Putih": {
+      "gloss": "蒜蓉豆芽"
+    },
+    "sayur|Tauge Tauco Seafood": {
+      "gloss": "豆酱海鲜炒豆芽"
+    },
+    "sayur|Terong Balado": {
+      "gloss": "巴拉多辣酱茄子"
+    },
+    "sayur|Tumis Brokoli": {
+      "gloss": "清炒西兰花"
+    },
+    "sayur|Tumis Brokoli Seafood": {
+      "gloss": "海鲜炒西兰花"
+    },
+    "sayur|Baby Kaylan Tumis Teri": {
+      "gloss": "银鱼炒芥兰苗"
+    },
+    "sayur|Baby Kaylan Bawang Putih": {
+      "gloss": "蒜蓉芥兰苗"
+    },
+    "sayur|Genjer Tumis Teri": {
+      "gloss": "银鱼炒水生野菜"
+    },
+    "sayur|Genjer Bawang Putih": {
+      "gloss": "蒜蓉水生野菜"
+    },
+    "sayur|Lalapan": {
+      "gloss": "印尼式生菜拼盘"
+    },
+    "sweets-delights|Rujak Ice Cream Pesona": {
+      "gloss": "水果沙拉风味冰淇淋"
+    },
+    "sweets-delights|Kurnia Signature Sorbet": {
+      "gloss": ""
+    },
+    "sweets-delights|Es Pisang Ijo": {
+      "gloss": "绿粿香蕉甜品冰"
+    },
+    "sweets-delights|Es Serut Kurnia Spesial": {
+      "gloss": "招牌特色刨冰"
+    },
+    "sweets-delights|Mango Sago Kelapa": {
+      "gloss": "芒果西米椰奶"
+    },
+    "dessert|Es Campur": {
+      "gloss": "什锦刨冰"
+    },
+    "dessert|Signature Ice Cream": {
+      "gloss": ""
+    },
+    "dessert|Margareta Ice Cream": {
+      "gloss": ""
+    },
+    "dessert|Slice Fruit Large": {
+      "gloss": "大份综合水果拼盘"
+    },
+    "dessert|Es Cao Kombinasi": {
+      "gloss": "什锦仙草冰"
+    },
+    "degan-series|Es Degan Jeruk": {
+      "gloss": "椰香柳橙冰"
+    },
+    "degan-series|Es Degan Selasih": {
+      "gloss": "罗勒籽椰子冰"
+    },
+    "degan-series|Es Degan Murni": {
+      "gloss": "原味嫩椰冰"
+    },
+    "degan-series|Kelapa Muda Utuh": {
+      "gloss": "整颗嫩椰子"
+    },
+    "juice-series|Jus Semangka": {
+      "gloss": "西瓜汁"
+    },
+    "juice-series|Jus Melon": {
+      "gloss": "哈密瓜汁"
+    },
+    "juice-series|Jus Strawberry": {
+      "gloss": "草莓汁"
+    },
+    "juice-series|Jus Sirsak": {
+      "gloss": "刺果番荔枝汁"
+    },
+    "juice-series|Jus Mangga": {
+      "gloss": "芒果汁"
+    },
+    "juice-series|Jus Alpukat": {
+      "gloss": "牛油果汁"
+    },
+    "juice-series|Jus Jambu": {
+      "gloss": "番石榴汁"
+    },
+    "juice-series|Jus Orange": {
+      "gloss": "橙汁"
+    },
+    "juice-series|Jus Buah Naga": {
+      "gloss": "火龙果汁"
+    },
+    "special-drink|Cinematic Milo": {
+      "gloss": ""
+    },
+    "special-drink|Deep Blue Sea": {
+      "gloss": ""
+    },
+    "special-drink|Italian Green Soda": {
+      "gloss": "意式绿色风味苏打水"
+    },
+    "special-drink|Italian Red Soda": {
+      "gloss": "意式红色风味苏打水"
+    },
+    "special-drink|Lychee Squash": {
+      "gloss": "荔枝汽水"
+    },
+    "special-drink|Lemon Squash": {
+      "gloss": "柠檬汽水"
+    },
+    "special-drink|Mango Squash": {
+      "gloss": "芒果汽水"
+    },
+    "special-drink|Es Melon Serut": {
+      "gloss": "哈密瓜刨冰"
+    },
+    "milk-series|Chocomilk": {
+      "gloss": "巧克力牛奶"
+    },
+    "milk-series|Milkshake Strawberry": {
+      "gloss": "草莓奶昔"
+    },
+    "milk-series|Milkshake Chocolate": {
+      "gloss": "巧克力奶昔"
+    },
+    "milk-series|Milkshake Vanilla": {
+      "gloss": "香草奶昔"
+    },
+    "tea-series|Lemon Tea": {
+      "gloss": "柠檬茶"
+    },
+    "tea-series|Lychee Tea": {
+      "gloss": "荔枝茶"
+    },
+    "tea-series|Teh Manis": {
+      "gloss": "甜茶"
+    },
+    "tea-series|Teh Tawar": {
+      "gloss": "无糖茶"
+    },
+    "tea-series|Teh Kerampul": {
+      "gloss": "玛琅传统香料茶"
+    },
+    "traditional|Wedang Jahe Sereh": {
+      "gloss": "姜香茅茶"
+    },
+    "traditional|Wedang Jahe": {
+      "gloss": "姜茶"
+    },
+    "traditional|Wedang Sejuk": {
+      "gloss": "清凉草本饮"
+    },
+    "traditional|Wedang Susu": {
+      "gloss": "热牛奶饮"
+    },
+    "others|Mineral": {
+      "gloss": "矿泉水",
+      "satuan": "热/冰"
+    },
+    "others|Jeruk Manis": {
+      "gloss": "甜橙汁"
+    },
+    "others|Jeruk Nipis": {
+      "gloss": "青柠汁"
+    },
+    "others|Tropical Rum": {
+      "gloss": ""
+    },
+    "others|Tropical Blueberry/Lychee": {
+      "gloss": "蓝莓／荔枝风味饮品"
+    },
+    "others|Fresh Tape Blend": {
+      "gloss": "发酵木薯冰沙",
+      "deskripsi": "巧克力、牛奶、原味"
+    },
+    "coffee-series|Americano": {
+      "gloss": "美式咖啡",
+      "satuan": "热/冰"
+    },
+    "coffee-series|Affogato": {
+      "gloss": "阿芙佳朵（咖啡淋意式冰淇淋）"
+    },
+    "coffee-series|Cafe Latte": {
+      "gloss": "拿铁咖啡",
+      "satuan": "热/冰"
+    },
+    "coffee-series|Cappucino": {
+      "gloss": "卡布奇诺",
+      "satuan": "热/冰"
+    },
+    "coffee-series|Espresso": {
+      "gloss": "意式浓缩咖啡"
+    },
+    "coffee-series|Es Kopi Susu Gula Aren": {
+      "gloss": "棕榈糖冰咖啡拿铁"
+    },
+    "coffee-series|Moccacino": {
+      "gloss": "摩卡奇诺"
+    },
+    "coffee-series|Kopi Susu Avocado": {
+      "gloss": "牛油果咖啡"
+    },
+    "coffee-series|Batavia Coffee": {
+      "gloss": ""
+    }
+  },
+  "olahan": {
+    "Kepiting (300 gr up)": "螃蟹（300克以上）",
+    "Kepiting (400 gr up)": "螃蟹（400克以上）",
+    "Kepiting (500 gr up)": "螃蟹（500克以上）",
+    "Kepiting (600 gr up)": "螃蟹（600克以上）",
+    "Kepiting (700 gr up)": "螃蟹（700克以上）",
+    "Kepiting (800 gr up)": "螃蟹（800克以上）",
+    "Kepiting (1 kg up)": "螃蟹（1公斤以上）",
+    "Kepiting Telur": "膏蟹",
+    "Garlic Caramel": "蒜香焦糖酱",
+    "Saus Kurnia": "Saus Kurnia",
+    "Saus Telur Asin": "咸蛋酱",
+    "Tauco Asap": "烟熏豆酱",
+    "Masak Gulai": "咖喱煮",
+    "Saus Woku": "Woku香料酱",
+    "Saus Lada Hitam": "黑胡椒酱",
+    "Saus Asam Manis": "甜酸酱",
+    "Saus Padang (Khas Kurnia)": "巴东酱（Kurnia招牌）",
+    "Saus Mentega": "黄油酱",
+    "Saus Tiram": "蚝油酱",
+    "Saus Malaka": "马六甲酱",
+    "Lobster (Live)": "龙虾（活）",
+    "Lobster (Fresh)": "龙虾（鲜）",
+    "Lobster Mutiara": "珍珠龙虾",
+    "Udang Pancet": "特级鲜虾",
+    "Udang Galah": "淡水大虾",
+    "Udang Vaname": "南美白虾",
+    "Tiger Prawn": "虎虾",
+    "Bakar Madu": "蜜汁烧烤",
+    "Steam Bawang Putih": "蒜蓉清蒸",
+    "Goreng Kering": "干炸",
+    "Goreng Tepung": "裹粉油炸",
+    "Goreng Cabe Bawang": "蒜香辣椒炸",
+    "Masak Raja Bawang": "蒜皇酱",
+    "Cumi": "鱿鱼",
+    "Baby Gurita": "小章鱼",
+    "Sotong": "墨鱼",
+    "Bakar Bumbu Rujak": "烤啰惹风味酱",
+    "Saus Thai": "泰式酱",
+    "Kerang Hijau": "青口贝",
+    "Kerang Bambu": "竹蛏",
+    "Kerang Srimping": "贝类（Srimping）",
+    "Kerang Kapak": "斧蛤",
+    "Kerang Madu": "蜜贝",
+    "Kerang Bali": "巴厘贝",
+    "Kerang Dara": "血蚶",
+    "Kerang Batik": "花纹贝",
+    "Fresh Oyster": "新鲜生蚝",
+    "Bakar Kurnia (oyster)": "Kurnia烧烤（生蚝）",
+    "Steam Bawang Putih (oyster)": "蒜蓉清蒸（生蚝）",
+    "Bakar Jimbaran (Oyster)": "金巴兰烧烤（生蚝）",
+    "Rebus Cocol": "水煮蘸酱",
+    "Kerapu Cantang - Live": "虎龙斑（活鱼）",
+    "Baramundi - Live": "金目鲈（活鱼）",
+    "Gurami - Live": "丝足鲈（活鱼）",
+    "Baronang": "臭肚鱼",
+    "Baramundi": "金目鲈",
+    "Dorang": "多朗鱼",
+    "Gurami": "丝足鲈",
+    "Ekor Kuning": "黄尾鱼",
+    "Kakap Putih": "白鲷鱼",
+    "Kakap Merah": "红鲷鱼",
+    "Kaca Piring": "玻璃鱼",
+    "Kerapu Totol": "斑点石斑鱼",
+    "Ikan Kwe": "浪人鲹",
+    "Sukang": "苏刚鱼",
+    "Bakar Kurnia": "Kurnia烧烤",
+    "Bakar Rica Makassar": "望加锡辣椒烧烤",
+    "Steam Saus Kurnia": "清蒸配Kurnia酱",
+    "Bakar Jimbaran": "金巴兰烧烤",
+    "Goreng Saus Asam Manis": "炸甜酸酱",
+    "Goreng Saus Padang": "炸巴东酱",
+    "Goreng Saus Woku": "炸Woku酱",
+    "Bakar Dabu-dabu": "烤配马纳多辣酱",
+    "Bakar Kecap": "甜酱油烧烤",
+    "Sup Gurih": "香浓清汤",
+    "Steam Hongkong": "港式清蒸",
+    "Steam Limau": "青柠清蒸",
+    "Kuah Asam": "酸汤",
+    "Kuah Asam Pedas": "酸辣汤",
+    "Goreng Saus Thai": "炸泰式酱",
+    "Saus Lotis Pesona": "特色果味辣酱",
+    "Harga per 100 gram · minimal order 250 gram · harga pasar, tanya staff": "价格按每100克计算 · 最低起订250克 · 时价，请询问店员"
+  },
+  "catatan_global": [
+    "所有价格均不含服务费及政府税",
+    "海鲜价格按每100克计算，最低起订量为250克",
+    "新鲜海鲜类（螃蟹、虾与龙虾、鱿鱼、贝类、鱼类）价格随市场行情浮动 — 请联系店员获取最新报价",
+    "装饰细节及摆盘方式可能与图片有所不同"
+  ],
+  "restoran": {
+    "tentang": "Kurnia Seafood 精选各式新鲜活海鲜，从龙虾、鱼类、螃蟹到虾类应有尽有。凭借超过25种烹饪方式，每道菜肴都能透过多种独特手法呈现，包括Kurnia Seafood 招牌的烧烤酱、油炸酱与清蒸酱——从风味浓郁独特的Saus Kurnia、咸甜完美融合的Saus Garlic Caramel，到香料浓郁、令人食指大动的Saus Padang，应有尽有。无论是与家人共享美食，还是举办各类活动，我们都致力于为每一位宾客提供舒适体验，设施完善、氛围温馨。Kurnia Seafood 通过清真认证，致力于提供安全、优质、老少咸宜的海鲜佳肴。",
+    "fasilitas": [
+      "用餐区（室内与室外）",
+      "VIP卡拉OK包厢（Anyer、Carita）",
+      "VIP包厢（Bunaken）",
+      "小型游乐区",
+      "祈祷室",
+      "电梯",
+      "宽敞停车场"
+    ],
+    "tersedia_untuk": [
+      "单点",
+      "会议",
+      "研讨会",
+      "聚会",
+      "外烩服务",
+      "生日庆祝",
+      "订婚宴"
+    ]
+  },
+  "gloss_ragu": [
+    "appetizer|Mendoan",
+    "appetizer|Tahu Bawang Lombok",
+    "appetizer|Terong Raos",
+    "sup|Sup Telur Kepiting",
+    "sayur|Genjer Tumis Teri",
+    "sayur|Genjer Bawang Putih",
+    "sweets-delights|Rujak Ice Cream Pesona",
+    "juice-series|Jus Sirsak",
+    "tea-series|Teh Kerampul",
+    "traditional|Wedang Sejuk"
+  ]
+}

@@ -65,7 +65,7 @@ Kalau mau coba-coba dulu tanpa punya token, tekan **"Coba tanpa token (mode demo
 ### Ubah Foto
 1. Masuk ke tab **Foto**.
 2. Ketuk **Edit** di foto yang mau diganti/diubah infonya, atau **"+ Tambah Foto"** untuk foto baru.
-3. Kalau upload foto baru: pilih file foto dari galeri HP -- CMS otomatis mengecilkan ukurannya supaya website tetap cepat dibuka. Tunggu sampai muncul tanda "Siap" di bawah preview foto.
+3. Kalau upload foto baru: pilih file foto dari galeri HP -- CMS otomatis mengecilkan ukurannya supaya website tetap cepat dibuka, sekaligus otomatis mendeteksi kalau foto itu punya latar transparan (foto "cutout" hasil potong, bukan foto biasa). Tunggu sampai muncul tanda "Siap" di bawah preview foto -- akan muncul 2 kotak preview kecil ("Kartu" vs "Cutout") yang menunjukkan salah satunya otomatis terpilih (border emas) sesuai deteksi, jadi kamu bisa langsung lihat kira-kira nanti tampil seperti apa di menu online tanpa perlu paham istilah teknisnya.
 4. Isi nama/caption, tipe (**Hidangan** = foto 1 menu spesifik, **Komposisi** = foto gabungan/showcase kategori), dan kategori.
 5. Kalau tipe **Hidangan**, pilih menu-nya dari daftar dropdown (bukan ketik manual) -- supaya fotonya pasti nyambung ke menu yang benar. Kalau kategorinya sudah punya satu foto gabungan (komposisi), CMS akan kasih peringatan kalau foto hidangan baru itu tidak akan tampil di menu online.
 6. Tunggu sampai status di bawah preview foto berubah jadi **"Siap"** (bukan lagi "Memproses foto...") sebelum tekan **Terapkan** -- tombolnya otomatis nonaktif selama proses kompresi foto masih berjalan, jadi kalau belum bisa dipencet, tunggu saja sebentar.
@@ -107,7 +107,7 @@ Segera minta Patrick untuk **revoke** (cabut) token itu di GitHub (lihat cara di
 
 ## 4. Keterbatasan yang Belum Ditangani
 
-- **Foto latar transparan (PNG-alpha):** CMS belum punya tombol untuk menandai foto sebagai "latar transparan". Kalau kamu mengganti foto komposisi yang aslinya transparan dengan foto baru yang bukan PNG transparan (atau sebaliknya), tampilannya di menu online bisa terlihat sedikit janggal (foto diperkecil dengan pinggiran kosong, atau foto transparan terpotong). Kalau ini terjadi, hubungi Patrick untuk perbaikan manual.
+- **Foto latar transparan (PNG-alpha):** sudah terdeteksi otomatis saat upload (lihat preview "Kartu"/"Cutout" di langkah Ubah Foto) -- kamu tidak perlu set manual lagi. Kalau hasil deteksinya terasa salah (misalnya foto penuh malah dianggap transparan), hubungi Patrick untuk dicek.
 - **Kategori jadi kosong:** kalau item terakhir di sebuah kategori (non seafood-segar) dihapus, CMS akan kasih peringatan sebelum kamu konfirmasi hapus, tapi tetap mengizinkan -- kategori itu akan tampil sebagai judul tanpa isi di menu online. Sebaiknya jangan menghapus item terakhir tanpa menambah item pengganti dulu.
 
 ## 5. Catatan Keamanan Singkat
@@ -115,3 +115,11 @@ Segera minta Patrick untuk **revoke** (cabut) token itu di GitHub (lihat cara di
 - `admin.html` **boleh dibuka siapa saja** -- tanpa token, tidak ada yang bisa diubah (cuma bisa lihat mode demo pakai data contoh).
 - Yang **wajib dijaga kerahasiaannya** cuma **token**-nya, bukan link CMS-nya.
 - Kalau ragu token sudah bocor, langsung revoke & bikin baru -- tidak ada biaya, prosesnya cuma 1 menit.
+
+## 6. Menu Multi-Bahasa
+
+Menu online ini bisa ditampilkan dalam 6 bahasa: Indonesia (default), Inggris, Jepang, Korea, Mandarin, dan Melayu -- tamu tinggal pilih lewat pill bahasa di bagian atas halaman atau tombol globe di bar pencarian.
+
+- **Kamu tidak perlu melakukan apa pun soal terjemahan lewat CMS ini.** Semua terjemahan diatur lewat file terpisah (`data/i18n/`), bukan lewat `admin.html`.
+- **Item/kategori baru yang kamu tambah lewat CMS otomatis tampil dalam Bahasa Indonesia di SEMUA bahasa** sampai terjemahannya diperbarui -- ini bukan bug, memang sengaja begitu (tidak pernah ada teks kosong, selalu fallback ke Indonesia).
+- Kalau ada item baru atau perubahan nama/deskripsi menu, dan kamu mau versi Inggris/Jepang/Korea/Mandarin/Melayu-nya ikut ter-update: minta Patrick atau Claude untuk "refresh terjemahan menu" -- prosesnya di luar CMS ini.

@@ -1,0 +1,632 @@
+{
+  "ui": {
+    "skip_link": "メニュー一覧へスキップ",
+    "loading": "メニューを読み込み中…",
+    "error_title": "メニューを開けません",
+    "error_file_html": "このメニューはファイルをダブルクリックして開くこと（Finderなど）はできません。WhatsAppで送られた<strong>スタッフからのリンク</strong>から開くか、ローカルサーバー（例：<code>python3 -m http.server</code>）を起動して、ブラウザで<code>http://localhost/</code>にアクセスしてください。",
+    "error_network_html": "メニューの読み込みに失敗しました。インターネット接続が安定していることを確認し、このページを再読み込みしてください。問題が続く場合は、スタッフに最新のメニューリンクをお問い合わせください。",
+    "js_required_title": "JavaScriptが必要です",
+    "js_required_body": "このメニューページを表示するには、ブラウザでJavaScriptを有効にする必要があります。",
+    "back_to_top": "トップに戻る",
+    "hero_tagline": "Fresh & Live Seafood",
+    "halal_certified": "ハラール認証",
+    "share_menu": "メニューを共有",
+    "view_menu": "メニューを見る",
+    "service_charge_notice": "表示価格にはサービス料・税金は含まれません",
+    "info_harga_catatan": "価格・注意事項について",
+    "search_placeholder": "メニューを検索（例：カニ）",
+    "search_input_label": "メニュー検索",
+    "search_clear_label": "検索をクリア",
+    "nav_kategori_label": "メニューカテゴリー",
+    "search_result_count": "{n}件のメニューが見つかりました",
+    "search_empty": "「{q}」に一致するメニューが見つかりませんでした。料理名やカテゴリーなど、別のキーワードでお試しください。",
+    "badge_new": "NEW",
+    "signature_badge": "シグネチャー",
+    "signature_kicker": "シグネチャーディッシュ",
+    "signature_subtag": "リミテッド・エクスクルーシブ・プレミアム",
+    "signature_ribbon_king": "カニの王様",
+    "pilihan_ukuran": "サイズ選択",
+    "pilihan_olahan": "調理法選択",
+    "tampak_di_foto_prefix": "写真：",
+    "kunjungi_kami": "アクセス",
+    "buka_di_google_maps": "Googleマップで開く",
+    "fasilitas_label": "施設",
+    "tersedia_untuk_label": "対応シーン",
+    "catatan_label": "注意事項",
+    "toast_link_copied": "メニューのリンクをコピーしました",
+    "toast_copy_failed": "リンクのコピーに失敗しました。アドレスバーから手動でコピーしてください",
+    "toast_copy_manual": "ブラウザのアドレスバーからリンクをコピーしてください",
+    "lang_switch_label": "言語を選択"
+  },
+  "kategori": {
+    "appetizer": {
+      "nama": "前菜"
+    },
+    "signature-dish": {
+      "nama": "シグネチャーディッシュ"
+    },
+    "seafood-kepiting": {
+      "nama": "カニ"
+    },
+    "seafood-udang-lobster": {
+      "nama": "エビ・ロブスター"
+    },
+    "seafood-cumi": {
+      "nama": "イカ"
+    },
+    "seafood-kerang": {
+      "nama": "貝"
+    },
+    "seafood-ikan": {
+      "nama": "魚"
+    },
+    "special-menu": {
+      "nama": "スペシャルメニュー"
+    },
+    "menu-nusantara": {
+      "nama": "ヌサンタラ料理",
+      "catatan": "鶏肉・牛肉"
+    },
+    "nasi-liwet": {
+      "nama": "Nasi Liwet"
+    },
+    "nasi-mie": {
+      "nama": "ご飯・麺類"
+    },
+    "sup": {
+      "nama": "スープ"
+    },
+    "sambal": {
+      "nama": "サンバル"
+    },
+    "sayur": {
+      "nama": "野菜料理",
+      "catatan": "盛り付けや飾り付けは写真と異なる場合があります"
+    },
+    "sweets-delights": {
+      "nama": "スイーツ"
+    },
+    "dessert": {
+      "nama": "デザート"
+    },
+    "degan-series": {
+      "nama": "ヤングココナッツシリーズ"
+    },
+    "juice-series": {
+      "nama": "ジュースシリーズ"
+    },
+    "special-drink": {
+      "nama": "スペシャルドリンク"
+    },
+    "milk-series": {
+      "nama": "ミルクシリーズ"
+    },
+    "tea-series": {
+      "nama": "ティーシリーズ",
+      "catatan": "ホット/アイスからお選びいただけます"
+    },
+    "traditional": {
+      "nama": "伝統ドリンク"
+    },
+    "others": {
+      "nama": "その他"
+    },
+    "coffee-series": {
+      "nama": "コーヒーシリーズ"
+    }
+  },
+  "items": {
+    "appetizer|Gohyong": {
+      "gloss": ""
+    },
+    "appetizer|Jamur Crispy": {
+      "gloss": "カリカリ揚げきのこ"
+    },
+    "appetizer|Kangkung Crispy": {
+      "gloss": "カリカリ空心菜"
+    },
+    "appetizer|Kentang Goreng": {
+      "gloss": "フライドポテト"
+    },
+    "appetizer|Lumpia Udang": {
+      "gloss": "海老春巻き"
+    },
+    "appetizer|Mantau": {
+      "gloss": ""
+    },
+    "appetizer|Mendoan": {
+      "gloss": ""
+    },
+    "appetizer|Tahu Goreng": {
+      "gloss": "豆腐の唐揚げ"
+    },
+    "appetizer|Tempe/Tahu Goreng": {
+      "gloss": "テンペ・豆腐の唐揚げ"
+    },
+    "appetizer|Tahu Bawang Lombok": {
+      "gloss": "豆腐のニンニク唐辛子炒め"
+    },
+    "appetizer|Terong Raos": {
+      "gloss": "ナスの旨味炒め"
+    },
+    "appetizer|Otak-Otak": {
+      "gloss": "",
+      "satuan": "1個あたり"
+    },
+    "signature-dish|Alaska King Crab": {
+      "gloss": "",
+      "deskripsi": "Ideal for Sharing (3-4 pax) · Singapore Sauce Style · Halal Certified. 海の王様として知られ、冷たいアラスカの海に生息する一品。身は柔らかく甘みがあり、シェフが素材本来の旨みを活かして調理します。",
+      "satuan": "100gあたり（1オンス）、重量目安 約1.2〜1.5kg"
+    },
+    "signature-dish|Rahang Tuna Bakar (L)": {
+      "gloss": "マグロのカマ焼き",
+      "deskripsi": "選べる味のバリエーション：Bakar Merah Bara（辛味・テラシと干し海老の香ばしい旨み）、Bakar Saus Malaka（旨味・甘み・コクのあるクリーミーココナッツ）、Bakar Saus Kurnia（旨味・ほんのり辛味・香り豊かなスパイス）",
+      "satuan": "600〜800g"
+    },
+    "signature-dish|Rahang Tuna Bakar (XL)": {
+      "gloss": "マグロのカマ焼き",
+      "deskripsi": "選べる味のバリエーション：Bakar Merah Bara（辛味・テラシと干し海老の香ばしい旨み）、Bakar Saus Malaka（旨味・甘み・コクのあるクリーミーココナッツ）、Bakar Saus Kurnia（旨味・ほんのり辛味・香り豊かなスパイス）",
+      "satuan": "800g〜1kg"
+    },
+    "signature-dish|Rahang Tuna Bakar (XXL)": {
+      "gloss": "マグロのカマ焼き",
+      "deskripsi": "選べる味のバリエーション：Bakar Merah Bara（辛味・テラシと干し海老の香ばしい旨み）、Bakar Saus Malaka（旨味・甘み・コクのあるクリーミーココナッツ）、Bakar Saus Kurnia（旨味・ほんのり辛味・香り豊かなスパイス）",
+      "satuan": "1kg以上"
+    },
+    "signature-dish|Pleasure Platter Premium": {
+      "gloss": "",
+      "deskripsi": "ロブスター、エビ、イカ、ミックス貝、スイートコーン、Saus Kurnia／Saus Padang"
+    },
+    "signature-dish|Pleasure Platter Reguler": {
+      "gloss": "",
+      "deskripsi": "カニ、エビ、イカ、ミックス貝、スイートコーン、Saus Kurnia／Saus Padang"
+    },
+    "special-menu|Kepiting Soka (Cabe Bawang/Telur Asin)": {
+      "gloss": "ソフトシェルクラブ",
+      "deskripsi": "サクサクのソフトシェルクラブに自慢の衣をまとわせた一品。チリガーリック味と塩卵黄味の2種類から選べ、香ばしく奥深い旨みを一口ごとに楽しめます。"
+    },
+    "menu-nusantara|Ayam Goreng Kremes": {
+      "gloss": "カリカリ衣のフライドチキン"
+    },
+    "menu-nusantara|Ayam Bakar": {
+      "gloss": "鶏肉のグリル焼き"
+    },
+    "menu-nusantara|Ayam Bakar Serundeng": {
+      "gloss": "鶏肉のグリル焼き、香ばしいスパイスココナッツフレーク添え"
+    },
+    "menu-nusantara|Ayam Goreng Serundeng": {
+      "gloss": "揚げ鶏、香ばしいスパイスココナッツフレーク添え"
+    },
+    "menu-nusantara|Ayam Sambal Mangga": {
+      "gloss": "鶏肉のマンゴーサンバル添え"
+    },
+    "menu-nusantara|Sup Buntut (2 Porsi)": {
+      "gloss": "オックステールスープ",
+      "satuan": "2人前"
+    },
+    "menu-nusantara|Sup Iga (2 Porsi)": {
+      "gloss": "牛リブスープ",
+      "satuan": "2人前"
+    },
+    "menu-nusantara|Sup Buntut (1 Porsi)": {
+      "gloss": "オックステールスープ",
+      "satuan": "1人前"
+    },
+    "menu-nusantara|Sup Iga (1 Porsi)": {
+      "gloss": "牛リブスープ",
+      "satuan": "1人前"
+    },
+    "nasi-liwet|Nasi Liwet Ayam Bekakak": {
+      "gloss": "鶏の丸焼き付き炊き込みご飯セット",
+      "deskripsi": "Nasi Liwet 1鍋、丸焼きチキン1羽、黒イカ、塩魚の干物、豆腐、テンペ、ペテ豆、サンバル、生野菜の盛り合わせ"
+    },
+    "nasi-liwet|Nasi Liwet Gurami Terbang": {
+      "gloss": "素揚げグラミー添え炊き込みご飯セット",
+      "deskripsi": "Nasi Liwet 1鍋、素揚げグラミー（ジャンピングスタイル）1尾、エビ素揚げ、塩魚の干物、豆腐、テンペ、ペテ豆、サンバル、生野菜の盛り合わせ"
+    },
+    "nasi-mie|Nasi Putih (Porsi)": {
+      "gloss": "白ご飯",
+      "satuan": "1人前"
+    },
+    "nasi-mie|Nasi Putih Bakul Kecil": {
+      "gloss": "白ご飯（小盛りおひつ）"
+    },
+    "nasi-mie|Nasi Putih Bakul Besar": {
+      "gloss": "白ご飯（大盛りおひつ）"
+    },
+    "nasi-mie|Nasi Liwet (Porsi)": {
+      "gloss": "ココナッツ風味の炊き込みご飯",
+      "satuan": "1人前"
+    },
+    "nasi-mie|Nasi Liwet Ketel": {
+      "gloss": "ココナッツ風味の炊き込みご飯（鍋盛り）"
+    },
+    "nasi-mie|Nasi Goreng Seafood": {
+      "gloss": "シーフード入りナシゴレン"
+    },
+    "nasi-mie|Nasi Goreng Telur": {
+      "gloss": "卵入りナシゴレン"
+    },
+    "nasi-mie|Nasi Goreng Ikan Asin": {
+      "gloss": "塩魚入りナシゴレン"
+    },
+    "nasi-mie|Mie Goreng Seafood": {
+      "gloss": "シーフード入り焼きそば（ミーゴレン）"
+    },
+    "nasi-mie|Mie Goreng Telur": {
+      "gloss": "卵入り焼きそば（ミーゴレン）"
+    },
+    "nasi-mie|Mie Kuah Hongkong": {
+      "gloss": "香港風麺スープ"
+    },
+    "nasi-mie|Char Kwetiaw": {
+      "gloss": "平打ち米麺炒め"
+    },
+    "nasi-mie|Pathai Kwetiaw": {
+      "gloss": "パッタイ風味の平打ち米麺"
+    },
+    "sup|Sup Kental Jagung": {
+      "gloss": "コーンクリームスープ"
+    },
+    "sup|Sup Tomyum Seafood": {
+      "gloss": "シーフードトムヤムスープ"
+    },
+    "sup|Sup Kental Tahu Seafood": {
+      "gloss": "シーフード豆腐とろみスープ"
+    },
+    "sup|Sup Telur Kepiting": {
+      "gloss": "カニ肉入り卵スープ"
+    },
+    "sambal|Sambal Mangga": {
+      "gloss": "マンゴーサンバル"
+    },
+    "sambal|Sambal Dabu-dabu": {
+      "gloss": "ダブダブソース（マナド風薬味）"
+    },
+    "sayur|Kangkung Terasi": {
+      "gloss": "空心菜のテラシ（エビペースト）炒め"
+    },
+    "sayur|Kangkung Bawang Putih": {
+      "gloss": "空心菜のニンニク炒め"
+    },
+    "sayur|Tauge Ikan Asin": {
+      "gloss": "もやしと塩魚の炒め物"
+    },
+    "sayur|Tauge Bawang Putih": {
+      "gloss": "もやしのニンニク炒め"
+    },
+    "sayur|Tauge Tauco Seafood": {
+      "gloss": "もやしとシーフードのタウチョ（発酵豆味噌）炒め"
+    },
+    "sayur|Terong Balado": {
+      "gloss": "ナスのバラドソース炒め（辛味チリソース）"
+    },
+    "sayur|Tumis Brokoli": {
+      "gloss": "ブロッコリー炒め"
+    },
+    "sayur|Tumis Brokoli Seafood": {
+      "gloss": "シーフード入りブロッコリー炒め"
+    },
+    "sayur|Baby Kaylan Tumis Teri": {
+      "gloss": "ベビーケールと小魚（テリ）の炒め物"
+    },
+    "sayur|Baby Kaylan Bawang Putih": {
+      "gloss": "ベビーケールのニンニク炒め"
+    },
+    "sayur|Genjer Tumis Teri": {
+      "gloss": "ゲンジェル（水生野菜）と小魚の炒め物"
+    },
+    "sayur|Genjer Bawang Putih": {
+      "gloss": "ゲンジェル（水生野菜）のニンニク炒め"
+    },
+    "sayur|Lalapan": {
+      "gloss": "生野菜の盛り合わせ"
+    },
+    "sweets-delights|Rujak Ice Cream Pesona": {
+      "gloss": "ルジャック（フルーツと辛味ソース）風味のアイスクリーム"
+    },
+    "sweets-delights|Kurnia Signature Sorbet": {
+      "gloss": ""
+    },
+    "sweets-delights|Es Pisang Ijo": {
+      "gloss": "緑の生地で包んだバナナの氷菓子（マカッサル名物）"
+    },
+    "sweets-delights|Es Serut Kurnia Spesial": {
+      "gloss": ""
+    },
+    "sweets-delights|Mango Sago Kelapa": {
+      "gloss": "マンゴーとサゴパール、ココナッツのデザート"
+    },
+    "dessert|Es Campur": {
+      "gloss": "かき氷のミックスデザート"
+    },
+    "dessert|Signature Ice Cream": {
+      "gloss": ""
+    },
+    "dessert|Margareta Ice Cream": {
+      "gloss": ""
+    },
+    "dessert|Slice Fruit Large": {
+      "gloss": ""
+    },
+    "dessert|Es Cao Kombinasi": {
+      "gloss": ""
+    },
+    "degan-series|Es Degan Jeruk": {
+      "gloss": "若いココナッツと柑橘のアイスドリンク"
+    },
+    "degan-series|Es Degan Selasih": {
+      "gloss": "若いココナッツとバジルシードのアイスドリンク"
+    },
+    "degan-series|Es Degan Murni": {
+      "gloss": "若いココナッツのアイスドリンク（プレーン）"
+    },
+    "degan-series|Kelapa Muda Utuh": {
+      "gloss": "まるごとヤングココナッツ"
+    },
+    "juice-series|Jus Semangka": {
+      "gloss": "スイカジュース"
+    },
+    "juice-series|Jus Melon": {
+      "gloss": "メロンジュース"
+    },
+    "juice-series|Jus Strawberry": {
+      "gloss": "いちごジュース"
+    },
+    "juice-series|Jus Sirsak": {
+      "gloss": "サワーソップ（トゲバンレイシ）ジュース"
+    },
+    "juice-series|Jus Mangga": {
+      "gloss": "マンゴージュース"
+    },
+    "juice-series|Jus Alpukat": {
+      "gloss": "アボカドジュース"
+    },
+    "juice-series|Jus Jambu": {
+      "gloss": "グアバジュース"
+    },
+    "juice-series|Jus Orange": {
+      "gloss": "オレンジジュース"
+    },
+    "juice-series|Jus Buah Naga": {
+      "gloss": "ドラゴンフルーツジュース"
+    },
+    "special-drink|Cinematic Milo": {
+      "gloss": ""
+    },
+    "special-drink|Deep Blue Sea": {
+      "gloss": ""
+    },
+    "special-drink|Italian Green Soda": {
+      "gloss": ""
+    },
+    "special-drink|Italian Red Soda": {
+      "gloss": ""
+    },
+    "special-drink|Lychee Squash": {
+      "gloss": ""
+    },
+    "special-drink|Lemon Squash": {
+      "gloss": ""
+    },
+    "special-drink|Mango Squash": {
+      "gloss": ""
+    },
+    "special-drink|Es Melon Serut": {
+      "gloss": "メロンのかき氷ドリンク"
+    },
+    "milk-series|Chocomilk": {
+      "gloss": ""
+    },
+    "milk-series|Milkshake Strawberry": {
+      "gloss": ""
+    },
+    "milk-series|Milkshake Chocolate": {
+      "gloss": ""
+    },
+    "milk-series|Milkshake Vanilla": {
+      "gloss": ""
+    },
+    "tea-series|Lemon Tea": {
+      "gloss": ""
+    },
+    "tea-series|Lychee Tea": {
+      "gloss": ""
+    },
+    "tea-series|Teh Manis": {
+      "gloss": "甘い紅茶"
+    },
+    "tea-series|Teh Tawar": {
+      "gloss": "無糖の紅茶"
+    },
+    "tea-series|Teh Kerampul": {
+      "gloss": "ハーブ入り伝統茶"
+    },
+    "traditional|Wedang Jahe Sereh": {
+      "gloss": "生姜とレモングラスのホットドリンク"
+    },
+    "traditional|Wedang Jahe": {
+      "gloss": "生姜のホットドリンク"
+    },
+    "traditional|Wedang Sejuk": {
+      "gloss": "伝統的な冷たい薬草ドリンク"
+    },
+    "traditional|Wedang Susu": {
+      "gloss": "伝統的なホットミルクドリンク"
+    },
+    "others|Mineral": {
+      "gloss": "ミネラルウォーター",
+      "satuan": "ホット/アイス"
+    },
+    "others|Jeruk Manis": {
+      "gloss": "スイートオレンジジュース"
+    },
+    "others|Jeruk Nipis": {
+      "gloss": "ライムジュース"
+    },
+    "others|Tropical Rum": {
+      "gloss": ""
+    },
+    "others|Tropical Blueberry/Lychee": {
+      "gloss": ""
+    },
+    "others|Fresh Tape Blend": {
+      "gloss": "タペ（発酵キャッサバ）を使ったブレンドドリンク",
+      "deskripsi": "チョコレート、ミルク、オリジナル"
+    },
+    "coffee-series|Americano": {
+      "gloss": "",
+      "satuan": "ホット/アイス"
+    },
+    "coffee-series|Affogato": {
+      "gloss": ""
+    },
+    "coffee-series|Cafe Latte": {
+      "gloss": "",
+      "satuan": "ホット/アイス"
+    },
+    "coffee-series|Cappucino": {
+      "gloss": "",
+      "satuan": "ホット/アイス"
+    },
+    "coffee-series|Espresso": {
+      "gloss": ""
+    },
+    "coffee-series|Es Kopi Susu Gula Aren": {
+      "gloss": "パームシュガー入りアイスコーヒー牛乳"
+    },
+    "coffee-series|Moccacino": {
+      "gloss": ""
+    },
+    "coffee-series|Kopi Susu Avocado": {
+      "gloss": "アボカド入りコーヒー牛乳"
+    },
+    "coffee-series|Batavia Coffee": {
+      "gloss": ""
+    }
+  },
+  "olahan": {
+    "Kepiting (300 gr up)": "カニ（300g以上）",
+    "Kepiting (400 gr up)": "カニ（400g以上）",
+    "Kepiting (500 gr up)": "カニ（500g以上）",
+    "Kepiting (600 gr up)": "カニ（600g以上）",
+    "Kepiting (700 gr up)": "カニ（700g以上）",
+    "Kepiting (800 gr up)": "カニ（800g以上）",
+    "Kepiting (1 kg up)": "カニ（1kg以上）",
+    "Kepiting Telur": "子持ちガニ",
+    "Garlic Caramel": "Garlic Caramel",
+    "Saus Kurnia": "Saus Kurnia",
+    "Saus Telur Asin": "塩卵黄ソース",
+    "Tauco Asap": "スモークタウチョソース",
+    "Masak Gulai": "カレー風煮込み",
+    "Saus Woku": "ウォクソース",
+    "Saus Lada Hitam": "黒コショウソース",
+    "Saus Asam Manis": "甘酢ソース",
+    "Saus Padang (Khas Kurnia)": "Saus Padang (Khas Kurnia)",
+    "Saus Mentega": "バターソース",
+    "Saus Tiram": "オイスターソース",
+    "Saus Malaka": "マラッカソース",
+    "Lobster (Live)": "ロブスター（活）",
+    "Lobster (Fresh)": "ロブスター（新鮮）",
+    "Lobster Mutiara": "パールロブスター",
+    "Udang Pancet": "パンチェットエビ",
+    "Udang Galah": "テナガエビ",
+    "Udang Vaname": "バナメイエビ",
+    "Tiger Prawn": "ブラックタイガー",
+    "Bakar Madu": "蜂蜜焼き",
+    "Steam Bawang Putih": "ニンニク蒸し",
+    "Goreng Kering": "から揚げ",
+    "Goreng Tepung": "衣揚げ",
+    "Goreng Cabe Bawang": "チリガーリック揚げ",
+    "Masak Raja Bawang": "ガーリック王炒め",
+    "Cumi": "イカ",
+    "Baby Gurita": "ベビーダコ",
+    "Sotong": "コウイカ",
+    "Bakar Bumbu Rujak": "ルジャックソース焼き",
+    "Saus Thai": "タイソース",
+    "Kerang Hijau": "ミドリイガイ",
+    "Kerang Bambu": "マテガイ",
+    "Kerang Srimping": "スリンピンガイ",
+    "Kerang Kapak": "斧貝",
+    "Kerang Madu": "ハチミツ貝",
+    "Kerang Bali": "バリガイ",
+    "Kerang Dara": "ハイガイ",
+    "Kerang Batik": "バティック貝",
+    "Fresh Oyster": "生ガキ",
+    "Bakar Kurnia (oyster)": "Bakar Kurnia（牡蠣）",
+    "Steam Bawang Putih (oyster)": "ニンニク蒸し（牡蠣）",
+    "Bakar Jimbaran (Oyster)": "ジンバラン風焼き（牡蠣）",
+    "Rebus Cocol": "ボイル（つけダレ付き）",
+    "Kerapu Cantang - Live": "カンタンハタ（活魚）",
+    "Baramundi - Live": "バラマンディ（活魚）",
+    "Gurami - Live": "グラミー（活魚）",
+    "Baronang": "アイゴ",
+    "Baramundi": "バラマンディ",
+    "Dorang": "ドラン",
+    "Gurami": "グラミー",
+    "Ekor Kuning": "タカサゴ",
+    "Kakap Putih": "ホワイトスナッパー",
+    "Kakap Merah": "レッドスナッパー",
+    "Kaca Piring": "カチャピリン",
+    "Kerapu Totol": "斑点ハタ",
+    "Ikan Kwe": "トレバリー",
+    "Sukang": "スーカン",
+    "Bakar Kurnia": "Bakar Kurnia",
+    "Bakar Rica Makassar": "マカッサル風リチャ焼き",
+    "Steam Saus Kurnia": "Steam Saus Kurnia",
+    "Bakar Jimbaran": "ジンバラン風焼き",
+    "Goreng Saus Asam Manis": "甘酢ソース揚げ",
+    "Goreng Saus Padang": "パダンソース揚げ",
+    "Goreng Saus Woku": "ウォクソース揚げ",
+    "Bakar Dabu-dabu": "ダブダブ焼き",
+    "Bakar Kecap": "甘口醤油焼き",
+    "Sup Gurih": "うま味スープ",
+    "Steam Hongkong": "香港風蒸し",
+    "Steam Limau": "ライム蒸し",
+    "Kuah Asam": "酸味スープ",
+    "Kuah Asam Pedas": "酸辣スープ",
+    "Goreng Saus Thai": "タイソース揚げ",
+    "Saus Lotis Pesona": "Saus Lotis Pesona",
+    "Harga per 100 gram · minimal order 250 gram · harga pasar, tanya staff": "100gあたりの価格・最低注文250g・時価のためスタッフにお問い合わせください"
+  },
+  "catatan_global": [
+    "表示価格にはサービス料・税金は含まれておりません",
+    "シーフードの価格は100gあたりで計算され、ご注文は250g以上からとなります",
+    "新鮮なシーフード（カニ、エビ・ロブスター、イカ、貝、魚）は時価のため、最新価格はスタッフまでお問い合わせください",
+    "盛り付けや飾り付けは写真と異なる場合があります"
+  ],
+  "restoran": {
+    "tentang": "Kurnia Seafoodは、ロブスター、魚、カニ、エビなど、厳選された新鮮で活きのいいFresh & Live Seafoodを豊富に取り揃えています。25種類以上の調理法から選べ、Kurnia Seafood自慢の焼きソース、揚げソース、蒸しソースなど様々な調理スタイルでお楽しみいただけます。コクと個性豊かなSaus Kurnia、香ばしさと甘みが絶妙に調和したSaus Garlic Caramel、力強いスパイスの効いたSaus Padangなど、どれも食欲をそそる味わいです。ご家族でのお食事から各種イベントまで、充実した設備と温かい雰囲気で、すべてのお客様に快適なひとときをお届けします。ハラール認証を取得したKurnia Seafoodは、安全で高品質、そしてすべての方に安心してお楽しみいただける海鮮料理をお届けすることをお約束します。",
+    "fasilitas": [
+      "ダイニングエリア（屋内・屋外）",
+      "VIPカラオケルーム（Anyer、Carita）",
+      "VIPルーム Bunaken",
+      "キッズプレイエリア",
+      "礼拝室",
+      "エレベーター",
+      "広い駐車場"
+    ],
+    "tersedia_untuk": [
+      "アラカルト",
+      "ミーティング",
+      "カンファレンス",
+      "ギャザリング",
+      "ケータリング",
+      "誕生日会",
+      "婚約パーティー"
+    ]
+  },
+  "gloss_ragu": [
+    "appetizer|Terong Raos",
+    "menu-nusantara|Sup Iga (2 Porsi)",
+    "menu-nusantara|Sup Iga (1 Porsi)",
+    "sayur|Genjer Tumis Teri",
+    "sayur|Genjer Bawang Putih",
+    "sweets-delights|Rujak Ice Cream Pesona",
+    "juice-series|Jus Jambu",
+    "tea-series|Teh Kerampul",
+    "traditional|Wedang Sejuk",
+    "traditional|Wedang Susu",
+    "others|Fresh Tape Blend"
+  ]
+}

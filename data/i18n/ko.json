@@ -1,0 +1,631 @@
+{
+  "ui": {
+    "skip_link": "메뉴 목록으로 바로 가기",
+    "loading": "메뉴 불러오는 중…",
+    "error_title": "메뉴를 열 수 없습니다",
+    "error_file_html": "이 메뉴는 파일을 더블클릭하는 방식(예: Finder)으로는 열 수 없습니다. 저희 직원이 WhatsApp으로 보내드린 <strong>링크</strong>를 통해 열어주시거나, 로컬 서버(예: <code>python3 -m http.server</code>)를 실행한 뒤 브라우저에서 <code>http://localhost/</code>로 접속해 주세요.",
+    "error_network_html": "메뉴를 불러오지 못했습니다. 인터넷 연결 상태를 확인하신 후 이 페이지를 새로고침해 주세요. 문제가 계속되면 최신 메뉴 링크를 위해 직원에게 문의해 주세요.",
+    "js_required_title": "자바스크립트가 필요합니다",
+    "js_required_body": "이 메뉴 페이지는 메뉴 목록을 표시하기 위해 브라우저에서 자바스크립트가 활성화되어 있어야 합니다.",
+    "back_to_top": "맨 위로",
+    "hero_tagline": "Fresh & Live Seafood",
+    "halal_certified": "Halal Certified",
+    "share_menu": "메뉴 공유하기",
+    "view_menu": "메뉴 보기",
+    "service_charge_notice": "가격에는 서비스 차지 및 정부 세금이 포함되어 있지 않습니다",
+    "info_harga_catatan": "가격 안내 및 참고사항",
+    "search_placeholder": "메뉴 검색, 예: 게 요리",
+    "search_input_label": "메뉴 검색",
+    "search_clear_label": "검색어 지우기",
+    "nav_kategori_label": "메뉴 카테고리",
+    "search_result_count": "메뉴 {n}개 검색됨",
+    "search_empty": "\"{q}\"와(과) 일치하는 메뉴가 없습니다. 요리명이나 카테고리 등 다른 검색어로 다시 시도해 보세요.",
+    "badge_new": "NEW",
+    "signature_badge": "Signature",
+    "signature_kicker": "Signature Dish",
+    "signature_subtag": "Limited · Exclusive · Premium",
+    "signature_ribbon_king": "The King of the Crab",
+    "pilihan_ukuran": "사이즈 선택",
+    "pilihan_olahan": "조리법 선택",
+    "tampak_di_foto_prefix": "사진 속 메뉴: ",
+    "kunjungi_kami": "매장 안내",
+    "buka_di_google_maps": "구글 지도에서 보기",
+    "fasilitas_label": "부대시설",
+    "tersedia_untuk_label": "이용 가능",
+    "catatan_label": "참고사항",
+    "toast_link_copied": "메뉴 링크가 클립보드에 복사되었습니다",
+    "toast_copy_failed": "링크 복사에 실패했습니다. 주소창에서 직접 복사해 주세요",
+    "toast_copy_manual": "브라우저 주소창에서 링크를 복사해 주세요",
+    "lang_switch_label": "언어 선택"
+  },
+  "kategori": {
+    "appetizer": {
+      "nama": "Appetizer"
+    },
+    "signature-dish": {
+      "nama": "Signature Dish"
+    },
+    "seafood-kepiting": {
+      "nama": "게"
+    },
+    "seafood-udang-lobster": {
+      "nama": "새우 & 랍스터"
+    },
+    "seafood-cumi": {
+      "nama": "오징어"
+    },
+    "seafood-kerang": {
+      "nama": "조개"
+    },
+    "seafood-ikan": {
+      "nama": "생선"
+    },
+    "special-menu": {
+      "nama": "Special Menu"
+    },
+    "menu-nusantara": {
+      "nama": "누산타라 메뉴",
+      "catatan": "닭고기 & 소고기"
+    },
+    "nasi-liwet": {
+      "nama": "Nasi Liwet"
+    },
+    "nasi-mie": {
+      "nama": "밥 & 면"
+    },
+    "sup": {
+      "nama": "수프"
+    },
+    "sambal": {
+      "nama": "삼발"
+    },
+    "sayur": {
+      "nama": "채소",
+      "catatan": "가니시 및 플레이팅 디테일은 실제와 다를 수 있습니다"
+    },
+    "sweets-delights": {
+      "nama": "Sweets & Delights"
+    },
+    "dessert": {
+      "nama": "Dessert"
+    },
+    "degan-series": {
+      "nama": "Degan Series"
+    },
+    "juice-series": {
+      "nama": "Juice Series"
+    },
+    "special-drink": {
+      "nama": "Special Drink"
+    },
+    "milk-series": {
+      "nama": "Milk Series"
+    },
+    "tea-series": {
+      "nama": "Tea Series",
+      "catatan": "Hot/Ice 선택 가능"
+    },
+    "traditional": {
+      "nama": "Traditional"
+    },
+    "others": {
+      "nama": "Others"
+    },
+    "coffee-series": {
+      "nama": "Coffee Series"
+    }
+  },
+  "items": {
+    "appetizer|Gohyong": {
+      "gloss": ""
+    },
+    "appetizer|Jamur Crispy": {
+      "gloss": "바삭하게 튀긴 버섯"
+    },
+    "appetizer|Kangkung Crispy": {
+      "gloss": "바삭하게 튀긴 깡꿍(모닝글로리)"
+    },
+    "appetizer|Kentang Goreng": {
+      "gloss": "감자튀김"
+    },
+    "appetizer|Lumpia Udang": {
+      "gloss": "새우 스프링롤"
+    },
+    "appetizer|Mantau": {
+      "gloss": ""
+    },
+    "appetizer|Mendoan": {
+      "gloss": ""
+    },
+    "appetizer|Tahu Goreng": {
+      "gloss": "튀긴 두부"
+    },
+    "appetizer|Tempe/Tahu Goreng": {
+      "gloss": "튀긴 템페와 두부"
+    },
+    "appetizer|Tahu Bawang Lombok": {
+      "gloss": "마늘과 고추를 곁들인 두부"
+    },
+    "appetizer|Terong Raos": {
+      "gloss": ""
+    },
+    "appetizer|Otak-Otak": {
+      "gloss": "",
+      "satuan": "개당"
+    },
+    "signature-dish|Alaska King Crab": {
+      "gloss": "",
+      "deskripsi": "Ideal for Sharing (3-4 pax) · Singapore Sauce Style · Halal Certified. 바다의 왕으로 알려진 알래스카 킹크랩은 차가운 알래스카 바다에서 서식하며, 살이 부드럽고 달콤합니다. 셰프가 직접 조리하여 본연의 자연스러운 맛을 살렸습니다.",
+      "satuan": "100g당(온스), 무게 약 1.2~1.5kg"
+    },
+    "signature-dish|Rahang Tuna Bakar (L)": {
+      "gloss": "참치 턱살 구이",
+      "deskripsi": "맛 선택: Bakar Merah Bara(매콤하고 짭짤하며 테라시와 새우 에비 향이 진한 맛), Bakar Saus Malaka(짭짤달콤하고 진하며 크리미한 코코넛 맛), Bakar Saus Kurnia(짭짤하고 약간 매콤하며 향신료 향이 특징적인 맛)",
+      "satuan": "600 - 800 g"
+    },
+    "signature-dish|Rahang Tuna Bakar (XL)": {
+      "gloss": "참치 턱살 구이",
+      "deskripsi": "맛 선택: Bakar Merah Bara(매콤하고 짭짤하며 테라시와 새우 에비 향이 진한 맛), Bakar Saus Malaka(짭짤달콤하고 진하며 크리미한 코코넛 맛), Bakar Saus Kurnia(짭짤하고 약간 매콤하며 향신료 향이 특징적인 맛)",
+      "satuan": "800 g - 1 kg"
+    },
+    "signature-dish|Rahang Tuna Bakar (XXL)": {
+      "gloss": "참치 턱살 구이",
+      "deskripsi": "맛 선택: Bakar Merah Bara(매콤하고 짭짤하며 테라시와 새우 에비 향이 진한 맛), Bakar Saus Malaka(짭짤달콤하고 진하며 크리미한 코코넛 맛), Bakar Saus Kurnia(짭짤하고 약간 매콤하며 향신료 향이 특징적인 맛)",
+      "satuan": "1kg 이상"
+    },
+    "signature-dish|Pleasure Platter Premium": {
+      "gloss": "",
+      "deskripsi": "랍스터, 새우, 오징어, 조개 모둠, 옥수수, Saus Kurnia/Saus Padang"
+    },
+    "signature-dish|Pleasure Platter Reguler": {
+      "gloss": "",
+      "deskripsi": "게, 새우, 오징어, 조개 모둠, 옥수수, Saus Kurnia/Saus Padang"
+    },
+    "special-menu|Kepiting Soka (Cabe Bawang/Telur Asin)": {
+      "gloss": "말랑한 껍질째 먹는 소프트쉘 크랩",
+      "deskripsi": "바삭한 소프트쉘 크랩에 선택한 양념을 입혔으며, 짭짤하고 향긋하며 풍부한 맛의 고추마늘(Cabe Bawang) 또는 짠 계란(Telur Asin) 맛으로 한입 가득 즐기실 수 있습니다."
+    },
+    "menu-nusantara|Ayam Goreng Kremes": {
+      "gloss": "바삭한 크리스피 토핑을 얹은 프라이드치킨"
+    },
+    "menu-nusantara|Ayam Bakar": {
+      "gloss": "숯불에 구운 치킨"
+    },
+    "menu-nusantara|Ayam Bakar Serundeng": {
+      "gloss": "구운 치킨에 세룬뎅(코코넛 볶음)을 곁들인 요리"
+    },
+    "menu-nusantara|Ayam Goreng Serundeng": {
+      "gloss": "세룬뎅(코코넛 볶음)을 곁들인 프라이드치킨"
+    },
+    "menu-nusantara|Ayam Sambal Mangga": {
+      "gloss": "망고 삼발 소스를 곁들인 치킨"
+    },
+    "menu-nusantara|Sup Buntut (2 Porsi)": {
+      "gloss": "소꼬리 수프",
+      "satuan": "2인분"
+    },
+    "menu-nusantara|Sup Iga (2 Porsi)": {
+      "gloss": "갈비 수프",
+      "satuan": "2인분"
+    },
+    "menu-nusantara|Sup Buntut (1 Porsi)": {
+      "gloss": "소꼬리 수프",
+      "satuan": "1인분"
+    },
+    "menu-nusantara|Sup Iga (1 Porsi)": {
+      "gloss": "갈비 수프",
+      "satuan": "1인분"
+    },
+    "nasi-liwet|Nasi Liwet Ayam Bekakak": {
+      "gloss": "인도네시아식 솥밥과 통닭구이 세트",
+      "deskripsi": "나시 리웟(Nasi Liwet) 1솥, 통닭구이 1마리, 오징어 먹물 요리, 짠 생선(이칸 아신), 두부, 템페, 페테, 삼발, 그리고 생채소(랄라판)"
+    },
+    "nasi-liwet|Nasi Liwet Gurami Terbang": {
+      "gloss": "인도네시아식 솥밥과 튀긴 구라미 생선 세트",
+      "deskripsi": "나시 리웟(Nasi Liwet) 1솥, 날개 편 모양으로 튀긴 구라미 생선 1마리, 새우튀김, 짠 생선(이칸 아신), 두부, 템페, 페테, 삼발, 그리고 생채소(랄라판)"
+    },
+    "nasi-mie|Nasi Putih (Porsi)": {
+      "gloss": "흰쌀밥",
+      "satuan": "인분당"
+    },
+    "nasi-mie|Nasi Putih Bakul Kecil": {
+      "gloss": "작은 대바구니에 담긴 흰쌀밥"
+    },
+    "nasi-mie|Nasi Putih Bakul Besar": {
+      "gloss": "큰 대바구니에 담긴 흰쌀밥"
+    },
+    "nasi-mie|Nasi Liwet (Porsi)": {
+      "gloss": "인도네시아식 향미 솥밥",
+      "satuan": "인분당"
+    },
+    "nasi-mie|Nasi Liwet Ketel": {
+      "gloss": "솥째 담아내는 인도네시아식 향미밥"
+    },
+    "nasi-mie|Nasi Goreng Seafood": {
+      "gloss": "해산물 볶음밥"
+    },
+    "nasi-mie|Nasi Goreng Telur": {
+      "gloss": "계란 볶음밥"
+    },
+    "nasi-mie|Nasi Goreng Ikan Asin": {
+      "gloss": "짠 생선을 곁들인 볶음밥"
+    },
+    "nasi-mie|Mie Goreng Seafood": {
+      "gloss": "해산물 볶음면"
+    },
+    "nasi-mie|Mie Goreng Telur": {
+      "gloss": "계란 볶음면"
+    },
+    "nasi-mie|Mie Kuah Hongkong": {
+      "gloss": "홍콩식 국물 국수"
+    },
+    "nasi-mie|Char Kwetiaw": {
+      "gloss": ""
+    },
+    "nasi-mie|Pathai Kwetiaw": {
+      "gloss": ""
+    },
+    "sup|Sup Kental Jagung": {
+      "gloss": "옥수수 크림 수프"
+    },
+    "sup|Sup Tomyum Seafood": {
+      "gloss": "톰얌 해산물 수프"
+    },
+    "sup|Sup Kental Tahu Seafood": {
+      "gloss": "두부와 해산물이 들어간 크림 수프"
+    },
+    "sup|Sup Telur Kepiting": {
+      "gloss": "게살이 들어간 계란 수프"
+    },
+    "sambal|Sambal Mangga": {
+      "gloss": "망고를 곁들인 매콤한 삼발 소스"
+    },
+    "sambal|Sambal Dabu-dabu": {
+      "gloss": "인도네시아 마나도식 매콤한 다진 양념"
+    },
+    "sayur|Kangkung Terasi": {
+      "gloss": "새우페이스트(터라시)로 볶은 깡꿍(공심채)"
+    },
+    "sayur|Kangkung Bawang Putih": {
+      "gloss": "마늘로 볶은 깡꿍(공심채)"
+    },
+    "sayur|Tauge Ikan Asin": {
+      "gloss": "짠 생선을 곁들인 숙주나물 볶음"
+    },
+    "sayur|Tauge Bawang Putih": {
+      "gloss": "마늘로 볶은 숙주나물"
+    },
+    "sayur|Tauge Tauco Seafood": {
+      "gloss": "타우코(발효콩장) 소스로 볶은 해산물 숙주나물"
+    },
+    "sayur|Terong Balado": {
+      "gloss": "발라도(매콤한 고추양념) 가지 볶음"
+    },
+    "sayur|Tumis Brokoli": {
+      "gloss": "브로콜리 볶음"
+    },
+    "sayur|Tumis Brokoli Seafood": {
+      "gloss": "해산물을 곁들인 브로콜리 볶음"
+    },
+    "sayur|Baby Kaylan Tumis Teri": {
+      "gloss": "멸치를 곁들인 베이비 케일란 볶음"
+    },
+    "sayur|Baby Kaylan Bawang Putih": {
+      "gloss": "마늘로 볶은 베이비 케일란"
+    },
+    "sayur|Genjer Tumis Teri": {
+      "gloss": "멸치를 곁들인 겐제르(수생 채소) 볶음"
+    },
+    "sayur|Genjer Bawang Putih": {
+      "gloss": "마늘로 볶은 겐제르(수생 채소)"
+    },
+    "sayur|Lalapan": {
+      "gloss": "삼발과 함께 먹는 생채소 모둠"
+    },
+    "sweets-delights|Rujak Ice Cream Pesona": {
+      "gloss": "매콤달콤한 룰작 소스를 곁들인 아이스크림"
+    },
+    "sweets-delights|Kurnia Signature Sorbet": {
+      "gloss": ""
+    },
+    "sweets-delights|Es Pisang Ijo": {
+      "gloss": "그린 바나나 케이크로 감싼 인도네시아식 빙수 디저트"
+    },
+    "sweets-delights|Es Serut Kurnia Spesial": {
+      "gloss": "쿠르니아 특제 빙수"
+    },
+    "sweets-delights|Mango Sago Kelapa": {
+      "gloss": "망고, 사고펄, 코코넛이 들어간 디저트"
+    },
+    "dessert|Es Campur": {
+      "gloss": "여러 재료를 섞은 인도네시아식 빙수"
+    },
+    "dessert|Signature Ice Cream": {
+      "gloss": ""
+    },
+    "dessert|Margareta Ice Cream": {
+      "gloss": ""
+    },
+    "dessert|Slice Fruit Large": {
+      "gloss": ""
+    },
+    "dessert|Es Cao Kombinasi": {
+      "gloss": ""
+    },
+    "degan-series|Es Degan Jeruk": {
+      "gloss": "오렌지를 곁들인 어린 코코넛 음료"
+    },
+    "degan-series|Es Degan Selasih": {
+      "gloss": "바질씨(슬라시)를 곁들인 어린 코코넛 음료"
+    },
+    "degan-series|Es Degan Murni": {
+      "gloss": "아무것도 섞지 않은 어린 코코넛 음료"
+    },
+    "degan-series|Kelapa Muda Utuh": {
+      "gloss": "통째로 나오는 어린 코코넛"
+    },
+    "juice-series|Jus Semangka": {
+      "gloss": "수박으로 만든 신선한 주스"
+    },
+    "juice-series|Jus Melon": {
+      "gloss": "멜론으로 만든 신선한 주스"
+    },
+    "juice-series|Jus Strawberry": {
+      "gloss": "딸기로 만든 신선한 주스"
+    },
+    "juice-series|Jus Sirsak": {
+      "gloss": "그라비올라(사워솝)로 만든 주스"
+    },
+    "juice-series|Jus Mangga": {
+      "gloss": "망고로 만든 신선한 주스"
+    },
+    "juice-series|Jus Alpukat": {
+      "gloss": "아보카도로 만든 신선한 주스"
+    },
+    "juice-series|Jus Jambu": {
+      "gloss": "구아바로 만든 신선한 주스"
+    },
+    "juice-series|Jus Orange": {
+      "gloss": "오렌지로 만든 신선한 주스"
+    },
+    "juice-series|Jus Buah Naga": {
+      "gloss": "용과(드래곤프루트)로 만든 신선한 주스"
+    },
+    "special-drink|Cinematic Milo": {
+      "gloss": ""
+    },
+    "special-drink|Deep Blue Sea": {
+      "gloss": ""
+    },
+    "special-drink|Italian Green Soda": {
+      "gloss": ""
+    },
+    "special-drink|Italian Red Soda": {
+      "gloss": ""
+    },
+    "special-drink|Lychee Squash": {
+      "gloss": ""
+    },
+    "special-drink|Lemon Squash": {
+      "gloss": ""
+    },
+    "special-drink|Mango Squash": {
+      "gloss": ""
+    },
+    "special-drink|Es Melon Serut": {
+      "gloss": "곱게 간 얼음 위에 멜론을 올린 빙수"
+    },
+    "milk-series|Chocomilk": {
+      "gloss": ""
+    },
+    "milk-series|Milkshake Strawberry": {
+      "gloss": ""
+    },
+    "milk-series|Milkshake Chocolate": {
+      "gloss": ""
+    },
+    "milk-series|Milkshake Vanilla": {
+      "gloss": ""
+    },
+    "tea-series|Lemon Tea": {
+      "gloss": ""
+    },
+    "tea-series|Lychee Tea": {
+      "gloss": ""
+    },
+    "tea-series|Teh Manis": {
+      "gloss": "설탕을 넣은 달콤한 차"
+    },
+    "tea-series|Teh Tawar": {
+      "gloss": "설탕을 넣지 않은 차"
+    },
+    "tea-series|Teh Kerampul": {
+      "gloss": "인도네시아 전통 허브차"
+    },
+    "traditional|Wedang Jahe Sereh": {
+      "gloss": "생강과 레몬그라스로 만든 따뜻한 음료"
+    },
+    "traditional|Wedang Jahe": {
+      "gloss": "생강으로 만든 따뜻한 음료"
+    },
+    "traditional|Wedang Sejuk": {
+      "gloss": "몸을 편안하게 해주는 인도네시아 전통 허브 음료"
+    },
+    "traditional|Wedang Susu": {
+      "gloss": "따뜻한 우유에 생강향을 더한 인도네시아식 음료"
+    },
+    "others|Mineral": {
+      "gloss": "",
+      "satuan": "Hot/Ice"
+    },
+    "others|Jeruk Manis": {
+      "gloss": "달콤한 오렌지 주스"
+    },
+    "others|Jeruk Nipis": {
+      "gloss": "라임 주스"
+    },
+    "others|Tropical Rum": {
+      "gloss": ""
+    },
+    "others|Tropical Blueberry/Lychee": {
+      "gloss": ""
+    },
+    "others|Fresh Tape Blend": {
+      "gloss": "인도네시아식 발효 카사바(타페) 음료",
+      "deskripsi": "초콜릿, 밀키, 오리지널"
+    },
+    "coffee-series|Americano": {
+      "gloss": "",
+      "satuan": "Hot/Ice"
+    },
+    "coffee-series|Affogato": {
+      "gloss": ""
+    },
+    "coffee-series|Cafe Latte": {
+      "gloss": "",
+      "satuan": "Hot/Ice"
+    },
+    "coffee-series|Cappucino": {
+      "gloss": "",
+      "satuan": "Hot/Ice"
+    },
+    "coffee-series|Espresso": {
+      "gloss": ""
+    },
+    "coffee-series|Es Kopi Susu Gula Aren": {
+      "gloss": "야자설탕(굴라아렌)을 넣은 아이스 밀크커피"
+    },
+    "coffee-series|Moccacino": {
+      "gloss": ""
+    },
+    "coffee-series|Kopi Susu Avocado": {
+      "gloss": "아보카도를 넣은 밀크커피"
+    },
+    "coffee-series|Batavia Coffee": {
+      "gloss": ""
+    }
+  },
+  "olahan": {
+    "Kepiting (300 gr up)": "게 (300g 이상)",
+    "Kepiting (400 gr up)": "게 (400g 이상)",
+    "Kepiting (500 gr up)": "게 (500g 이상)",
+    "Kepiting (600 gr up)": "게 (600g 이상)",
+    "Kepiting (700 gr up)": "게 (700g 이상)",
+    "Kepiting (800 gr up)": "게 (800g 이상)",
+    "Kepiting (1 kg up)": "게 (1kg 이상)",
+    "Kepiting Telur": "알을 품은 게",
+    "Garlic Caramel": "갈릭 카라멜 소스",
+    "Saus Kurnia": "Saus Kurnia",
+    "Saus Telur Asin": "짠 계란 소스",
+    "Tauco Asap": "훈제 타우코 소스",
+    "Masak Gulai": "굴라이 커리 소스",
+    "Saus Woku": "우쿠 소스",
+    "Saus Lada Hitam": "흑후추 소스",
+    "Saus Asam Manis": "새콤달콤 소스",
+    "Saus Padang (Khas Kurnia)": "파당 소스(쿠르니아 스타일)",
+    "Saus Mentega": "버터 소스",
+    "Saus Tiram": "굴 소스",
+    "Saus Malaka": "말라카 소스",
+    "Lobster (Live)": "랍스터 (활)",
+    "Lobster (Fresh)": "랍스터 (신선)",
+    "Lobster Mutiara": "진주 랍스터",
+    "Udang Pancet": "판쳇 새우",
+    "Udang Galah": "민물 왕새우(갈라)",
+    "Udang Vaname": "흰다리새우(바나메이)",
+    "Tiger Prawn": "타이거새우",
+    "Bakar Madu": "꿀 구이",
+    "Steam Bawang Putih": "마늘 찜",
+    "Goreng Kering": "바삭 튀김",
+    "Goreng Tepung": "튀김옷 튀김",
+    "Goreng Cabe Bawang": "고추마늘 튀김",
+    "Masak Raja Bawang": "라자바왕 마늘 소스",
+    "Cumi": "오징어",
+    "Baby Gurita": "베이비 문어",
+    "Sotong": "갑오징어",
+    "Bakar Bumbu Rujak": "룰작 양념 구이",
+    "Saus Thai": "타이 소스",
+    "Kerang Hijau": "그린 홍합",
+    "Kerang Bambu": "맛조개",
+    "Kerang Srimping": "스림핑 조개",
+    "Kerang Kapak": "도끼 조개",
+    "Kerang Madu": "꿀조개",
+    "Kerang Bali": "발리 조개",
+    "Kerang Dara": "꼬막(피조개)",
+    "Kerang Batik": "바틱 무늬 조개",
+    "Fresh Oyster": "신선한 생굴",
+    "Bakar Kurnia (oyster)": "쿠르니아 구이 (오이스터)",
+    "Steam Bawang Putih (oyster)": "마늘 찜 (오이스터)",
+    "Bakar Jimbaran (Oyster)": "짐바란 구이 (오이스터)",
+    "Rebus Cocol": "삶음(디핑소스 곁들임)",
+    "Kerapu Cantang - Live": "칸탕 그루퍼 (활어)",
+    "Baramundi - Live": "바라문디 (활어)",
+    "Gurami - Live": "구라미 (활어)",
+    "Baronang": "독가시치(바로낭)",
+    "Baramundi": "바라문디",
+    "Dorang": "병어(도랑)",
+    "Gurami": "구라미",
+    "Ekor Kuning": "노랑꼬리고기",
+    "Kakap Putih": "화이트 스내퍼",
+    "Kakap Merah": "레드 스내퍼(적도미)",
+    "Kaca Piring": "카짜삐링",
+    "Kerapu Totol": "점박이 그루퍼",
+    "Ikan Kwe": "전갱이류 생선(이칸꿰)",
+    "Sukang": "수캉 생선",
+    "Bakar Kurnia": "쿠르니아 구이",
+    "Bakar Rica Makassar": "마카사르 리짜 구이",
+    "Steam Saus Kurnia": "쿠르니아 소스 찜",
+    "Bakar Jimbaran": "짐바란 구이",
+    "Goreng Saus Asam Manis": "새콤달콤 소스 튀김",
+    "Goreng Saus Padang": "파당 소스 튀김",
+    "Goreng Saus Woku": "우쿠 소스 튀김",
+    "Bakar Dabu-dabu": "다부다부 구이",
+    "Bakar Kecap": "간장 구이",
+    "Sup Gurih": "감칠맛 수프",
+    "Steam Hongkong": "홍콩식 찜",
+    "Steam Limau": "라임 찜",
+    "Kuah Asam": "새콤한 국물",
+    "Kuah Asam Pedas": "새콤매콤한 국물",
+    "Goreng Saus Thai": "타이 소스 튀김",
+    "Saus Lotis Pesona": "로티스 뻬소나 소스",
+    "Harga per 100 gram · minimal order 250 gram · harga pasar, tanya staff": "100그램당 가격 · 최소 주문 250그램 · 시가이므로 직원에게 문의"
+  },
+  "catatan_global": [
+    "모든 가격에는 서비스 차지 및 정부 세금이 포함되어 있지 않습니다",
+    "해산물 가격은 100g 단위로 책정되며, 최소 주문 수량은 250g입니다",
+    "신선 해산물 메뉴(게, 새우 & 랍스터, 오징어, 조개, 생선)는 시가로 책정되며, 최신 가격은 직원에게 문의해 주세요",
+    "가니시 및 플레이팅 디테일은 실제 사진과 다를 수 있습니다"
+  ],
+  "restoran": {
+    "tentang": "Kurnia Seafood는 랍스터, 생선, 게, 새우에 이르기까지 신선하고 살아있는 최고급 해산물을 다양하게 선보입니다. 25가지가 넘는 조리법을 통해 구이 소스, 튀김 소스, 찜 소스 등 Kurnia Seafood만의 다양한 조리 기법으로 각 요리를 맛보실 수 있습니다 — 풍부하고 독특한 맛의 Saus Kurnia, 짭짤하고 달콤한 조화가 특별한 Saus Garlic Caramel부터, 강렬한 향신료 풍미로 식욕을 돋우는 Saus Padang까지 다양합니다. 저희는 가족과 함께하는 식사부터 다양한 행사 진행까지, 완벽한 시설과 따뜻한 분위기로 모든 손님께 편안함을 선사합니다. 할랄 인증을 받은 Kurnia Seafood는 안전하고 품질 좋은 해산물 요리를 모든 분들이 즐기실 수 있도록 만드는 데 최선을 다하고 있습니다.",
+    "fasilitas": [
+      "다이닝룸 (실내 & 실외)",
+      "VIP 노래방 룸 (Anyer, Carita)",
+      "VIP룸 Bunaken",
+      "미니 놀이터",
+      "기도실(무쏠라)",
+      "엘리베이터",
+      "넓은 주차장"
+    ],
+    "tersedia_untuk": [
+      "À La Carte",
+      "Meeting",
+      "Conference",
+      "Gathering",
+      "Catering",
+      "Birthday Celebration",
+      "Engagement"
+    ]
+  },
+  "gloss_ragu": [
+    "appetizer|Tahu Bawang Lombok",
+    "sup|Sup Telur Kepiting",
+    "sambal|Sambal Dabu-dabu",
+    "sayur|Genjer Tumis Teri",
+    "sayur|Genjer Bawang Putih",
+    "juice-series|Jus Jambu",
+    "tea-series|Teh Kerampul",
+    "traditional|Wedang Sejuk",
+    "traditional|Wedang Susu",
+    "others|Fresh Tape Blend"
+  ]
+}
