@@ -133,21 +133,21 @@
           "nama": "Alaska King Crab",
           "harga": 275000,
           "harga_label": "275K",
-          "satuan": "per ons (100 gr), berat ± 1,2–1,5 kg",
+          "satuan": "per ons (100 gr), estimasi berat ± 1,2–1,5 kg",
           "deskripsi": "Ideal for Sharing (3-4 pax) · Singapore Sauce Style · Halal Certified. Dikenal sebagai rajanya laut, hidup di perairan dingin Alaska, dagingnya lembut dan manis, diolah langsung oleh chef untuk mempertahankan cita rasa alaminya."
         },
         {
           "nama": "American Lobster (Fresh)",
           "harga": 249000,
           "harga_label": "249K",
-          "satuan": "per ons (100 gr)",
+          "satuan": "per ons (100 gr), estimasi berat 400-700 gr",
           "deskripsi": "Menu baru (NEW)"
         },
         {
           "nama": "American Lobster (Live)",
           "harga": 335000,
           "harga_label": "335K",
-          "satuan": "per ons (100 gr)",
+          "satuan": "per ons (100 gr), estimasi berat 400-700 gr",
           "deskripsi": "Menu baru (NEW)"
         },
         {
