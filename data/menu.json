@@ -134,7 +134,7 @@
           "harga": 275000,
           "harga_label": "275K",
           "satuan": "per ons (100 gr), estimasi berat ± 1,2–1,5 kg",
-          "deskripsi": "Ideal for Sharing (3-4 pax) · Singapore Sauce Style · Halal Certified. Dikenal sebagai rajanya laut, hidup di perairan dingin Alaska, dagingnya lembut dan manis, diolah langsung oleh chef untuk mempertahankan cita rasa alaminya."
+          "deskripsi": "Ideal for Sharing (3–4 pax) · Singapore-Style Sauce · Halal Certified\n\nDikenal sebagai “raja laut” dari perairan dingin Alaska, dengan daging yang lembut dan cita rasa manis alami. Diolah secara khusus oleh chef untuk menjaga kesegaran dan karakter rasanya."
         },
         {
           "nama": "American Lobster (Fresh)",
@@ -155,7 +155,7 @@
           "harga": 269000,
           "harga_label": "269K++",
           "satuan": "600 - 800 gr",
-          "deskripsi": "Pilihan varian rasa: Bakar Merah Bara (Pedas, Gurih Beraromatik Terasi dan Udang Ebi), Bakar Saus Malaka (Gurih, Manis, Bold, Creamy Coconut), Bakar Saus Kurnia (Gurih, Sedikit Pedas, Aromatik Khas Rempah)",
+          "deskripsi": "Pilihan varian rasa:\n\nBakar Merah Bara — Pedas dan gurih, dengan aroma khas terasi dan udang ebi.\nBakar Saus Malaka — Perpaduan gurih-manis yang kaya dengan sentuhan creamy coconut.\nBakar Saus Kurnia — Gurih, sedikit pedas, dengan aroma rempah khas Kurnia.",
           "plus_plus": true
         },
         {
@@ -163,7 +163,7 @@
           "harga": 299000,
           "harga_label": "299K++",
           "satuan": "800 gr - 1 kg",
-          "deskripsi": "Pilihan varian rasa: Bakar Merah Bara (Pedas, Gurih Beraromatik Terasi dan Udang Ebi), Bakar Saus Malaka (Gurih, Manis, Bold, Creamy Coconut), Bakar Saus Kurnia (Gurih, Sedikit Pedas, Aromatik Khas Rempah)",
+          "deskripsi": "Pilihan varian rasa:\n\nBakar Merah Bara — Pedas dan gurih, dengan aroma khas terasi dan udang ebi.\nBakar Saus Malaka — Perpaduan gurih-manis yang kaya dengan sentuhan creamy coconut.\nBakar Saus Kurnia — Gurih, sedikit pedas, dengan aroma rempah khas Kurnia.",
           "plus_plus": true
         },
         {
@@ -171,8 +171,8 @@
           "harga": 329000,
           "harga_label": "329K++",
           "satuan": "1 kg up",
-          "plus_plus": true,
-          "deskripsi": "Pilihan varian rasa: Bakar Merah Bara (Pedas, Gurih Beraromatik Terasi dan Udang Ebi), Bakar Saus Malaka (Gurih, Manis, Bold, Creamy Coconut), Bakar Saus Kurnia (Gurih, Sedikit Pedas, Aromatik Khas Rempah)"
+          "deskripsi": "Pilihan varian rasa:\n\nBakar Merah Bara — Pedas dan gurih, dengan aroma khas terasi dan udang ebi.\nBakar Saus Malaka — Perpaduan gurih-manis yang kaya dengan sentuhan creamy coconut.\nBakar Saus Kurnia — Gurih, sedikit pedas, dengan aroma rempah khas Kurnia.",
+          "plus_plus": true
         },
         {
           "nama": "Pleasure Platter Premium",
