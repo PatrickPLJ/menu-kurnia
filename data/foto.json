@@ -4,7 +4,7 @@
     "nama": "Alaska King Crab",
     "kategori": "signature",
     "halaman": 5,
-    "alpha": true,
+    "alpha": false,
     "yakin": true,
     "tipe": "hidangan",
     "kategori_id": "signature-dish",
@@ -64,11 +64,11 @@
     "kategori_id": "seafood-kepiting"
   },
   {
-    "file": "udang-saus-kurnia-steam-bawang-putih.webp",
+    "file": "udang-saus-kurnia-udang-steam-bawang-putih.webp",
     "nama": "Udang Saus Kurnia & Udang Steam Bawang Putih",
     "kategori": "udang-lobster",
     "halaman": 10,
-    "alpha": true,
+    "alpha": false,
     "yakin": true,
     "tipe": "komposisi",
     "kategori_id": "seafood-udang-lobster"
@@ -88,7 +88,7 @@
     "nama": "Fresh Oyster",
     "kategori": "kerang",
     "halaman": 12,
-    "alpha": true,
+    "alpha": false,
     "yakin": true,
     "tipe": "komposisi",
     "kategori_id": "seafood-kerang"
@@ -136,11 +136,11 @@
     "item": "Nasi Liwet Gurami Terbang"
   },
   {
-    "file": "kepiting-soka.webp",
+    "file": "kepiting-soka-94-cabe-bawang-telur-asin.webp",
     "nama": "Kepiting Soka 94 (Cabe Bawang/Telur Asin)",
     "kategori": "special-menu",
     "halaman": 17,
-    "alpha": true,
+    "alpha": false,
     "yakin": true,
     "tipe": "hidangan",
     "kategori_id": "special-menu",
