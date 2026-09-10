@@ -286,5 +286,50 @@
     "tipe": "komposisi",
     "kategori_id": "degan-series",
     "file": "kelapa-muda-utuh-es-degan-murni-es-degan-jeruk.webp"
+  },
+  {
+    "alpha": false,
+    "yakin": true,
+    "nama": "Signature Ice Cream",
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Signature Ice Cream",
+    "file": "signature-ice-cream.webp"
+  },
+  {
+    "alpha": false,
+    "yakin": true,
+    "nama": "Margareta Ice Cream",
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Margareta Ice Cream",
+    "file": "margareta-ice-cream.webp"
+  },
+  {
+    "alpha": false,
+    "yakin": true,
+    "nama": "Es Campur",
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Es Campur",
+    "file": "es-campur.webp"
+  },
+  {
+    "alpha": false,
+    "yakin": true,
+    "nama": "Es Cao Kombinasi",
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Es Cao Kombinasi",
+    "file": "es-cao-kombinasi.webp"
+  },
+  {
+    "alpha": false,
+    "yakin": true,
+    "nama": "Sliced Fruit",
+    "tipe": "hidangan",
+    "kategori_id": "dessert",
+    "item": "Slice Fruit Large",
+    "file": "sliced-fruit.webp"
   }
 ]
