@@ -473,7 +473,7 @@
           "nama": "Nasi Putih (Porsi)",
           "harga": 9500,
           "harga_label": "9.5K",
-          "satuan": "porsi",
+          "satuan": null,
           "deskripsi": null
         },
         {
@@ -494,7 +494,7 @@
           "nama": "Nasi Liwet (Porsi)",
           "harga": 11000,
           "harga_label": "11K",
-          "satuan": "porsi",
+          "satuan": null,
           "deskripsi": null
         },
         {
