@@ -212,53 +212,31 @@
     "item": "Mango Sago Kelapa"
   },
   {
-    "file": "juice-series.webp",
+    "file": "juice-series-jus-semangka-jus-alpukat-jus-mangga-jus-buah-naga.webp",
     "nama": "Juice Series (Jus Semangka, Jus Alpukat, Jus Mangga, Jus Buah Naga)",
     "kategori": "minuman",
     "halaman": 20,
-    "alpha": true,
+    "alpha": false,
     "yakin": true,
     "tipe": "komposisi",
     "kategori_id": "juice-series"
   },
   {
-    "file": "ice-cream-duo.webp",
-    "nama": "Signature Ice Cream & Margareta Ice Cream",
+    "file": "es-cao-kombinasi-margareta-ice-cream-signature-ice-cream-es-campur.webp",
+    "nama": "Fresh Tape Blend, Es Cao Kombinasi, Margareta Ice Cream, Signature Ice Cream, Es Campur",
     "kategori": "dessert",
     "halaman": 21,
-    "alpha": true,
+    "alpha": false,
     "yakin": true,
     "tipe": "komposisi",
     "kategori_id": "dessert"
-  },
-  {
-    "file": "es-campur.webp",
-    "nama": "Es Campur",
-    "kategori": "dessert",
-    "halaman": 21,
-    "alpha": true,
-    "yakin": true,
-    "tipe": "hidangan",
-    "kategori_id": "dessert",
-    "item": "Es Campur"
-  },
-  {
-    "file": "es-cao-kombinasi.webp",
-    "nama": "Es Cao Kombinasi",
-    "kategori": "dessert",
-    "halaman": 21,
-    "alpha": true,
-    "yakin": true,
-    "tipe": "hidangan",
-    "kategori_id": "dessert",
-    "item": "Es Cao Kombinasi"
   },
   {
     "file": "fresh-tape-blend.webp",
     "nama": "Fresh Tape Blend",
     "kategori": "minuman",
     "halaman": 21,
-    "alpha": true,
+    "alpha": false,
     "yakin": true,
     "tipe": "hidangan",
     "kategori_id": "others",
@@ -300,5 +278,13 @@
     "kategori_id": "signature-dish",
     "item": "American Lobster (Live)",
     "file": "american-lobster-garlic-caramel.webp"
+  },
+  {
+    "alpha": false,
+    "yakin": true,
+    "nama": "Kelapa muda utuh, Es Degan Murni, Es Degan Jeruk",
+    "tipe": "komposisi",
+    "kategori_id": "degan-series",
+    "file": "kelapa-muda-utuh-es-degan-murni-es-degan-jeruk.webp"
   }
 ]
