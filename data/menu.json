@@ -417,28 +417,28 @@
           "nama": "Sup Buntut (2 Porsi)",
           "harga": 100000,
           "harga_label": "100K",
-          "satuan": "2 porsi",
+          "satuan": null,
           "deskripsi": null
         },
         {
           "nama": "Sup Iga (2 Porsi)",
           "harga": 100000,
           "harga_label": "100K",
-          "satuan": "2 porsi",
+          "satuan": null,
           "deskripsi": null
         },
         {
           "nama": "Sup Buntut (1 Porsi)",
           "harga": 70000,
           "harga_label": "70K",
-          "satuan": "1 porsi",
+          "satuan": null,
           "deskripsi": null
         },
         {
           "nama": "Sup Iga (1 Porsi)",
           "harga": 70000,
           "harga_label": "70K",
-          "satuan": "1 porsi",
+          "satuan": null,
           "deskripsi": null
         }
       ]
