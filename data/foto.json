@@ -282,5 +282,23 @@
     "alpha": true,
     "yakin": false,
     "tipe": "hero"
+  },
+  {
+    "alpha": false,
+    "yakin": true,
+    "nama": "American Lobster Spicy Creamy Garlic",
+    "tipe": "hidangan",
+    "kategori_id": "signature-dish",
+    "item": "American Lobster (Fresh)",
+    "file": "american-lobster-spicy-garlic-caramel.webp"
+  },
+  {
+    "alpha": false,
+    "yakin": true,
+    "nama": "American Lobster Garlic Caramel",
+    "tipe": "hidangan",
+    "kategori_id": "signature-dish",
+    "item": "American Lobster (Live)",
+    "file": "american-lobster-garlic-caramel.webp"
   }
 ]

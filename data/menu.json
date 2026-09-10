@@ -38,18 +38,90 @@
       "nama": "Appetizer",
       "catatan": null,
       "item": [
-        { "nama": "Gohyong", "harga": 46000, "harga_label": "46K", "satuan": null, "deskripsi": null },
-        { "nama": "Jamur Crispy", "harga": 29000, "harga_label": "29K", "satuan": null, "deskripsi": null },
-        { "nama": "Kangkung Crispy", "harga": 20000, "harga_label": "20K", "satuan": null, "deskripsi": null },
-        { "nama": "Kentang Goreng", "harga": 33000, "harga_label": "33K", "satuan": null, "deskripsi": null },
-        { "nama": "Lumpia Udang", "harga": 37000, "harga_label": "37K", "satuan": null, "deskripsi": null },
-        { "nama": "Mantau", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": null },
-        { "nama": "Mendoan", "harga": 19000, "harga_label": "19K", "satuan": null, "deskripsi": null },
-        { "nama": "Tahu Goreng", "harga": 19000, "harga_label": "19K", "satuan": null, "deskripsi": null },
-        { "nama": "Tempe/Tahu Goreng", "harga": 18000, "harga_label": "18K", "satuan": null, "deskripsi": null },
-        { "nama": "Tahu Bawang Lombok", "harga": 29000, "harga_label": "29K", "satuan": null, "deskripsi": null },
-        { "nama": "Terong Raos", "harga": 26000, "harga_label": "26K", "satuan": null, "deskripsi": null },
-        { "nama": "Otak-Otak", "harga": 12000, "harga_label": "12K/Pcs", "satuan": "per pcs", "deskripsi": null }
+        {
+          "nama": "Gohyong",
+          "harga": 46000,
+          "harga_label": "46K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jamur Crispy",
+          "harga": 29000,
+          "harga_label": "29K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Kangkung Crispy",
+          "harga": 20000,
+          "harga_label": "20K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Kentang Goreng",
+          "harga": 33000,
+          "harga_label": "33K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Lumpia Udang",
+          "harga": 37000,
+          "harga_label": "37K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Mantau",
+          "harga": 45000,
+          "harga_label": "45K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Mendoan",
+          "harga": 19000,
+          "harga_label": "19K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tahu Goreng",
+          "harga": 19000,
+          "harga_label": "19K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tempe/Tahu Goreng",
+          "harga": 18000,
+          "harga_label": "18K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tahu Bawang Lombok",
+          "harga": 29000,
+          "harga_label": "29K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Terong Raos",
+          "harga": 26000,
+          "harga_label": "26K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Otak-Otak",
+          "harga": 12000,
+          "harga_label": "12K/Pcs",
+          "satuan": "per pcs",
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -63,6 +135,20 @@
           "harga_label": "275K",
           "satuan": "per ons (100 gr), berat ± 1,2–1,5 kg",
           "deskripsi": "Ideal for Sharing (3-4 pax) · Singapore Sauce Style · Halal Certified. Dikenal sebagai rajanya laut, hidup di perairan dingin Alaska, dagingnya lembut dan manis, diolah langsung oleh chef untuk mempertahankan cita rasa alaminya."
+        },
+        {
+          "nama": "American Lobster (Fresh)",
+          "harga": 249000,
+          "harga_label": "249K",
+          "satuan": "per ons (100 gr)",
+          "deskripsi": "Menu baru (NEW)"
+        },
+        {
+          "nama": "American Lobster (Live)",
+          "harga": 335000,
+          "harga_label": "335K",
+          "satuan": "per ons (100 gr)",
+          "deskripsi": "Menu baru (NEW)"
         },
         {
           "nama": "Rahang Tuna Bakar (L)",
@@ -292,15 +378,69 @@
       "nama": "Menu Nusantara",
       "catatan": "Ayam & Sapi",
       "item": [
-        { "nama": "Ayam Goreng Kremes", "harga": 40000, "harga_label": "40K", "satuan": null, "deskripsi": null },
-        { "nama": "Ayam Bakar", "harga": 41000, "harga_label": "41K", "satuan": null, "deskripsi": null },
-        { "nama": "Ayam Bakar Serundeng", "harga": 41000, "harga_label": "41K", "satuan": null, "deskripsi": null },
-        { "nama": "Ayam Goreng Serundeng", "harga": 41000, "harga_label": "41K", "satuan": null, "deskripsi": null },
-        { "nama": "Ayam Sambal Mangga", "harga": 41000, "harga_label": "41K", "satuan": null, "deskripsi": null },
-        { "nama": "Sup Buntut (2 Porsi)", "harga": 100000, "harga_label": "100K", "satuan": "2 porsi", "deskripsi": null },
-        { "nama": "Sup Iga (2 Porsi)", "harga": 100000, "harga_label": "100K", "satuan": "2 porsi", "deskripsi": null },
-        { "nama": "Sup Buntut (1 Porsi)", "harga": 70000, "harga_label": "70K", "satuan": "1 porsi", "deskripsi": null },
-        { "nama": "Sup Iga (1 Porsi)", "harga": 70000, "harga_label": "70K", "satuan": "1 porsi", "deskripsi": null }
+        {
+          "nama": "Ayam Goreng Kremes",
+          "harga": 40000,
+          "harga_label": "40K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Ayam Bakar",
+          "harga": 41000,
+          "harga_label": "41K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Ayam Bakar Serundeng",
+          "harga": 41000,
+          "harga_label": "41K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Ayam Goreng Serundeng",
+          "harga": 41000,
+          "harga_label": "41K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Ayam Sambal Mangga",
+          "harga": 41000,
+          "harga_label": "41K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Sup Buntut (2 Porsi)",
+          "harga": 100000,
+          "harga_label": "100K",
+          "satuan": "2 porsi",
+          "deskripsi": null
+        },
+        {
+          "nama": "Sup Iga (2 Porsi)",
+          "harga": 100000,
+          "harga_label": "100K",
+          "satuan": "2 porsi",
+          "deskripsi": null
+        },
+        {
+          "nama": "Sup Buntut (1 Porsi)",
+          "harga": 70000,
+          "harga_label": "70K",
+          "satuan": "1 porsi",
+          "deskripsi": null
+        },
+        {
+          "nama": "Sup Iga (1 Porsi)",
+          "harga": 70000,
+          "harga_label": "70K",
+          "satuan": "1 porsi",
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -329,19 +469,97 @@
       "nama": "Nasi & Mie",
       "catatan": null,
       "item": [
-        { "nama": "Nasi Putih (Porsi)", "harga": 9500, "harga_label": "9.5K", "satuan": "porsi", "deskripsi": null },
-        { "nama": "Nasi Putih Bakul Kecil", "harga": 27000, "harga_label": "27K", "satuan": null, "deskripsi": null },
-        { "nama": "Nasi Putih Bakul Besar", "harga": 37000, "harga_label": "37K", "satuan": null, "deskripsi": null },
-        { "nama": "Nasi Liwet (Porsi)", "harga": 11000, "harga_label": "11K", "satuan": "porsi", "deskripsi": null },
-        { "nama": "Nasi Liwet Ketel", "harga": 53000, "harga_label": "53K", "satuan": null, "deskripsi": null },
-        { "nama": "Nasi Goreng Seafood", "harga": 39000, "harga_label": "39K", "satuan": null, "deskripsi": null },
-        { "nama": "Nasi Goreng Telur", "harga": 36000, "harga_label": "36K", "satuan": null, "deskripsi": null },
-        { "nama": "Nasi Goreng Ikan Asin", "harga": 38000, "harga_label": "38K", "satuan": null, "deskripsi": null },
-        { "nama": "Mie Goreng Seafood", "harga": 39000, "harga_label": "39K", "satuan": null, "deskripsi": null },
-        { "nama": "Mie Goreng Telur", "harga": 36000, "harga_label": "36K", "satuan": null, "deskripsi": null },
-        { "nama": "Mie Kuah Hongkong", "harga": 38000, "harga_label": "38K", "satuan": null, "deskripsi": null },
-        { "nama": "Char Kwetiaw", "harga": 44000, "harga_label": "44K", "satuan": null, "deskripsi": null },
-        { "nama": "Pathai Kwetiaw", "harga": 44000, "harga_label": "44K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Nasi Putih (Porsi)",
+          "harga": 9500,
+          "harga_label": "9.5K",
+          "satuan": "porsi",
+          "deskripsi": null
+        },
+        {
+          "nama": "Nasi Putih Bakul Kecil",
+          "harga": 27000,
+          "harga_label": "27K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Nasi Putih Bakul Besar",
+          "harga": 37000,
+          "harga_label": "37K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Nasi Liwet (Porsi)",
+          "harga": 11000,
+          "harga_label": "11K",
+          "satuan": "porsi",
+          "deskripsi": null
+        },
+        {
+          "nama": "Nasi Liwet Ketel",
+          "harga": 53000,
+          "harga_label": "53K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Nasi Goreng Seafood",
+          "harga": 39000,
+          "harga_label": "39K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Nasi Goreng Telur",
+          "harga": 36000,
+          "harga_label": "36K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Nasi Goreng Ikan Asin",
+          "harga": 38000,
+          "harga_label": "38K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Mie Goreng Seafood",
+          "harga": 39000,
+          "harga_label": "39K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Mie Goreng Telur",
+          "harga": 36000,
+          "harga_label": "36K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Mie Kuah Hongkong",
+          "harga": 38000,
+          "harga_label": "38K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Char Kwetiaw",
+          "harga": 44000,
+          "harga_label": "44K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Pathai Kwetiaw",
+          "harga": 44000,
+          "harga_label": "44K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -349,10 +567,34 @@
       "nama": "Sup",
       "catatan": null,
       "item": [
-        { "nama": "Sup Kental Jagung", "harga": 34000, "harga_label": "34K", "satuan": null, "deskripsi": null },
-        { "nama": "Sup Tomyum Seafood", "harga": 79000, "harga_label": "79K", "satuan": null, "deskripsi": null },
-        { "nama": "Sup Kental Tahu Seafood", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Sup Telur Kepiting", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Sup Kental Jagung",
+          "harga": 34000,
+          "harga_label": "34K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Sup Tomyum Seafood",
+          "harga": 79000,
+          "harga_label": "79K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Sup Kental Tahu Seafood",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Sup Telur Kepiting",
+          "harga": 45000,
+          "harga_label": "45K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -360,8 +602,20 @@
       "nama": "Sambal",
       "catatan": null,
       "item": [
-        { "nama": "Sambal Mangga", "harga": 11000, "harga_label": "11K", "satuan": null, "deskripsi": null },
-        { "nama": "Sambal Dabu-dabu", "harga": 12500, "harga_label": "12.5K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Sambal Mangga",
+          "harga": 11000,
+          "harga_label": "11K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Sambal Dabu-dabu",
+          "harga": 12500,
+          "harga_label": "12.5K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -369,19 +623,97 @@
       "nama": "Sayur",
       "catatan": "Detail garnish dan tata saji dapat berbeda",
       "item": [
-        { "nama": "Kangkung Terasi", "harga": 26000, "harga_label": "26K", "satuan": null, "deskripsi": null },
-        { "nama": "Kangkung Bawang Putih", "harga": 26000, "harga_label": "26K", "satuan": null, "deskripsi": null },
-        { "nama": "Tauge Ikan Asin", "harga": 26000, "harga_label": "26K", "satuan": null, "deskripsi": null },
-        { "nama": "Tauge Bawang Putih", "harga": 26000, "harga_label": "26K", "satuan": null, "deskripsi": null },
-        { "nama": "Tauge Tauco Seafood", "harga": 39000, "harga_label": "39K", "satuan": null, "deskripsi": null },
-        { "nama": "Terong Balado", "harga": 26000, "harga_label": "26K", "satuan": null, "deskripsi": null },
-        { "nama": "Tumis Brokoli", "harga": 36000, "harga_label": "36K", "satuan": null, "deskripsi": null },
-        { "nama": "Tumis Brokoli Seafood", "harga": 43000, "harga_label": "43K", "satuan": null, "deskripsi": null },
-        { "nama": "Baby Kaylan Tumis Teri", "harga": 32000, "harga_label": "32K", "satuan": null, "deskripsi": null },
-        { "nama": "Baby Kaylan Bawang Putih", "harga": 32000, "harga_label": "32K", "satuan": null, "deskripsi": null },
-        { "nama": "Genjer Tumis Teri", "harga": 28000, "harga_label": "28K", "satuan": null, "deskripsi": null },
-        { "nama": "Genjer Bawang Putih", "harga": 28000, "harga_label": "28K", "satuan": null, "deskripsi": null },
-        { "nama": "Lalapan", "harga": 15000, "harga_label": "15K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Kangkung Terasi",
+          "harga": 26000,
+          "harga_label": "26K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Kangkung Bawang Putih",
+          "harga": 26000,
+          "harga_label": "26K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tauge Ikan Asin",
+          "harga": 26000,
+          "harga_label": "26K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tauge Bawang Putih",
+          "harga": 26000,
+          "harga_label": "26K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tauge Tauco Seafood",
+          "harga": 39000,
+          "harga_label": "39K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Terong Balado",
+          "harga": 26000,
+          "harga_label": "26K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tumis Brokoli",
+          "harga": 36000,
+          "harga_label": "36K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tumis Brokoli Seafood",
+          "harga": 43000,
+          "harga_label": "43K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Baby Kaylan Tumis Teri",
+          "harga": 32000,
+          "harga_label": "32K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Baby Kaylan Bawang Putih",
+          "harga": 32000,
+          "harga_label": "32K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Genjer Tumis Teri",
+          "harga": 28000,
+          "harga_label": "28K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Genjer Bawang Putih",
+          "harga": 28000,
+          "harga_label": "28K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Lalapan",
+          "harga": 15000,
+          "harga_label": "15K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -389,11 +721,41 @@
       "nama": "Sweets & Delights",
       "catatan": null,
       "item": [
-        { "nama": "Rujak Ice Cream Pesona", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": null },
-        { "nama": "Kurnia Signature Sorbet", "harga": 63000, "harga_label": "63K", "satuan": null, "deskripsi": null },
-        { "nama": "Es Pisang Ijo", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": null },
-        { "nama": "Es Serut Kurnia Spesial", "harga": 45000, "harga_label": "45K", "satuan": null, "deskripsi": null },
-        { "nama": "Mango Sago Kelapa", "harga": 53000, "harga_label": "53K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Rujak Ice Cream Pesona",
+          "harga": 45000,
+          "harga_label": "45K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Kurnia Signature Sorbet",
+          "harga": 63000,
+          "harga_label": "63K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Es Pisang Ijo",
+          "harga": 45000,
+          "harga_label": "45K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Es Serut Kurnia Spesial",
+          "harga": 45000,
+          "harga_label": "45K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Mango Sago Kelapa",
+          "harga": 53000,
+          "harga_label": "53K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -401,11 +763,41 @@
       "nama": "Dessert",
       "catatan": null,
       "item": [
-        { "nama": "Es Campur", "harga": 38000, "harga_label": "38K", "satuan": null, "deskripsi": null },
-        { "nama": "Signature Ice Cream", "harga": 36000, "harga_label": "36K", "satuan": null, "deskripsi": null },
-        { "nama": "Margareta Ice Cream", "harga": 26000, "harga_label": "26K", "satuan": null, "deskripsi": null },
-        { "nama": "Slice Fruit Large", "harga": 82000, "harga_label": "82K", "satuan": null, "deskripsi": null },
-        { "nama": "Es Cao Kombinasi", "harga": 35000, "harga_label": "35K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Es Campur",
+          "harga": 38000,
+          "harga_label": "38K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Signature Ice Cream",
+          "harga": 36000,
+          "harga_label": "36K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Margareta Ice Cream",
+          "harga": 26000,
+          "harga_label": "26K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Slice Fruit Large",
+          "harga": 82000,
+          "harga_label": "82K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Es Cao Kombinasi",
+          "harga": 35000,
+          "harga_label": "35K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -413,10 +805,34 @@
       "nama": "Degan Series",
       "catatan": null,
       "item": [
-        { "nama": "Es Degan Jeruk", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Es Degan Selasih", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Es Degan Murni", "harga": 27000, "harga_label": "27K", "satuan": null, "deskripsi": null },
-        { "nama": "Kelapa Muda Utuh", "harga": 39000, "harga_label": "39K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Es Degan Jeruk",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Es Degan Selasih",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Es Degan Murni",
+          "harga": 27000,
+          "harga_label": "27K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Kelapa Muda Utuh",
+          "harga": 39000,
+          "harga_label": "39K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -424,15 +840,69 @@
       "nama": "Juice Series",
       "catatan": null,
       "item": [
-        { "nama": "Jus Semangka", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Jus Melon", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Jus Strawberry", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Jus Sirsak", "harga": 31000, "harga_label": "31K", "satuan": null, "deskripsi": null },
-        { "nama": "Jus Mangga", "harga": 31000, "harga_label": "31K", "satuan": null, "deskripsi": null },
-        { "nama": "Jus Alpukat", "harga": 33000, "harga_label": "33K", "satuan": null, "deskripsi": null },
-        { "nama": "Jus Jambu", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Jus Orange", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Jus Buah Naga", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Jus Semangka",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jus Melon",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jus Strawberry",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jus Sirsak",
+          "harga": 31000,
+          "harga_label": "31K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jus Mangga",
+          "harga": 31000,
+          "harga_label": "31K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jus Alpukat",
+          "harga": 33000,
+          "harga_label": "33K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jus Jambu",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jus Orange",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jus Buah Naga",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -440,14 +910,62 @@
       "nama": "Special Drink",
       "catatan": null,
       "item": [
-        { "nama": "Cinematic Milo", "harga": 31000, "harga_label": "31K", "satuan": null, "deskripsi": null },
-        { "nama": "Deep Blue Sea", "harga": 27000, "harga_label": "27K", "satuan": null, "deskripsi": null },
-        { "nama": "Italian Green Soda", "harga": 27000, "harga_label": "27K", "satuan": null, "deskripsi": null },
-        { "nama": "Italian Red Soda", "harga": 27000, "harga_label": "27K", "satuan": null, "deskripsi": null },
-        { "nama": "Lychee Squash", "harga": 25000, "harga_label": "25K", "satuan": null, "deskripsi": null },
-        { "nama": "Lemon Squash", "harga": 25000, "harga_label": "25K", "satuan": null, "deskripsi": null },
-        { "nama": "Mango Squash", "harga": 25000, "harga_label": "25K", "satuan": null, "deskripsi": null },
-        { "nama": "Es Melon Serut", "harga": 27000, "harga_label": "27K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Cinematic Milo",
+          "harga": 31000,
+          "harga_label": "31K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Deep Blue Sea",
+          "harga": 27000,
+          "harga_label": "27K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Italian Green Soda",
+          "harga": 27000,
+          "harga_label": "27K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Italian Red Soda",
+          "harga": 27000,
+          "harga_label": "27K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Lychee Squash",
+          "harga": 25000,
+          "harga_label": "25K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Lemon Squash",
+          "harga": 25000,
+          "harga_label": "25K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Mango Squash",
+          "harga": 25000,
+          "harga_label": "25K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Es Melon Serut",
+          "harga": 27000,
+          "harga_label": "27K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -455,10 +973,34 @@
       "nama": "Milk Series",
       "catatan": null,
       "item": [
-        { "nama": "Chocomilk", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Milkshake Strawberry", "harga": 29000, "harga_label": "29K", "satuan": null, "deskripsi": null },
-        { "nama": "Milkshake Chocolate", "harga": 29000, "harga_label": "29K", "satuan": null, "deskripsi": null },
-        { "nama": "Milkshake Vanilla", "harga": 29000, "harga_label": "29K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Chocomilk",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Milkshake Strawberry",
+          "harga": 29000,
+          "harga_label": "29K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Milkshake Chocolate",
+          "harga": 29000,
+          "harga_label": "29K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Milkshake Vanilla",
+          "harga": 29000,
+          "harga_label": "29K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -466,11 +1008,41 @@
       "nama": "Tea Series",
       "catatan": "Tersedia pilihan Hot/Ice",
       "item": [
-        { "nama": "Lemon Tea", "harga": 20000, "harga_label": "20K", "satuan": null, "deskripsi": null },
-        { "nama": "Lychee Tea", "harga": 30000, "harga_label": "30K", "satuan": null, "deskripsi": null },
-        { "nama": "Teh Manis", "harga": 10000, "harga_label": "10K", "satuan": null, "deskripsi": null },
-        { "nama": "Teh Tawar", "harga": 8000, "harga_label": "8K", "satuan": null, "deskripsi": null },
-        { "nama": "Teh Kerampul", "harga": 14000, "harga_label": "14K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Lemon Tea",
+          "harga": 20000,
+          "harga_label": "20K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Lychee Tea",
+          "harga": 30000,
+          "harga_label": "30K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Teh Manis",
+          "harga": 10000,
+          "harga_label": "10K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Teh Tawar",
+          "harga": 8000,
+          "harga_label": "8K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Teh Kerampul",
+          "harga": 14000,
+          "harga_label": "14K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -478,10 +1050,34 @@
       "nama": "Traditional",
       "catatan": null,
       "item": [
-        { "nama": "Wedang Jahe Sereh", "harga": 19000, "harga_label": "19K", "satuan": null, "deskripsi": null },
-        { "nama": "Wedang Jahe", "harga": 19000, "harga_label": "19K", "satuan": null, "deskripsi": null },
-        { "nama": "Wedang Sejuk", "harga": 19000, "harga_label": "19K", "satuan": null, "deskripsi": null },
-        { "nama": "Wedang Susu", "harga": 20000, "harga_label": "20K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Wedang Jahe Sereh",
+          "harga": 19000,
+          "harga_label": "19K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Wedang Jahe",
+          "harga": 19000,
+          "harga_label": "19K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Wedang Sejuk",
+          "harga": 19000,
+          "harga_label": "19K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Wedang Susu",
+          "harga": 20000,
+          "harga_label": "20K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     },
     {
@@ -489,12 +1085,48 @@
       "nama": "Others",
       "catatan": null,
       "item": [
-        { "nama": "Mineral", "harga": 17000, "harga_label": "17K", "satuan": "Hot/Ice", "deskripsi": null },
-        { "nama": "Jeruk Manis", "harga": 19000, "harga_label": "19K", "satuan": null, "deskripsi": null },
-        { "nama": "Jeruk Nipis", "harga": 19000, "harga_label": "19K", "satuan": null, "deskripsi": null },
-        { "nama": "Tropical Rum", "harga": 34000, "harga_label": "34K", "satuan": null, "deskripsi": null },
-        { "nama": "Tropical Blueberry/Lychee", "harga": 29000, "harga_label": "29K", "satuan": null, "deskripsi": null },
-        { "nama": "Fresh Tape Blend", "harga": 25000, "harga_label": "25K", "satuan": null, "deskripsi": "Chocolate, Milky, Original" }
+        {
+          "nama": "Mineral",
+          "harga": 17000,
+          "harga_label": "17K",
+          "satuan": "Hot/Ice",
+          "deskripsi": null
+        },
+        {
+          "nama": "Jeruk Manis",
+          "harga": 19000,
+          "harga_label": "19K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Jeruk Nipis",
+          "harga": 19000,
+          "harga_label": "19K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tropical Rum",
+          "harga": 34000,
+          "harga_label": "34K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Tropical Blueberry/Lychee",
+          "harga": 29000,
+          "harga_label": "29K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Fresh Tape Blend",
+          "harga": 25000,
+          "harga_label": "25K",
+          "satuan": null,
+          "deskripsi": "Chocolate, Milky, Original"
+        }
       ]
     },
     {
@@ -502,15 +1134,69 @@
       "nama": "Coffee Series",
       "catatan": null,
       "item": [
-        { "nama": "Americano", "harga": 28000, "harga_label": "28K", "satuan": "Hot/Ice", "deskripsi": null },
-        { "nama": "Affogato", "harga": 38000, "harga_label": "38K", "satuan": null, "deskripsi": null },
-        { "nama": "Cafe Latte", "harga": 35000, "harga_label": "35K", "satuan": "Hot/Ice", "deskripsi": null },
-        { "nama": "Cappucino", "harga": 37000, "harga_label": "37K", "satuan": "Hot/Ice", "deskripsi": null },
-        { "nama": "Espresso", "harga": 26000, "harga_label": "26K", "satuan": null, "deskripsi": null },
-        { "nama": "Es Kopi Susu Gula Aren", "harga": 37000, "harga_label": "37K", "satuan": null, "deskripsi": null },
-        { "nama": "Moccacino", "harga": 37000, "harga_label": "37K", "satuan": null, "deskripsi": null },
-        { "nama": "Kopi Susu Avocado", "harga": 37000, "harga_label": "37K", "satuan": null, "deskripsi": null },
-        { "nama": "Batavia Coffee", "harga": 39000, "harga_label": "39K", "satuan": null, "deskripsi": null }
+        {
+          "nama": "Americano",
+          "harga": 28000,
+          "harga_label": "28K",
+          "satuan": "Hot/Ice",
+          "deskripsi": null
+        },
+        {
+          "nama": "Affogato",
+          "harga": 38000,
+          "harga_label": "38K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Cafe Latte",
+          "harga": 35000,
+          "harga_label": "35K",
+          "satuan": "Hot/Ice",
+          "deskripsi": null
+        },
+        {
+          "nama": "Cappucino",
+          "harga": 37000,
+          "harga_label": "37K",
+          "satuan": "Hot/Ice",
+          "deskripsi": null
+        },
+        {
+          "nama": "Espresso",
+          "harga": 26000,
+          "harga_label": "26K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Es Kopi Susu Gula Aren",
+          "harga": 37000,
+          "harga_label": "37K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Moccacino",
+          "harga": 37000,
+          "harga_label": "37K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Kopi Susu Avocado",
+          "harga": 37000,
+          "harga_label": "37K",
+          "satuan": null,
+          "deskripsi": null
+        },
+        {
+          "nama": "Batavia Coffee",
+          "harga": 39000,
+          "harga_label": "39K",
+          "satuan": null,
+          "deskripsi": null
+        }
       ]
     }
   ]
