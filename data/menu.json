@@ -140,31 +140,31 @@
           "nama": "American Lobster (Fresh)",
           "harga": 249000,
           "harga_label": "249K",
-          "satuan": "per ons (100 gr), estimasi berat 400-700 gr",
+          "satuan": "per ons (100 gr), estimasi berat ± 400-700 gr",
           "deskripsi": "Menu baru (NEW)"
         },
         {
           "nama": "American Lobster (Live)",
           "harga": 335000,
           "harga_label": "335K",
-          "satuan": "per ons (100 gr), estimasi berat 400-700 gr",
+          "satuan": "per ons (100 gr), estimasi berat ± 400-700 gr",
           "deskripsi": "Menu baru (NEW)"
         },
         {
           "nama": "Rahang Tuna Bakar (L)",
           "harga": 269000,
           "harga_label": "269K++",
-          "satuan": "600 - 800 g",
-          "plus_plus": true,
-          "deskripsi": "Pilihan varian rasa: Bakar Merah Bara (Pedas, Gurih Beraromatik Terasi dan Udang Ebi), Bakar Saus Malaka (Gurih, Manis, Bold, Creamy Coconut), Bakar Saus Kurnia (Gurih, Sedikit Pedas, Aromatik Khas Rempah)"
+          "satuan": "600 - 800 gr",
+          "deskripsi": "Pilihan varian rasa: Bakar Merah Bara (Pedas, Gurih Beraromatik Terasi dan Udang Ebi), Bakar Saus Malaka (Gurih, Manis, Bold, Creamy Coconut), Bakar Saus Kurnia (Gurih, Sedikit Pedas, Aromatik Khas Rempah)",
+          "plus_plus": true
         },
         {
           "nama": "Rahang Tuna Bakar (XL)",
           "harga": 299000,
           "harga_label": "299K++",
-          "satuan": "800 g - 1 kg",
-          "plus_plus": true,
-          "deskripsi": "Pilihan varian rasa: Bakar Merah Bara (Pedas, Gurih Beraromatik Terasi dan Udang Ebi), Bakar Saus Malaka (Gurih, Manis, Bold, Creamy Coconut), Bakar Saus Kurnia (Gurih, Sedikit Pedas, Aromatik Khas Rempah)"
+          "satuan": "800 gr - 1 kg",
+          "deskripsi": "Pilihan varian rasa: Bakar Merah Bara (Pedas, Gurih Beraromatik Terasi dan Udang Ebi), Bakar Saus Malaka (Gurih, Manis, Bold, Creamy Coconut), Bakar Saus Kurnia (Gurih, Sedikit Pedas, Aromatik Khas Rempah)",
+          "plus_plus": true
         },
         {
           "nama": "Rahang Tuna Bakar (XXL)",
